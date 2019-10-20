@@ -1,0 +1,340 @@
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                         `-----`                      .-----                                        
+                         :NNNNN+                      hNNNNN                                        
+                      `hhhyyyssyhh-  yhhhhhhho     +hh+:::::                                        
+                      .MMNyyyssmMMo::dmmdddddy:::::hMMo:::::                                        
+                      .MMMMMMMMMMMMMMsss+++++sMMMMMMMMMMMMMM                                        
+                      .MMd///////////mNNmmmoooooooodMM+.....mmh                                     
+                    //+hhy:::::::::::yhhhhyooo++oyymMMo//`  yyo  `:::::.                            
+                    MMN::/oooooosssss:----:ooo++hMMMNNNNN.     ``-yyyyy/``                          
+                    MMm--:ooooohNNNNNo+++++//+++hMMhssdNN.    `sso/////oss.                         
+                 +ooyyy//+hhhhhmNNNNNo+++++///++hMMy//oyy+++///oo+/////+oo///`                      
+                 mMM::/ssyNNNMMNmmmmmo++//////++yNNo--///mNNyys::/+++++/::shh`                      
+                 mMMoosNNd//sNNhoooooyyy////////+oo/--hNNNNN:::++++++++:--shh`                      
+              +sshhhddh++oyyyyys+++++ssssso/////+++///dMMNNNooosss++++++//yhh`                      
+              hMMyssmmh  :NNh++ooooooo++hhy///++++++++dNNmmmyyyyyy+++++ooosss`                      
+              hMMMMM``   :NNh++hNNNNNo++hhy//+hhs++:--+ooooo+++++++++ooshh-                         
+              -/////  `++ossyddyyymNNo++hhhssssso++:--/++hdd++++++++oyy+--`                         
+                      `hhy//sddyssdNNsssyyyyys+++++/::+oodddsssssssssss-                            
+                      `hhs/////yNNNNNNNN+++++++++ooo++yhh+//NNNmmmmmo                               
+                       --:yyo//+oohddNNN++++++++sddhyyo++///ddh:::::.                               
+                         .oooooooohddmmmssssss++sddhhho/////hhs                                     
+                            :hhhhhNMMdhhNNNNNdoo+++shh+/////hhs                                     
+                      `ddddddmmNNNMMMNNNMMMNNNmmdyyo++///syy...                                     
+                    //+NNmhhhhhmMMMMMMMMMMMNNNmmdhhsoosssddd//:                                     
+                    NNNNNd+++++dMMMMMNNNNNNMMNhhhhhhhhmNNNNNNNd                                     
+                    NNmooshhdMMMMMNNNhhhoosNNNMMy--yNNsoo:::oosmmy                                  
+                    NNm++ohhmMMMMMNNNhhh++ohhdNNdsshdds++---///hhy++:                               
+                    NNm++ohhmMMMMMNNNdhhooo++smmmmmdhho++:-----oosNNo                               
+                    NNm++yMMMMMMMMMMMNNNhhy+++oooooyhho+++++---oosNNo                               
+                    MMNdddmmmmmmmmNMMMMMmmdssssssssyhhysso++//+hhy//-                               
+                 .--MMMMMNddddddddNNNNNNmmmhhhhhhhhhhhhhhsssssshho  `--------                       
+                 dNNMMMMMMMMMMMmdddddddddddNNNNNNNNNNNNNNmmmmmd```  +NNNNNNNN.                      
+                 mMMMMMMMMMMMMMNNNNNNNNNddhssssshMMMMMo::::::::  -yyhdddddNMMhyy                    
+                 yhhMMMMMMMMMMMMMMMMMMMMdddooooohNNNNN+:::::   ::+NNmhhhhhmNNMMM                    
+                  ``MMMMMMMMMMMMMMMMMMMMMMMMMMMMmdddddNNNNNN  .NNNhhhhhhhhhhhNMM                    
+                    -----+MMMMMMMMMMMmdddddddddddhhhhhdddMMMddddddhhdmmmmmmmmMMM                    
+                    :::::oMMMNNNNNNNNdhhmmmmmmmmmmmdhhhhhMMMNNmhhhddmNNNNNNNNMMM                    
+                 ```MMMMMMMMmhhhhhddddddNNNNNNNNMMMmddhhhNMMhhhhhdNNNMMMMMMMMNNN                    
+                 hdddddMMMMMmhhhhhmNNNNN--------sMMMNNdhhdddhhhmmNMMMMMMMMMMM:--                    
+              :++dmmhhhNNNNNmhhdmmysssss        :ssmMMdhhhhhdddNNMMMMMMMMMhss`                      
+              hMMhhhhhhhhhdddddmNN:                sMMdhhhhhNNNMMMMMNNNNNN:                         
+              hMMhhhhhhhhdmmNNNo..`                sMMdhhmmmMMMMMMMMy.....`                         
+              hMMhhhhhhmmmmmmmmyoo.                sMMdhhmNNMMMMMmoo:                               
+              hMMdhhhhhmmmdddddNMM/..              ommdhhNNNMMMmmy                                  
+              hMMNNNhhhhhdNNNNNNMMNNN.             ```hMMMMMMMm```                                  
+              hMMNNNhhhhhhddddddmmmmmyss              :+++++++/                                     
+              ymmNNNhhhhhhhhhhhhhhhhhNMM                                                            
+                 mMMNNmhhhhhhhhhhhhhhNMM                                                            
+                 ://:::--------------://                                                            
+                                                                                                   
+              By Maxim                                                                                
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                      `..                                           
+                                                      yNN.                                          
+                               /yyyyy`                ://syy                                        
+                            `--yNNMMM/--   --------`     mMM     `--.                               
+                            +NNhssmMMNNN  .NNNNNNNN+     mMM     :NNs                               
+                            +MMNmms++ooohhhyyysssssyhhhhhNMM  `hhs::.                               
+                         `::oddddd/---::dddyyysso++ymmmmmMMM::/hho                                  
+                         :MMy::-----------/MMMMMdoo+//+++NMMMMm                                     
+                      .ddy++/--/+++++++++++/////+ooo++hmmMMMNNd        :sssss`                      
+                 :////+hhy///::+oooooyyyyyy:::::/+++++mMMmddNNd     `--+sssss:-----                 
+              ```dNNNNm::/sssssssssssNMMMMNooooo+//+++mMMo++NNd`````/yy+:::::yyyhhs                 
+              sdd+++sssoosNNNNNNNNNNNNNNNNm+++++///+++mMM/::MMNhhhsso///+++++:::hhs                 
+              hMMysshhhhhhssssssssmNNhhhhhhooo/////+++ydd:--MMMNNdoo+//++++++---hhs                 
+              yNNNNNNNNNNy   `````ymmo++++ohhs++//////+++:--NNNNNh::/ooo+++++:--hhs                 
+              `..........`  :yyhddsoo++++++oosyys/////++++++::/NNmyyyyys++++++++hhs                 
+                         .//+oohNNs++yhhhhy++ohhs//osso++//////yyyssssso+++++sss//:                 
+                         -hhs//ymmsoommmNNm++ohhs++shho++---+++ooo++++++++oooyyy                    
+                         -hhs/////dNNo++NNm++ohhhhhs+++++---++ohhy+++++oooyhh`                      
+                         `::+ss+//osshhhNNmhhhssssso+++++///yysooshhhhhhhh+::`                      
+                            -sso+++++dmmdddNNd++++++++ooooooyyy//ommmddddd-                         
+                               +hhhhhhhh::/NNd++++++++yhhhhh/////ohh+                               
+                               .--------dddddddddddhyyo+++++/////ohh+                               
+                                  -:::::MMMddmNNNNNmdds+++++///++ooo:                               
+                                  yNNNNNMMMMMMMMMNNNNNdhhhhh//+hho                                  
+                              +ddyssNMMMMMNNNNNNMMMMM/..yhhyys..`                                  
+                            .//shhhyyNMMMMNmmdhhmMMMMM:  /++++/                                     
+                            /NNyoomMMMMMNNmhhy++yNNMMM:                                             
+                            /NNNNNMMMMMMNNmhhy++yNNMMM:  hmmmmmmms                                  
+                    ++++++++yNNMMMNmmmmmNNmhhyssyddNNNs++yhhhhhddh++-                               
+                    MMMMMMMMMMMMMMmdddddNNmhhhyyyyydmmmmmo+++++yyhNNo                               
+                    MMNhhdMMMMMMMMMMMMMMNNmhhyooooooooooo:----:ooyNNo                               
+                 ossmmmmmmNNMMMMMMMMMMMMNNNmmdsssssssssss///---++sNNo                               
+                 mMMhhhNNNmmNNNMMMMMMNNNMMMNNmhhhhhhhhhhho++:::ssyhh+                               
+                 mMMhhhNNmdddddNMMMMMdddMMMMMMNNNNNdhhhhho++++ommy```                               
+              +yyNMMhhhNNNmmdhhdmmmmmdhhmmmMMMMMNddmmmmmmdddddh//-                                  
+              hMMNNNhhhmmmNNmdddhhhhhhhhddmMMMNNmhhdmmNNNhhhhhy                                     
+              hMMdhhhhhhhdNNNMMmhhhhhhhhMMMMMNddhhhhhhNMM.                                          
+              hMMhhhhhhhhhddmMMNNNNNNNNNMMN::+NNmhhhhhNMM.                                          
+              hMMhhhhhhhhhhhmMMmhhhhhhhhhhy  :MMmhhdddhhh`                                          
+              yNNdhhhhhhhhhhmMM+           ``/MMmddNMM:  `````````                                  
+              .--mNNhhhhhdNNMMM+          .dddddmmmNMM:  yddddddds                                  
+                 oyydddddmMMmyy:        //oMMNddmNNNNNo//dmmmmmmmh//-                               
+                    NNNNNNNNo        ```MMMMMNNNNNNmddNMMhhhhhhhhdMMs``                             
+                    ........`        hmmNNNhhhhhdNNNNNNNNhhhhhhhhhhhdmm/                            
+                                     mMMNNmhhhhhdddddddddhhhhhhhhhddmMM+                            
+                                     dNNmmmyyyyyyyyyyyyyyyyyyyyyyhmmmNN+                            
+                                      `````                       `````                             
+                                                                                                    
+              By Maxim                                                                                
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                   
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                         hmm                                        
+                            .+++++.                      mMM                                        
+                          ``+MMNNN/``   ```````````   ```dNN   ```                                  
+                         :mmdssooodmm.  mmmmmmmmh++-  ymm-..  .mmy                                  
+                         :MMNddhhhNMMsoodddhhhhhhddyoomMMsooooooo/                                  
+                         :MMNmmmmmmmmMMMsssoo+++yNNNNNMMMMMMmmh                                     
+                         :MMh::::::::NMMNNNNNdooo+++++mMMMMM```                                     
+                      `sssss+--://///yhhooooooooo++yhhNMMNNN        .+++++.                         
+                      .MMd:::::+oossssss:::::/ooo++dMMNNNNNN     `../yyyyy:..                       
+                      .MMd--/ooooomMMMMMooooo+//+++dMMyoomNN     -yyo:::::syy`                      
+                 shhhhyooo+++oohmmNNNNNN++++++//+++syyo++syyyyyoo++++++++++++ooo                    
+              .--hmmmmd//+yyyyymMMmddddd+++/////++++++ssssssNNmsso::/+++++:::yhh                    
+              hNN/::ooossyNNMMMNNNs+++++hhy////////+++mMMMMMNNd--:++++++++:--yhh                    
+              -::hddmmmmmh::sNNhsso+++++oooyys/////+++ssssssNNmsssyys++++++++yhh                    
+                 syyyyyyyo  /NNy++ssssss++ohhy//+ooo+++//+++ddhyyyyys+++++ossooo                    
+                            /NNyoodmmNNN++ohhy//ohhs++:--+++ooo++++++++oooyyy`                      
+                            :hhdmmyssmNN++ohhhyysooo++:--+++yyy++++++oosyy:..                       
+                         `::+ssyhhyyymNNyyyssssss+++++/::ossssssssyyyyyo++.                         
+                         -hhs/////hmmmmmNNm++++++++ooooooyhh//+hhdmmmmm/                            
+                         -hhs/////++++++NNm++++++++hmmhhh+++//+hho`````                             
+                         `//+ss+//ossyhhdddhhhhhs++syyhhh+/////ooo//-                               
+                            :yyo//syyNMMhhdNNNNNhooo++yhh+///////ohh+                               
+                               +hh/::NMMMMMMMMNNNNNy++yhh+///////ohh+                               
+                               .::shhNNNNNNMMMMMMMMmhhhhh+//ssssso::.                               
+                               `..hMMmmmmmmMMMMMMMMNNNdddo++hhhss+                                  
+                               oNNNNNooooooNNNMMMMMMMMMMMhhhhhy                                     
+                            :yyysssssyyyyyyNNNMMMMMMMMMMMsoosssyy+                                  
+                            /NNy++ooohdddddNNNMMMMMNmmNMMyyyyyyddy::.                               
+                            /NNy++yhhmNNNNNMMMMMMMMy//mMMMMMMMNoosmmo                               
+                         -hhysso++yhhmNNdddddmMMMMMNmmMMMmdddddmmNNNo                               
+                      `::+ddy+++//syymNNmmmmmmMMNNNNNNNNNdhhhhdNNNNNs                               
+                      .NNdoo+++:--/++mNNMMMMMMMMmhhddddddhhhhhhhhdMMs                               
+                      .NNdoo/-----/++mNNdddddddddhhmNNNNNdhhhhhhhdMMs                               
+                      `oosyyo//:::ossmNNhhhhhdmmmmmNMMNmmdhhhhdmmdss/                               
+                         -ddhoooooyhhNNNdddddmMMMMMMMMmddddddddmmy                                  
+                          ..+mmmmmmmmMMMMMMMMNhhmMMMMMMMMMMMMMm..`                                  
+                            -+++++++++ooMMMmmdhhmMMNmmmmmMMMoo+                                     
+                                        MMNhhhhhdNNmdddddNNN........`                               
+                                        MMNhhhhhhhhmMMMMMdhhNNNNNNNNo                               
+                                     oyyMMMmmmhhhhhddddddhhhddddddddhyy:                            
+                                  ...mNNNNNMMNddddddddhhhhhhhhhhhhhhdNNo..`                         
+                                  hMMdhhhhdNNNMMMMMMMMdhhhhhhhhhhhhhhhhmMM:                         
+                               +hhmNNmmmmmmddmNNNNNMMMNNNNNNhhhhhhhhhhhmMM:                         
+                            .::yMMNmmmmmNNNdddmmmmmNNNMMMMMMddddddddddddhh-                         
+                            +MMNNNdhhhhhNNNNNmhhhhhhhhNMMMMMMMMNNNNNNNN+                            
+                            +MMNNNmmmhhhdddddhhhhhhhhhddddddMMm--------`                            
+                            :yyyssssso++++++++++++++++++++++yys                                     
+                                                                                                    
+               By Maxim                                                                               
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                         `-----`                      .-----                                        
+                         :NNNNN+                      hNNNNN                                        
+                      `hhhyyyssyhh-  yhhhhhhho     +hh+:::::                                        
+                      .MMNyyyssmMMo::dmmdddddy:::::hMMo:::::                                        
+                      .MMMMMMMMMMMMMMsss+++++sMMMMMMMMMMMMMM                                        
+                      .MMd///////////mNNmmmoooooooodMM+.....mmh                                     
+                    //+hhy:::::::::::yhhhhyooo++oyymMMo//`  yyo  `:::::.                            
+                    MMN::/oooooosssss:----:ooo++hMMMNNNNN.     ``-yyyyy/``                          
+                    MMm--:ooooohNNNNNo+++++//+++hMMhssdNN.    `sso/////oss.                         
+                 +ooyyy//+hhhhhmNNNNNo+++++///++hMMy//oyy+++///oo+/////+oo///`                      
+                 mMM::/ssyNNNMMNmmmmmo++//////++yNNo--///mNNyys::/+++++/::shh`                      
+                 mMMoosNNd//sNNhoooooyyy////////+oo/--hNNNNN:::++++++++:--shh`                      
+              +sshhhddh++oyyyyys+++++ssssso/////+++///dMMNNNooosss++++++//yhh`                      
+              hMMyssmmh  :NNh++ooooooo++hhy///++++++++dNNmmmyyyyyy+++++ooosss`                      
+              hMMMMM``   :NNh++hNNNNNo++hhy//+hhs++:--+ooooo+++++++++ooshh-                         
+              -/////  `++ossyddyyymNNo++hhhssssso++:--/++hdd++++++++oyy+--`                         
+                      `hhy//sddyssdNNsssyyyyys+++++/::+oodddsssssssssss-                            
+                      `hhs/////yNNNNNNNN+++++++++ooo++yhh+//NNNmmmmmo                               
+                       --:yyo//+oohddNNN++++++++sddhyyo++///ddh:::::.                               
+                         .oooooooohddmmmssssss++sddhhho/////hhs                                     
+                            :hhhhhNMMdhhNNNNNd+++++shh+/////hhs                                     
+                         -dddmmmmmNNNmmmMMMNNmyys//+++///syy...                                     
+                      `//ohhhhhhhhhhhhhhMMMNNNddyoooooooohdd/////:                                  
+                      .NNdoo++++++++++++NNNMMMNNmhhhhhhhhmNNNNNNNy                                  
+                    mmdooo++shhhhhhhhhhhNNNMMMMMy--yNNNNNhhhoo+::+mmo                               
+                 /++hhhsssssyhhdddddddddNNMMMMMMdsshdddddyssyyy//+sso++-                            
+              ```dmmooohhhhhhhhmNNNNNNNNMMMMMMMMMNNdhhhhho++NNm+++::sNN/                            
+              ymmsoo+++ooohhdNNNMMMMMMMMMMMMMMMMMMMmhhhhho++NNm+++::sNN/                            
+              yNNo++:::::/sshNNmmmNMMMMMMMMMMMMMMMMmhhdmmyssddh++oyyo//.                            
+              yNNo++::---:++yNNmddNNNNNNNNNNNNmmmmmdhhmNNdhhhhhssyhh+  .--------                    
+              yNNo+++++--:++yNNmdddddddddddddy+++++hNNNNNNNNNNNmmy``   sNNNNNNNN                    
+              yNNddd+++//oddmMMNNNNNNNNNdddddy/////hMMo::::::::::-  :yyhdddddMMMyys                 
+              oyyyyysssssyNNMMMMMMMMMMMMdddddhooooodNN+::        `::sNNdhhhhhmNNMMm                 
+                    NNNNNNMMMMMMMMMMMMMMMMMMMMMMMMMmddNNN.       :NNmhhhhhhhhhhhMMm                 
+                    -----+MMMMMMMMMMMMMMMMMdddddddddhhdddddd  .dddddhhhhhhhhhhhhMMm                 
+                         -hhdMMNNNNNNMMMMMMmmmmmmmmmmmdhhNNN::+NNmddhhhhhhhhhdddhhs                 
+                    ````````+MMmhhdddMMMNNNNNNNNNNNMMMmddhhhMMNhhdNNmhhhhhhhhNMM                    
+                    ddddddddmMMmhhmNNMMM-----------yMMMNNdhhNNNhhdNNmhhhhhmmmMMM                    
+                 /++mmmmmNMMNNNdhhNMMyss           /ssmMMdhhmmmdddmmddddddNNNyss                    
+                 mMMhhhhhdMMmhhdddNMM.                hMMddddddNNmhhdNNNNNNNN.                      
+                 mMMhhhhhhdddhhmNNMMM.                hMMNmmmmmhhdmmNMMMMM/..                       
+                 mMMhhhhhhhhdmmyooooo`                hMMMNNNNNddmNNdooooo.                         
+                 mMMhhhhhhhhdMMo........              ymmMMMNNNNNNmmo                               
+                 mMMMMNhhhhhhhhmNNNNNNNN              ```mMMMMMMMh```                               
+                 mMMMMNhhhhhhhhdmmmmmMMMsso              /+++++++:                                  
+                 mMMMMMhhhhhhhhhhhhhhNMMMMm                                                         
+                 mMMMMMMMNhhhhhhhhhhhNMMMMm                                                         
+                 :///////:-----------:////:                                                         
+                                                                                                    
+         By Maxim                                                                                     
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                     
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                      `..                                           
+                                                      yNN.                                          
+                               /yyyyy`                ://syy                                        
+                            `--yNNMMM/--   --------`     mMM     `--.                               
+                            +NNhssmMMNNN  .NNNNNNNN+     mMM     :NNs                               
+                            +MMNmms++ooohhhyyysssssyhhhhhNMM  `hhs::.                               
+                         `::oddddd/---::dddyyysso++ymmmmmMMM::/hho                                  
+                         :MMy::-----------/MMMMMdoo+//+++NMMMMm                                     
+                      .ddy++/--/+++++++++++/////+ooo++hmmMMMNNd        :sssss`                      
+                 :////+hhy///::+oooooyyyyyy:::::/+++++mMMmddNNd     `--+sssss:-----                 
+              ```dNNNNm::/sssssssssssNMMMMNooooo+//+++mMMo++NNd`````/yy+:::::yyyhhs                 
+              sdd+++sssoosNNNNNNNNNNNNNNNNm+++++///+++mMM/::MMNhhhsso///+++++:::hhs                 
+              hMMysshhhhhhssssssssmNNhhhhhhooo/////+++ydd:--MMMNNdoo+//++++++---hhs                 
+              yNNNNNNNNNNy   `````ymmo++++ohhs++//////+++:--NNNNNh::/ooo+++++:--hhs                 
+              `..........`  :yyhddsoo++++++oosyys/////++++++::/NNmyyyyys++++++++hhs                 
+                         .//+oohNNs++yhhhhy++ohhs//osso++//////yyyssssso+++++sss//:                 
+                         -hhs//ymmsoommmNNm++ohhs++shho++---+++ooo++++++++oooyyy                    
+                         -hhs/////dNNo++NNm++ohhhhhs+++++---++ohhy+++++oooyhh`                      
+                         `::+ss+//osshhhNNmhhhssssso+++++///yysooshhhhhhhh+::`                      
+                            -sso+++++dmmdddNNd++++++++ooooooyyy//ommmddddd-                         
+                               +hhhhhhhh::/NNd++++++++yhhhhh/////ohh+                               
+                               .--------dddddddddddhyyo+++++/////ohh+                               
+                                     -::MMNddmNNNNNmdds+++++///++ooo:                               
+                                     dNNNNNMMMMMMNNNNNdhhhhh//+hho                                  
+                                  sddssssssNNNMMMMMMMM/..yhhyys..`                                  
+                    /////:     -//yhho++sssNNNMMMMMMMM:  /++++/                                     
+                    MMMMMh     oNNsoo+++hhhNNNMMMMMMMM:                                             
+                 dNNhhhhhdNNmmmyooo++yhhNNNNNNMMMMMMMM:                                             
+                 mMMmmmhhhmmmNNhsso++sssssssshNNMMMMMMs+++++                                        
+              `..mMMMMNhhhhhdNNdhhsooooo-----+mmNMMMMMNNNmmm```                                     
+              yNNMMMMMNhhhhhdNNdhhhhhhhh+++--:oohNNmddhhhsoommh                                     
+              hMMMMMMMNhhhhhdNNmmmmmmhhh+++//+sshNNmddhhhyssyyyoo/                                  
+              hMMMMMNNNhhhhhmMMNNNNNNdhhoooooshhmNNmddhhhhhhoooNNy                                  
+              hMMMMMhhhhhdNNNMMMMMNNNNNNhhhhhhNNNMMMMMdhhhhhoooNNy                                  
+              hMMMMMhhhhhdNNNMMMMMMMMMMMmmmmmmdddmmNMMNNNsssddh//-                                  
+              hMMMMMhhhhhdmmNMMMMMMMMMMMmmmmmmhhhhhmNNMMMysshhy                                     
+              hMMMMMhhhhhhhhmMMMMMMMMMMMdddddhhhhhhhddNMMNNN                                        
+              hMMMMMhhhhhhhhmMMs::dMMMMMNNNNNNNNmhhhhhNMM/--                                        
+              hMMMMMhhhhhhhhmMM+  ohhhhhhhdMMMMMmhhdddhhh`                                          
+              hMMMMMhhhhhhhhdNN+          .MMMMMmddNMM:  `````````                                  
+              hMMMMMhhhhhdNNy--`          .MMNddmmmNMM:  yddddddds                                  
+              +yyNMMddddddyy/           //oMMNddmNNNNNo//dmmmmmmmh//-                               
+                 dNNNNNNNy           ```MMMMMNNNNNNmddNMMhhhhhhhhdMMs``                             
+                 ........`           hmmNNNhhhhhdNNNNNNNNhhhhhhhhhhhdmm/                            
+                                     mMMNNmhhhhhdddddddddhhhhhhhhhddmMM+                            
+                                     dNNmmmyyyyyyyyyyyyyyyyyyyyyyhmmmNN+                            
+                                      `````                       `````                             
+                                                                                                    
+     By Maxim                                                                                         
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                         hmm                                        
+                            .+++++.                      mMM                                        
+                          ``+MMNNN/``   `````````     ```dNN   ```                                  
+                         :mmhssooodmm.  mmmmmmmmo     ymm-..  .mmy                                  
+                         :MMNddhhhNMMsoodddhhhhhyooooomMMsooooooo/                                  
+                         :MMNmmmmmmmmMMMsssoo+++yNNNNNMMMMMMmmh                                     
+                         :MMh::::::::NMMNNNNNdooo+++++mMMMMM```                                     
+                      `sssss+--://///yhhooooooooo++yhhNMMNNN        .+++++.                         
+                      .MMd:::::+oossssss:::::/ooo++dMMNNNNNN     `../yyyyy:..                       
+                      .MMd--/ooooomMMMMMooooo+//+++dMMyoomNN     -yyo:::::syy`                      
+                 shhhhyooo+++oohmmNNNNNN++++++//+++syyo++syyyyyoo++++/////+++ooo                    
+              .--hmmmmd::+yyyyymMMmddddd+++/////++++++ssssssNNmsso::/+++++:--yhh                    
+              hNN/::ooossyNNMMMNNNs+++++hhy////////+++mMMMMMNNd--:++++++++:--yhh                    
+              -::hddmmmmmh::sNNhsso+++++oooyys/////+++ssssssNNmsssyys++++++++yhh                    
+                 syyyyyyyo  /NNy++ssssss++ohhy//+ooo+++//+++ddhyyyyys+++++ossooo                    
+                            /NNyoodmmNNN++ohhy//ohhs++:--+++ooo++++++++oooyyy`                      
+                            :hhdmmyssmNN++ohhhyysooo++:--+++yyy++++++++syy:..                       
+                         `::+ssyhhyyymNNyyyssssss+++++/::ossssssssyyyyyo++.                         
+                         -hhs/////hmmmmmNNm++++++++ooooooyhh//+hhdmmmmm/                            
+                         -hhs/////++++++NNm++++++++hmmhhh+++//+hho`````                             
+                         `//+ss+//oss///yyyhhhhhs++syyhhh+/////ooo//-                               
+                            :yyo//syy///++oNNNNNhooo++yhh+///////ohh+                               
+                               +hh-     MMNhhdNNNNNy++yhh+///////ohh+                               
+                               .::`  oyyMMMmmNMMMMMmhhhhh+//ssssso::.                               
+                                     mMMMMMMMMMMMMMNNNhyy+++hhhss+                                  
+                                     mMMNNNNNNMMMMMMMMo::yhhhhy                                     
+                                  ohhNNNddhsshNNMMMMMMmdd:-----                                     
+                                  hMMNNNhhy++sNNNMMMMMMMM/::                                        
+                                  hMMNNNhhy++sNNNMMMMMMMMMMM                                        
+                                  hMMNNNhhy++sNNNMMhoomMMmddddh                                     
+                               -//dMMNNNhhy++sddmMMhssmMMdhhMMm                                     
+                          `````sMMMMMNNNhhy++oooyNNNmmmmmdddNNm                                     
+                         -mmmmmNMMMMMMMMmmmyyyyyyoo+:::::dmm...                                     
+                         :MMMMMMMMMMMMMMNNNdddhhyss+::---yhh+++++:                                  
+                         :mmNMMMMMMMMMMMMMMNNmhhhhhs++:--+++NNNMMh..`                               
+                         `..oMMMMMMMMMMMMMMMMNmmdhhs++++++++NNNhhdmmo                               
+                            -ooooooooNMMMMMMMMNNmddhssssshhhdddhhhmmhoo-                            
+                                     mMMMMMNNNmmNNNmhhhhhNNNdddddhhhmMM+                            
+                                     mMMMMMdddddmMMNNNNNNMMMMMMMMNhhmMM+                            
+                                  +yyNMMmmmhhdNNhooooomMMMMMMMMMMMmmy//.                            
+                                  hMMNNNddddddmmy/////dMMmmmmmmmmmmmo                               
+                                  hMMdhhMMMMMd--sMMMMMMMM.                                          
+                               +hhdddmmmmmmNNmdddddddddddhhhhhs                                     
+                            .::yMMdhhmNNdddNNNNNmhhhhhhhhmNNMMm                                     
+                            +MMNNNdhhmNNNNNNNmhhhhhhhhhhhhhhMMm``                                   
+                            +MMNNNmmmddddddddhhhhhhhhhhhhhhhddddds                                  
+                            :yyyssssso++++++++++++++++++++++++oyy+                                  
+                                                                                                    
+   By Maxim                                                                                          
+                                                                                                    
+                                                                                                    
