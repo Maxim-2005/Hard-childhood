@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    tools:context=".level_03">
+
+    <ImageView
+        android:id="@+id/Fon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/lvlnik" />
+
+    <ImageView
+        android:id="@+id/hero1"
+        android:layout_width="44dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.491"
+        app:srcCompat="@drawable/hero0" />
+
+    <ImageView
+        android:id="@+id/hero2"
+        android:layout_width="44dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="72dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.213"
+        app:srcCompat="@drawable/hero0" />
+
+    <ImageView
+        android:id="@+id/hero3"
+        android:layout_width="44dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="72dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.233"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.277"
+        app:srcCompat="@drawable/hero0" />
+
+    <ImageView
+        android:id="@+id/hero4"
+        android:layout_width="44dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="72dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.444"
+        app:srcCompat="@drawable/hero0" />
+
+    <ImageView
+        android:id="@+id/hero5"
+        android:layout_width="44dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="72dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.557"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.594"
+        app:srcCompat="@drawable/hero0" />
+
+    <ImageView
+        android:id="@+id/hero6"
+        android:layout_width="44dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="72dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.745"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.594"
+        app:srcCompat="@drawable/hero0" />
+
+    <ImageView
+        android:id="@+id/hero7"
+        android:layout_width="47dp"
+        android:layout_height="60dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.683"
+        app:srcCompat="@drawable/hero5" />
+
+    <ImageView
+        android:id="@+id/wood1"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.286"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.501"
+        app:srcCompat="@drawable/wood" />
+
+    <ImageView
+        android:id="@+id/wood2"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.722"
+        app:srcCompat="@drawable/wood" />
+
+    <ImageView
+        android:id="@+id/wood3"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:srcCompat="@drawable/wood" />
+
+    <ImageView
+        android:id="@+id/wood4"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Fon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintStart_toStartOf="@+id/Fon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.352"
+        app:srcCompat="@drawable/wood" />
+
+    <ImageView
+        android:id="@+id/wood5"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.633"
+        app:srcCompat="@drawable/wood" />
+
+    <ImageView
+        android:id="@+id/wood6"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.747"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.898"
+        app:srcCompat="@drawable/wood" />
+
+    <ImageView
+        android:id="@+id/wood7"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.697"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.633"
+        app:srcCompat="@drawable/wood" />
+
+    <ImageView
+        android:id="@+id/wood8"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.697"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.413"
+        app:srcCompat="@drawable/wood" />
+
+    <ImageView
+        android:id="@+id/wood9"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.854"
+        app:srcCompat="@drawable/wood" />
+
+    <ImageView
+        android:id="@+id/wood10"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.315"
+        app:srcCompat="@drawable/wood" />
+
+    <ImageView
+        android:id="@+id/wood11"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.572"
+        app:srcCompat="@drawable/wood" />
+
+    <ImageView
+        android:id="@+id/wood12"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.237"
+        app:srcCompat="@drawable/wood" />
+
+    <ImageView
+        android:id="@+id/wood13"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="224dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/Fon"
+        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.413"
+        app:srcCompat="@drawable/wood" />
+
+    <ImageView
+        android:id="@+id/wood14"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.715"
+        app:srcCompat="@drawable/wood" />
+
+    <ImageView
+        android:id="@+id/Zombe1"
+        android:layout_width="61dp"
+        android:layout_height="87dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.923"
+        app:srcCompat="@drawable/zombie" />
+
+    <ImageView
+        android:id="@+id/Zombe2"
+        android:layout_width="61dp"
+        android:layout_height="87dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.175"
+        app:srcCompat="@drawable/zombie" />
+
+    <ImageView
+        android:id="@+id/Zombe3"
+        android:layout_width="61dp"
+        android:layout_height="87dp"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.38"
+        app:srcCompat="@drawable/zombie" />
+
+    <ImageView
+        android:id="@+id/low"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/low" />
+
+    <ImageView
+        android:id="@+id/win"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/Fon"
+        app:layout_constraintEnd_toEndOf="@id/Fon"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/Fon"
+        app:layout_constraintTop_toTopOf="@id/Fon"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/win" />
+
+    <ImageView
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnExit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_dialog" />
+
+</android.support.constraint.ConstraintLayout>
