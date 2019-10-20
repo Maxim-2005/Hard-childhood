@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    tools:context=".level_04">
+
+    <ImageView
+        android:id="@+id/imageViewBeatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/beatch" />
+
+    <ImageView
+        android:id="@+id/imageViewTree"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.87"
+        app:layout_constraintStart_toStartOf="@+id/imageViewBeatch"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13999999"
+        app:srcCompat="@drawable/tree" />
+
+    <ImageView
+        android:id="@+id/imageViewKey"
+        android:layout_width="49dp"
+        android:layout_height="47dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBeatch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBeatch"
+        app:layout_constraintVertical_bias="0.6"
+        app:srcCompat="@drawable/key" />
+
+    <ImageView
+        android:id="@+id/imageViewCanistra"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBeatch"
+        app:layout_constraintVertical_bias="0.9"
+        app:srcCompat="@drawable/canistra" />
+
+    <ImageView
+        android:id="@+id/imageViewCase"
+        android:layout_width="141dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBeatch"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/kase" />
+
+    <ImageView
+        android:id="@+id/imageViewBoat"
+        android:layout_width="403dp"
+        android:layout_height="288dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBeatch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBeatch"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/boat" />
+
+    <ImageView
+        android:id="@+id/imageViewFox"
+        android:layout_width="68dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBeatch"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toStartOf="@+id/imageViewBeatch"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBeatch"
+        app:layout_constraintVertical_bias="0.55"
+        app:srcCompat="@drawable/fox" />
+
+    <ImageView
+        android:id="@+id/imageViewHikkiTree"
+        android:layout_width="117dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBeatch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBeatch"
+        app:layout_constraintVertical_bias="0.6"
+        app:srcCompat="@drawable/hero4" />
+
+    <ImageView
+        android:id="@+id/imageViewHikkiMid"
+        android:layout_width="115dp"
+        android:layout_height="154dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBeatch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.79"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBeatch"
+        app:layout_constraintVertical_bias="0.74"
+        app:srcCompat="@drawable/hero0" />
+
+    <ImageView
+        android:id="@+id/imageViewZombie1"
+        android:layout_width="52dp"
+        android:layout_height="71dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="@+id/imageViewBeatch"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31"
+        app:srcCompat="@drawable/zombie" />
+
+    <ImageView
+        android:id="@+id/imageViewZombie2"
+        android:layout_width="52dp"
+        android:layout_height="71dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.87"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        app:srcCompat="@drawable/zombie" />
+
+    <ImageView
+        android:id="@+id/imageViewZombie3"
+        android:layout_width="52dp"
+        android:layout_height="71dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38"
+        app:srcCompat="@drawable/zombie" />
+
+    <TextView
+        android:id="@+id/textViewNoFuel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Fuel"
+        android:textColor="#FF0000"
+        android:textSize="50dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintStart_toStartOf="@+id/imageViewBeatch"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26999998" />
+
+    <ImageView
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnExit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_dialog" />
+
+</android.support.constraint.ConstraintLayout>
