@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    tools:context=".level_02">
+
+    <ImageView
+        android:id="@+id/imageViewpole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/fon_mat" />
+
+    <ImageView
+        android:id="@+id/imageViewZombi"
+        android:layout_width="201dp"
+        android:layout_height="187dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewpole"
+        app:layout_constraintEnd_toEndOf="@id/imageViewpole"
+        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintStart_toStartOf="@id/imageViewpole"
+        app:layout_constraintTop_toTopOf="@id/imageViewpole"
+        app:layout_constraintVertical_bias="0.289"
+        app:srcCompat="@drawable/zombi" />
+
+    <ImageView
+        android:id="@+id/imageViewbrevno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewpole"
+        app:layout_constraintEnd_toEndOf="@id/imageViewpole"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/imageViewpole"
+        app:layout_constraintTop_toTopOf="@id/imageViewpole"
+        app:layout_constraintVertical_bias="0.957"
+        app:srcCompat="@drawable/brevno1" />
+
+    <ImageView
+        android:id="@+id/imageViewhero1"
+        android:layout_width="328dp"
+        android:layout_height="115dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewpole"
+        app:layout_constraintEnd_toEndOf="@id/imageViewpole"
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintStart_toStartOf="@id/imageViewpole"
+        app:layout_constraintTop_toTopOf="@id/imageViewpole"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/hero4" />
+
+    <ImageView
+        android:id="@+id/imageViewhero2"
+        android:layout_width="132dp"
+        android:layout_height="166dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewpole"
+        app:layout_constraintEnd_toEndOf="@id/imageViewpole"
+        app:layout_constraintHorizontal_bias="0.685"
+        app:layout_constraintStart_toStartOf="@id/imageViewpole"
+        app:layout_constraintTop_toTopOf="@id/imageViewpole"
+        app:layout_constraintVertical_bias="0.458"
+        app:srcCompat="@drawable/hero0" />
+
+    <ImageView
+        android:id="@+id/imageViewolen"
+        android:layout_width="828dp"
+        android:layout_height="536dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewpole"
+        app:layout_constraintStart_toStartOf="@id/imageViewpole"
+        app:srcCompat="@drawable/olen1" />
+
+    <ImageView
+        android:id="@+id/imageViewkamen"
+        android:layout_width="83dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="148dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewpole"
+        app:layout_constraintEnd_toEndOf="@id/imageViewpole"
+        app:layout_constraintHorizontal_bias="0.662"
+        app:layout_constraintStart_toStartOf="@id/imageViewpole"
+        app:layout_constraintTop_toTopOf="@id/imageViewpole"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/kam" />
+
+    <ImageView
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnExit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_dialog" />
+
+</android.support.constraint.ConstraintLayout>
