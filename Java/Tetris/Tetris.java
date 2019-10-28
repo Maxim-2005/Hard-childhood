@@ -5,13 +5,16 @@
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.KeyListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Tetris extends JPanel {
 
 	//Variables
-	protected static int block = 50, x = 10;
+	protected static int block = 50, x = 0, y=0;
 
 	public static void main(String[] args){
 		
@@ -25,19 +28,31 @@ public class Tetris extends JPanel {
 		jFrame.setVisible(true);
 		Tetris tetris = new Tetris();
 		jFrame.add(tetris);
-	
+		
+		//Press key
+		jFrame.addKeyListener(new KeyAdapter() {
+			public void keyPressed(KeyEvent event) {
+				switch(event.getKeyCode()) {
+					case 37: x--; break; //Left
+					case 38: y--; break; //Down
+					case 39: x++; break; //Right
+					case 40: y++; break; //Up
+				}
+			}
+		});
+
 		while(true) {
 			tetris.game();
 			tetris.repaint();
 			try {
-				Thread.sleep(125);
+				Thread.sleep(1);
 			} catch (Exception e) {}
 		}
 	}
 
 	//Logic block
 	private void game() {
-		x++;
+		//x++;
 	}
 	
 	//Drawing graphics
@@ -46,6 +61,6 @@ public class Tetris extends JPanel {
 		setBackground(Color.black);
 		
 		ctx.setColor(Color.white);
-		ctx.fillRect(50, x, 50, 50);
+		ctx.fillRect(x*block, y*block, 50, 50);
 	}
 }
