@@ -15,6 +15,15 @@ public class Tetris extends JPanel {
 
 	//Variables
 	protected static int block = 50, x = 0, y=0;
+	public int form[][][] = {
+		{{1, 2}, {0, 1}, {1, 1}, {2, 1}, {255, 0, 255}}, //I
+		{{1, 2}, {0, 1}, {1, 1}, {2, 1}, {255, 0, 255}}, //J
+		{{1, 2}, {0, 1}, {1, 1}, {2, 1}, {255, 0, 255}}, //L
+		{{1, 2}, {0, 1}, {1, 1}, {2, 1}, {255, 0, 255}}, //O
+		{{1, 2}, {0, 1}, {1, 1}, {2, 1}, {255, 0, 255}}, //S
+		{{1, 2}, {0, 1}, {1, 1}, {2, 1}, {255, 0, 255}}, //T
+		{{1, 2}, {0, 1}, {1, 1}, {2, 1}, {255, 0, 255}}  //Z
+	};
 
 	public static void main(String[] args){
 		
@@ -52,7 +61,7 @@ public class Tetris extends JPanel {
 
 	//Logic block
 	private void game() {
-		//x++;
+		//y++;
 	}
 	
 	//Drawing graphics
@@ -60,7 +69,9 @@ public class Tetris extends JPanel {
 		super.paint(ctx);
 		setBackground(Color.black);
 		
-		ctx.setColor(Color.white);
-		ctx.fillRect(x*block, y*block, 50, 50);
+		for (int i = 0; i < 4; i++){
+			ctx.setColor(new Color(form[0][4][0], form[0][4][1], form[0][4][2]));
+			ctx.fillRect(block*form[0][i][0]+x*block, block*form[0][i][1]+y*block, block, block);
+		}
 	}
 }
