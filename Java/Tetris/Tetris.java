@@ -16,6 +16,7 @@ public class Tetris extends JPanel {
 
 	//Variables
 	protected static int block = 50, x= 3, y = -3, randForm;
+	public int ground[][][] = new int [20][10][3]; 
 	public int form[][][] = { //Figure /Block / x,y or r,g,b
 		{{1, 2}, {2, 2}, {0, 1}, {1, 1}, {255,   0,   0}}, // Z red
 		{{1, 2}, {2, 2}, {1, 1}, {1, 0}, {255, 165,   0}}, // L orange
@@ -40,7 +41,6 @@ public class Tetris extends JPanel {
 		jFrame.setVisible(true);
 		Tetris tetris = new Tetris();
 		jFrame.add(tetris);
-		
 		//Press key
 		jFrame.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent event) {
@@ -80,8 +80,15 @@ public class Tetris extends JPanel {
 	//Drawing graphics
 	public void paint(Graphics ctx) {
 		super.paint(ctx);
-		setBackground(Color.black);
+		//setBackground(Color.black);
 		
+		//Down
+		for (int i = 0; i < 20; i++){
+			for (int j = 0; j < 10; j++){
+				ctx.setColor(new Color(ground[i][j][0], ground[i][j][1], ground[i][j][2]));
+				ctx.fillRect(j*block, i*block, block, block);
+			}
+		}
 		//Figure
 		for (int i = 0; i < 4; i++){
 			ctx.setColor(new Color(form[randForm][4][0], form[randForm][4][1], form[randForm][4][2]));
