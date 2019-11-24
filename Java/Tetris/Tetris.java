@@ -47,9 +47,9 @@ public class Tetris extends JPanel {
 				tetris.repaint();
 				speed = 500;
 				switch(event.getKeyCode()) {
-					case 37: x--; break; //Left
+					case 37: tetris.move(-1); break; //Left
 					case 38: tetris.rotate(); break; //Rotate
-					case 39: x++; break; //Right
+					case 39: tetris.move(+1); break; //Right
 					case 40: speed = 50; break; //Down
 				}
 			}
@@ -88,6 +88,11 @@ public class Tetris extends JPanel {
 		y = -3;
 	}
 	
+	//Move
+	private void move(int move) {
+		x = x+move;
+	}
+	
 	//Rotate figure
 	private void rotate() {
 		int temp;
@@ -100,8 +105,6 @@ public class Tetris extends JPanel {
 	
 	//Drawing graphics
 	public void paint(Graphics ctx) {
-		super.paint(ctx);
-		//setBackground(Color.black);
 		
 		//Down
 		for (int i = 0; i < 20; i++){
