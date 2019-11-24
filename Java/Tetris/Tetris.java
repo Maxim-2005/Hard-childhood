@@ -35,7 +35,7 @@ public class Tetris extends JPanel {
 		JFrame jFrame = new JFrame("Tetris");
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		jFrame.setSize(block*10+17, block*20+40);
+		jFrame.setSize(block*16+17, block*20+40);
 		jFrame.setResizable(false);
 		jFrame.setLocationRelativeTo(null);	
 		jFrame.setVisible(true);
@@ -82,7 +82,7 @@ public class Tetris extends JPanel {
 	
 	//Random
 	private void random() {
-		speed = 1;
+		speed = 500;
 		randForm = random.nextInt(7);
 		x = 3;
 		y = -3;
@@ -90,7 +90,13 @@ public class Tetris extends JPanel {
 	
 	//Move
 	private void move(int move) {
-		x = x+move;
+		test = 0;
+		for (int i = 0; i < 4; i++) {
+			if (form[randForm][i][0]+x+move < 10 && form[randForm][i][0]+x+move >= 0) test++;
+
+		}
+		if (test >= 4)
+			x = x+move;
 	}
 	
 	//Rotate figure
@@ -105,6 +111,16 @@ public class Tetris extends JPanel {
 	
 	//Drawing graphics
 	public void paint(Graphics ctx) {
+		
+		//Background Side bar
+		ctx.setColor(Color.black);
+		ctx.fillRect(block*10, 0, block*10, block*20);
+		
+		//Side bar
+		for (int i = 0; i < 4; i++){
+			ctx.setColor(new Color(form[randForm][4][0]));
+			ctx.fillRect(block*form[randForm][i][0]+11*block, block*form[randForm][i][1]+1*block, block-1, block-1);
+		}
 		
 		//Down
 		for (int i = 0; i < 20; i++){
