@@ -15,20 +15,21 @@ import java.util.Random;
 public class Tetris extends JPanel {
 
 	//Variables
-	protected static int block = 50, speed = 500,  x= 3, y = -3, look, test;
+	protected static int block = 50, speed = 500,  x= 3, y = -3, look, color, test;
 	private int form[][] = new int [4][2];
 	public int ground[][][] = new int [20][10][1]; 
 	public int forms[][][] = { //Figure /Block / x,y or r,g,b
-		{{1, 2}, {2, 2}, {0, 1}, {1, 1}, {0xff0000}}, // Z red
-		{{1, 2}, {2, 2}, {1, 1}, {1, 0}, {0xffa500}}, // L orange
-		{{1, 2}, {2, 2}, {1, 1}, {2, 1}, {0xffff00}}, // O yellow
-		{{0, 2}, {1, 2}, {1, 1}, {2, 1}, {0x00ff00}}, // S green
-		{{0, 2}, {1, 2}, {2, 2}, {3, 2}, {0x00ffff}}, // I aqua
-		{{1, 2}, {2, 2}, {2, 1}, {2, 0}, {0x0000ff}}, // J blue
-		{{1, 2}, {0, 1}, {1, 1}, {2, 1}, {0xff00ff}}  // T purple
+		{{1, 2}, {2, 2}, {0, 1}, {1, 1}, {0xA05A46}}, // Z red
+		{{1, 2}, {2, 2}, {1, 1}, {1, 0}, {0x6A4A57}}, // L orange
+		{{1, 2}, {2, 2}, {1, 1}, {2, 1}, {0xFAC865}}, // O yellow
+		{{0, 2}, {1, 2}, {1, 1}, {2, 1}, {0xC24448}}, // S green
+		{{0, 2}, {1, 2}, {2, 2}, {3, 2}, {0x534D63}}, // I aqua
+		{{1, 2}, {2, 2}, {2, 1}, {2, 0}, {0xF9DEC5}}, // J blue
+		{{1, 2}, {0, 1}, {1, 1}, {2, 1}, {0xF7F4F7}}  // T purple
 	};
 	
 	Random random = new Random();
+	private static Color colorBlock;
 
 	public static void main(String[] args){
 		
@@ -42,9 +43,7 @@ public class Tetris extends JPanel {
 		jFrame.setVisible(true);
 		Tetris tetris = new Tetris();
 		jFrame.add(tetris);
-		tetris.random();
-		
-		private static Color colorBlock;
+		tetris.newBlock();
 		
 		//Press key
 		jFrame.addKeyListener(new KeyAdapter() {
@@ -75,27 +74,29 @@ public class Tetris extends JPanel {
 	private void game() {
 		test = 0;
 		for (int i = 0; i < 4; i++) {
-			if (form[i][1]+y+1 < 20) test++;
+			if (form[i][1]+y+1 < 20 && ground[form[i][1]+y+1][form[i][0]+x][0] == 0) test++;
 		}
 		if (test >= 4) y++; else {
 			for (int i = 0; i <4; i++) {
-				ground[form[i][1]+y][form[i][0]+x][0] = form[4][0];
+				ground[form[i][1]+y][form[i][0]+x][0] = color;
 			}
-			random();
+			clear();
+			newBlock();
 		}
 	}
 	
 	//Random
-	private void random() {
+	private void newBlock() {
 		speed = 500;
-		colorBlock = new Color(forms[look][4][0]);
+		color = forms[look][4][0];
+		colorBlock = new Color(color);
 		for (int i = 0; i < 4; i++) {
 			form[i][0] = forms[look][i][0];
 			form[i][1] = forms[look][i][1];
 		}
 		look = random.nextInt(7);
 		x = 3;
-		y = -3;
+		y = -1;
 	}
 	
 	//Move
@@ -119,16 +120,30 @@ public class Tetris extends JPanel {
 		}
 	}
 	
+	//Clear
+	private void clear() {
+		int temp;
+		for (int i = 0; i < 20; i++) {
+			temp = 0;
+			for (int j = 0; j < 10; j++)
+				if (ground[i][j][0] > 0) temp++;
+		
+		if (temp >= 10)
+		for (int j = 0; j < 10; j++)
+			ground[i][j][0] = 0;
+		}
+	}
+	
 	//Drawing graphics
 	public void paint(Graphics ctx) {
 		
 		//Background Side bar
 		ctx.setColor(Color.black);
-		ctx.fillRect(block*20, 0, block*15, block*15);
+		ctx.fillRect(block*10, 0, block*6+1, block*20);
 		
-		//
-		//ctx.setColor(Color.red);
-		//ctx.drawRect(block*5, block*2, block*2 ,block*2);
+		//Frame
+		ctx.setColor(Color.white);
+		ctx.drawRect(block*11-5, block*1-5, block*4+5, block*4+5);
 		
 		//Side bar
 		for (int i = 0; i < 4; i++){
@@ -150,7 +165,7 @@ public class Tetris extends JPanel {
 		}
 		
 		//Grid
-		ctx.setColor(Color.white);
+		ctx.setColor(Color.black);
 		for (int i = 0; i <= 20; i++) ctx.drawLine(0, block*i, block*10, block*i);
 		for (int i = 0; i <= 10; i++) ctx.drawLine(block*i, 0, block*i, block*20);
 	}
