@@ -5,6 +5,7 @@
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Font;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -103,8 +104,7 @@ public class Tetris extends JPanel {
 	private void move(int move) {
 		test = 0;
 		for (int i = 0; i < 4; i++) {
-			if (form[i][0]+move < 10 && form[i][0]+move >= 0) test++;
-
+			if (form[i][0]+move < 10 && form[i][0]+move >= 0 && ground[form[i][1]][form[i][0] + move][0] == 0) test++;
 		}
 		if (test >= 4)
 			for (int i = 0; i < 4; i++)
@@ -145,14 +145,19 @@ public class Tetris extends JPanel {
 		ctx.fillRect(block*10, 0, block*6+1, block*20);
 		
 		//Frame
-		ctx.setColor(Color.white);
-		ctx.drawRect(block*11-5, block*1-5, block*4+5, block*4+5);
+		//ctx.setColor(Color.white);
+		//ctx.drawRect(block*11-5, block*1-5, block*4+5, block*4+5);
 		
 		//Side bar
 		for (int i = 0; i < 4; i++){
 			ctx.setColor(new Color(forms[look][4][0]));
 			ctx.fillRect(block*forms[look][i][0]+11*block, block*forms[look][i][1]+1*block, block-1, block-1);
 		}
+		
+		//Game info
+		ctx.setFont(new Font("Courier New", Font.BOLD, 24));
+		ctx.setColor(Color.white);
+		ctx.drawString(("Speed: " + speed), 11*block, 300);
 		
 		//Down
 		for (int i = 0; i < 20; i++){
