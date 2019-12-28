@@ -6,9 +6,11 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.util.Random;
@@ -16,7 +18,7 @@ import java.util.Random;
 public class Tetris extends JPanel {
 
 	//Variables
-	protected static int block = 50, speed = 500, look, color, test;
+	protected static int block = 50, speed = 500, look, color, test, line;
 	private int form[][] = new int [4][2];
 	public int ground[][][] = new int [20][10][1]; 
 	public int forms[][][] = { //Figure /Block / x,y or r,g,b
@@ -31,6 +33,7 @@ public class Tetris extends JPanel {
 	
 	Random random = new Random();
 	private static Color colorBlock;
+	private static Image image = new ImageIcon("Logo.png").getImage();
 
 	public static void main(String[] args){
 		
@@ -97,7 +100,7 @@ public class Tetris extends JPanel {
 			form[i][0] = forms[look][i][0]+3;
 			form[i][1] = forms[look][i][1]-1;
 		}
-		look = random.nextInt(7);
+		look = random.nextInt(7); look = 2;//Удалить******************
 	}
 	
 	//Move
@@ -129,11 +132,13 @@ public class Tetris extends JPanel {
 			for (int j = 0; j < 10; j++)
 				if (ground[i][j][0] > 0) temp++;
 		
-		if (temp >= 10)
-			for (int iClear = i; iClear > 0; iClear--)
-				for (int j = 0; j < 10; j++)
-					if (iClear > 0) 
-						ground[iClear][j][0] = ground[iClear-1][j][0];
+			if (temp >= 10){
+				line++;
+				for (int iClear = i; iClear > 0; iClear--)
+					for (int j = 0; j < 10; j++)
+						if (iClear > 0) 
+							ground[iClear][j][0] = ground[iClear-1][j][0];
+			}
 		}
 	}
 	
@@ -158,6 +163,8 @@ public class Tetris extends JPanel {
 		ctx.setFont(new Font("Courier New", Font.BOLD, 24));
 		ctx.setColor(Color.white);
 		ctx.drawString(("Speed: " + speed), 11*block, 300);
+		ctx.drawString(("Line: " + line), 11*block, 400);
+		ctx.drawString(("Level: " + (line/10)), 11*block, 500);
 		
 		//Down
 		for (int i = 0; i < 20; i++){
@@ -166,6 +173,10 @@ public class Tetris extends JPanel {
 				ctx.fillRect(j*block, i*block, block, block);
 			}
 		}
+		
+		//Image
+		ctx.drawImage(image, block*9, block*17, null);
+		
 		//Figure
 		for (int i = 0; i < 4; i++){
 			ctx.setColor(colorBlock);
