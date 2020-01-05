@@ -100,14 +100,15 @@ public class Tetris extends JPanel {
 			form[i][0] = forms[look][i][0]+3;
 			form[i][1] = forms[look][i][1]-1;
 		}
-		look = random.nextInt(7); look = 2;//Удалить******************
+		look = random.nextInt(7);
 	}
 	
 	//Move
 	private void move(int move) {
 		test = 0;
 		for (int i = 0; i < 4; i++) {
-			if (form[i][0]+move < 10 && form[i][0]+move >= 0 && ground[form[i][1]][form[i][0] + move][0] == 0) test++;
+			if (form[i][0]+move < 10 && form[i][0]+move >= 0 && ground[form[i][1]][form[i][0] + move][0] == 0)
+				test++;
 		}
 		if (test >= 4)
 			for (int i = 0; i < 4; i++)
@@ -116,12 +117,27 @@ public class Tetris extends JPanel {
 	
 	//Rotate figure
 	private void rotate() {
-		int temp;
+		
+		//Cloning with rotation
+		int tempBlock[][] = new int[4][2];
 		for (int i = 0; i < 4; i++) {
-			temp = form[i][0];
-			form[i][0] = -form[i][1]+form[0][1]+form[0][0];
-			form[i][1] = temp-form[0][0]+form[0][1];
+			tempBlock[i][0] = -form[i][1]+form[0][1]+form[0][0];
+			tempBlock[i][1] = form[i][0]-form[0][0]+form[0][1];
 		}
+		
+		//Rotation check
+		int temp = 0;
+		for (int i = 0; i < 4; i++)
+			if (tempBlock[i][0] >= 0 && tempBlock[i][0] < 10 && ground[tempBlock[i][1]][tempBlock[i][0]][0] == 0)
+				temp++;
+
+			
+		//Rotation
+		if (temp >= 4 && color != 0xFAC865) //******** наговнокодил с квадратом ********
+			for (int i = 0; i < 4; i++) {
+				form[i][0] = tempBlock[i][0];
+				form[i][1] = tempBlock[i][1];
+			}
 	}
 	
 	//Clear
@@ -184,7 +200,7 @@ public class Tetris extends JPanel {
 		}
 		
 		//Grid
-		ctx.setColor(Color.black);
+		ctx.setColor(Color.white);
 		for (int i = 0; i <= 20; i++) ctx.drawLine(0, block*i, block*10, block*i);
 		for (int i = 0; i <= 10; i++) ctx.drawLine(block*i, 0, block*i, block*20);
 	}
