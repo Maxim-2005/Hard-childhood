@@ -18,7 +18,7 @@ import java.util.Random;
 public class Tetris extends JPanel {
 
 	//Variables
-	protected static int block = 50, speed = 500, look, color, test, line;
+	protected static int block = 50, speed = 500, look, color, test, line, step;
 	private int form[][] = new int [4][2];
 	public int ground[][][] = new int [20][10][1]; 
 	public int forms[][][] = { //Figure /Block / x,y or r,g,b
@@ -91,11 +91,12 @@ public class Tetris extends JPanel {
 		}
 	}
 	
-	//Random
+	//New block
 	private void newBlock() {
-		speed = 500;
+		speed = 500-line*5;
 		color = forms[look][4][0];
 		colorBlock = new Color(color);
+		step++;
 		for (int i = 0; i < 4; i++) {
 			form[i][0] = forms[look][i][0]+3;
 			form[i][1] = forms[look][i][1]-1;
@@ -181,6 +182,7 @@ public class Tetris extends JPanel {
 		ctx.drawString(("Speed: " + speed), 11*block, 300);
 		ctx.drawString(("Line: " + line), 11*block, 400);
 		ctx.drawString(("Level: " + (line/10)), 11*block, 500);
+		ctx.drawString(("Step: " + step), 11*block, 600);
 		
 		//Down
 		for (int i = 0; i < 20; i++){
