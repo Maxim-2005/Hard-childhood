@@ -53,7 +53,6 @@ public class Tetris extends JPanel {
 		jFrame.addKeyListener(new KeyAdapter() {
 			public void keyPressed(KeyEvent event) {
 				tetris.repaint();
-				speed = 500;
 				switch(event.getKeyCode()) {
 					case 37: tetris.move(-1); break; //Left
 					case 38: tetris.rotate(); break; //Rotate
