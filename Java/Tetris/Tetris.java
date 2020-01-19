@@ -33,7 +33,7 @@ public class Tetris extends JPanel {
 	
 	Random random = new Random();
 	private static Color colorBlock;
-	private static Image image = new ImageIcon("Logo.png").getImage();
+	private static Image image = new ImageIcon("logo.png").getImage();
 
 	public static void main(String[] args){
 		
@@ -192,7 +192,7 @@ public class Tetris extends JPanel {
 		}
 		
 		//Image
-		ctx.drawImage(image, block*9, block*17, null);
+		ctx.drawImage(image, block*10, block*17, null);
 		
 		//Figure
 		for (int i = 0; i < 4; i++){
