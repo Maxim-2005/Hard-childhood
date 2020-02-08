@@ -4,3 +4,9 @@ D:\Documents\MyPrograms\Hard-hildhood\25.C#\Обучение\bin\Debug\Обуч�
 D:\Documents\MyPrograms\Hard-hildhood\25.C#\Обучение\obj\Debug\Обучение.csprojAssemblyReference.cache
 D:\Documents\MyPrograms\Hard-hildhood\25.C#\Обучение\obj\Debug\Обучение.exe
 D:\Documents\MyPrograms\Hard-hildhood\25.C#\Обучение\obj\Debug\Обучение.pdb
+D:\Documents\MyPrograms\Hard-hildhood\C#\Обучение\bin\Debug\Обучение.exe.config
+D:\Documents\MyPrograms\Hard-hildhood\C#\Обучение\bin\Debug\Обучение.exe
+D:\Documents\MyPrograms\Hard-hildhood\C#\Обучение\bin\Debug\Обучение.pdb
+D:\Documents\MyPrograms\Hard-hildhood\C#\Обучение\obj\Debug\Обучение.csprojAssemblyReference.cache
+D:\Documents\MyPrograms\Hard-hildhood\C#\Обучение\obj\Debug\Обучение.exe
+D:\Documents\MyPrograms\Hard-hildhood\C#\Обучение\obj\Debug\Обучение.pdb
