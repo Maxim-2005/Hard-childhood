@@ -1,0 +1,10 @@
+D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\bin\Debug\MyOsuParody.exe.config
+D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\bin\Debug\MyOsuParody.exe
+D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\bin\Debug\MyOsuParody.pdb
+D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\obj\Debug\MyOsuParody.csprojAssemblyReference.cache
+D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\obj\Debug\MyOsuParody.Form1.resources
+D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\obj\Debug\MyOsuParody.Properties.Resources.resources
+D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\obj\Debug\MyOsuParody.Resource1.resources
+D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\obj\Debug\MyOsuParody.csproj.GenerateResource.cache
+D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\obj\Debug\MyOsuParody.exe
+D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\obj\Debug\MyOsuParody.pdb
