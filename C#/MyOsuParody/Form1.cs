@@ -17,6 +17,7 @@ namespace MyOsuParody
         private Random random = new Random();
         private Bitmap target = Resource1.cursor;
         private Point point = Point.Empty;
+        private int score;
         //private Bitmap circle = Resource1.circle;
 
         //Star window
@@ -29,6 +30,7 @@ namespace MyOsuParody
                 ControlStyles.UserPaint, true);
 
             UpdateStyles();
+            RandomTarget();
 
         }
 
@@ -37,29 +39,40 @@ namespace MyOsuParody
         {
             Graphics ctx = e.Graphics;
             ctx.SmoothingMode = SmoothingMode.AntiAlias;
-            int score = 0;
-            score++;
             label1.Text = score.ToString();
 
-            var position = this.PointToClient(Cursor.Position);
-
-            point.X = 400 + random.Next(-4, 4) * 100;
-            point.Y = 250 + random.Next(-3, 3) * 100;
+            Point position = this.PointToClient(Cursor.Position);
 
             //ctx.DrawImage(circle, 100, 100, 100, 100); ;
-            ctx.DrawEllipse(new Pen(Color.Black, 2), point.X, point.Y, 100, 100);
-            ctx.DrawImage(target, position.X - 75, position.Y - 75, 150, 150);
+            Rectangle cursorPosition = new Rectangle(position.X - 75, position.Y - 75, 150, 150);
+            Rectangle targetPosition = new Rectangle(point.X, point.Y, 100, 100);
+
+            ctx.DrawEllipse(new Pen(Color.Black, 2), targetPosition);
+            ctx.DrawImage(target, cursorPosition);
         }
 
         //Update window
         private void timer1_Tick(object sender, EventArgs e)
         {
             Refresh();
+            score++;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        //Move circle
+        private void RandomTarget()
         {
+            point.X = 400 + random.Next(-4, 4) * 100;
+            point.Y = 250 + random.Next(-3, 3) * 100;
+        }
 
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            RandomTarget();
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            RandomTarget();
         }
     }
 }
