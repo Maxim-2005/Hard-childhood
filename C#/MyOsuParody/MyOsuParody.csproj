@@ -97,5 +97,8 @@
   <ItemGroup>
     <None Include="Resources\cursor.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drum-hitnormal.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
