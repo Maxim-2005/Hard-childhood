@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Media;
@@ -14,7 +15,8 @@ namespace MyOsuParody
         private Point point = Point.Empty;
         private Pen pen = new Pen(Color.Black, 2);
         private SoundPlayer soundPlayer = new SoundPlayer(Resource1.hit);
-        private int score;
+        private int score, time, step, hipotinuza;
+        private Stopwatch stopwatch = new Stopwatch();
         //private Bitmap circle = Resource1.circle;
 
         //Star window
@@ -31,6 +33,7 @@ namespace MyOsuParody
 
             UpdateStyles();
             RandomTarget();
+            stopwatch.Start();
 
         }
 
@@ -50,9 +53,7 @@ namespace MyOsuParody
 
             int katetX =cursorPosition.X - targetPosition.X;
             int katetY =cursorPosition.Y - targetPosition.Y;
-            int Hipotinuza = (int) Math.Sqrt(katetX*katetX + katetY*katetY);
-
-            label1.Text = Hipotinuza.ToString();
+            hipotinuza = (int) Math.Sqrt(katetX*katetX + katetY*katetY);
         }
 
         //Update window
@@ -64,8 +65,10 @@ namespace MyOsuParody
         //Move circle
         private void RandomTarget()
         {
-            point.X = Width/2 + random.Next(-4, 4) * 100;
-            point.Y = Height/2 + random.Next(-3, 3) * 100;
+            Point a = point;
+            point.X = Width / 2 + random.Next(-4, 4) * 100;
+            point.Y = Height / 2 + random.Next(-3, 3) * 100;
+            if (a == point) RandomTarget();
         }
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
@@ -78,12 +81,25 @@ namespace MyOsuParody
             StepGame();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
         //Step game
         private void StepGame()
         {
-            score++;
+            time =(int)stopwatch.Elapsed.TotalMilliseconds;
+            step++;
             soundPlayer.Play();
+
+            //Information panel
+            label2.Text = ("Timer: " + time.ToString());
+            label3.Text = ("Accuracy: " + hipotinuza.ToString());
+            label4.Text = ("Steps: " + step.ToString());
+
             RandomTarget();
+            stopwatch.Restart();
         }
     }
 }
