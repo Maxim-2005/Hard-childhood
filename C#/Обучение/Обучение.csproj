@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Типы_данных.cs" />
     <Compile Include="Переменные.cs" />
     <Compile Include="Урок.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
