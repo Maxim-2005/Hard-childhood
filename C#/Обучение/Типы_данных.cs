@@ -19,11 +19,11 @@ namespace Обучение
             Console.WriteLine($"uint (32 бит) - {9876543210}\n");
             Console.WriteLine($"long (64 бит) - {-64000000000}\n");
             Console.WriteLine($"ulong (64 бит) - {128000000000}\n");
-            Console.WriteLine($"float (7 цифр) - {123.456f}\n");
-            Console.WriteLine($"double (15-16 цифр) - {123.456789d}\n");
-            Console.WriteLine($"decimal (28-29 значащих цифр) - {123456.789d}\n");
+            Console.WriteLine($"float (32 бит) - {123.456f}\n");
+            Console.WriteLine($"double (64 бит) - {123.456789d}\n");
+            Console.WriteLine($"decimal (128 бит) - {123456.789d}\n");
             Console.WriteLine($"char (16 бит Unicode символ) - {"x"}\n");
-            Console.WriteLine($"string (Строка из символов Unicode) - {"abcdefg"}\n");
+            Console.WriteLine($"string (ссылка Строка из символов Unicode) - {"abcdefg"}\n");
         }
     }
 }
