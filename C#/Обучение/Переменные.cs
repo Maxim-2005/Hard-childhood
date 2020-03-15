@@ -15,6 +15,24 @@ namespace Обучение
 
             x = 2 == 3;
             Console.Write($"Сравнение 2 больше 3 - {x}\n");
+
+            int a = 16;
+            Console.WriteLine($"Остаток от деления - {a%5}\n");
+            Console.WriteLine($"Побитовый сдвиг вниз 16 >> 1 - {a >>= 1}\n");
+            Console.WriteLine($"Побитовый сдвиг вверх 16 << 2 - {a <<= 2}\n");
+            int b = 100;
+            int c = 3;
+            //decimal d =(decimal) b / c;
+            //decimal d = (double)b / c;
+            Console.WriteLine((decimal)b / c);
+            Console.WriteLine((double)b / c);
+
+            Console.WriteLine($"Бинарный код 0b100001 - {0b100001}\n");
+            Console.WriteLine($"Байт код 0xA1 - {0xA1}\n");
+            Console.WriteLine($"Число в степени код 3.2e4 - {3.2e4}\n");
+            Console.WriteLine($"Число в -степени код 1.2e-3 - {1.2e-3}\n");
+            Console.WriteLine($"Символы юникода \u0420 - {"\u0420"}\n");
+            Console.WriteLine($"Символы ASCII \x5A - {"\x5A"}\n");
         }
     }
 }
