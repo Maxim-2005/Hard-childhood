@@ -94,9 +94,11 @@ namespace MyOsuParody
             soundPlayer.Play();
 
             //Information panel
+            score = 100000/(hipotinuza + time) ;
+            label1.Text = ("Score: " + score.ToString());
             label2.Text = ("Timer: " + time.ToString());
             label3.Text = ("Accuracy: " + hipotinuza.ToString());
-            label4.Text = ("Steps: " + step.ToString());
+            label4.Text = ("Steps: " + step.ToString());    
 
             RandomTarget();
             stopwatch.Restart();
