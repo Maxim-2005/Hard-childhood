@@ -8,3 +8,4 @@ D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\obj\Debug\MyOsuParody.Resou
 D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\obj\Debug\MyOsuParody.csproj.GenerateResource.cache
 D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\obj\Debug\MyOsuParody.exe
 D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\obj\Debug\MyOsuParody.pdb
+D:\Documents\MyPrograms\Hard-hildhood\C#\MyOsuParody\obj\Debug\MyOsuParody.csproj.CoreCompileInputs.cache
