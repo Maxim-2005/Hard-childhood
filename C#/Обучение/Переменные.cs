@@ -33,6 +33,14 @@ namespace Обучение
             Console.WriteLine($"Число в -степени код 1.2e-3 - {1.2e-3}\n");
             Console.WriteLine($"Символы юникода \u0420 - {"\u0420"}\n");
             Console.WriteLine($"Символы ASCII \x5A - {"\x5A"}\n");
+
+            DateTime myDr = new DateTime(2005, 10, 11);
+            Console.WriteLine($"Мой день рождения: {myDr}\n");
+            Console.WriteLine($"День недели рождения: {myDr.DayOfWeek}\n");
+            DateTime Today = DateTime.Now;
+            Console.WriteLine($"Нынешний день: {Today}\n");
+            Console.WriteLine($"Число: {Today.Day}\n");
+            Console.WriteLine($"Число: {(Today - myDr).Days}\n");
         }
     }
 }
