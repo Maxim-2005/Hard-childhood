@@ -15,7 +15,7 @@ namespace MyOsuParody
         private Point point = Point.Empty;
         private Pen pen = new Pen(Color.Black, 2);
         private SoundPlayer soundPlayer = new SoundPlayer(Resource1.hit);
-        private int score, time, step, hipotinuza;
+        private int score, time, step, hipotinuza, scoreAll;
         private Stopwatch stopwatch = new Stopwatch();
         //private Bitmap circle = Resource1.circle;
 
@@ -94,12 +94,13 @@ namespace MyOsuParody
             soundPlayer.Play();
 
             //Information panel
-            score = 100000/(hipotinuza + time) ;
+            score = (200*180) / time + 600 / hipotinuza;
             label1.Text = ("Score: " + score.ToString());
             label2.Text = ("Timer: " + time.ToString());
             label3.Text = ("Accuracy: " + hipotinuza.ToString());
             label4.Text = ("Steps: " + step.ToString());    
-
+            label5.Text = ("scoreAll: " + scoreAll.ToString());
+            scoreAll += score;
             RandomTarget();
             stopwatch.Restart();
         }
