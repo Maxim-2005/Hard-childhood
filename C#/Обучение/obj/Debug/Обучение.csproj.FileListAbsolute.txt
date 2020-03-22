@@ -10,3 +10,4 @@ D:\Documents\MyPrograms\Hard-hildhood\C#\Обучение\bin\Debug\Обучен
 D:\Documents\MyPrograms\Hard-hildhood\C#\Обучение\obj\Debug\Обучение.csprojAssemblyReference.cache
 D:\Documents\MyPrograms\Hard-hildhood\C#\Обучение\obj\Debug\Обучение.exe
 D:\Documents\MyPrograms\Hard-hildhood\C#\Обучение\obj\Debug\Обучение.pdb
+D:\Documents\MyPrograms\Hard-hildhood\C#\Обучение\obj\Debug\Обучение.csproj.CoreCompileInputs.cache
