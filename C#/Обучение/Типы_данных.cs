@@ -25,5 +25,23 @@ namespace Обучение
             Console.WriteLine($"char (16 бит Unicode символ) - {"x"}\n");
             Console.WriteLine($"string (ссылка Строка из символов Unicode) - {"abcdefg"}\n");
         }
+
+        public enum Неделя
+        {
+            Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье
+        }
+        //Структуры
+        public void Структуры()
+        {
+            Неделя день = 0;
+            for (byte i = 0; i < 7; i++)
+            Console.WriteLine($"День недели: - {день + i}\n");
+            var tuple = (5, 10, 25, 45, 75, 105);
+            Console.WriteLine(tuple);
+            (string, int, double) школьник = ("Максим", 2005, 1.70);
+            Console.WriteLine(школьник);
+            Console.WriteLine(школьник.Item1);
+        }
+
     }
 }
