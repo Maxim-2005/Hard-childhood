@@ -1,5 +1,9 @@
 ﻿using System;
 using Обучение2;
+using Целое = System.Int32;
+using Дробь = System.Double;
+using Строка = System.String;
+using КвадратМаксима = System.Console;
 
 namespace Обучение
 {
@@ -21,7 +25,11 @@ namespace Обучение
             //переменные.Консоль();
             //условие.Console2();
             //тд.Данные();
-            тд.Структуры();
+            //тд.Структуры();
+            Целое дурак = 5;
+            Дробь дебил = 0.3;
+            Строка iks = "Дережабль";
+            КвадратМаксима.WriteLine(дурак + " " + дебил + " " + iks);
         }
     }
 }
