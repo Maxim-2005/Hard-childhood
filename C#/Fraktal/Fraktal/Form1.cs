@@ -50,11 +50,9 @@ namespace Fraktal
                 point.X = (point.X + angle[rand].X) / 2;
                 point.Y = (point.Y + angle[rand].Y) / 2;
                 bitmap.SetPixel(point.X, point.Y, Color.Black);
-
-                label1.Text = number.ToString();
-
-                pictureBox1.Image = bitmap;
             }
+            label1.Text = number.ToString();
+            pictureBox1.Image = bitmap;
         }
     }
 }
