@@ -51,7 +51,12 @@ namespace Tanks
             position.X++;
             position.Y--;
 
-            g.DrawImage(bitmap, position.X, position.Y, body, GraphicsUnit.Pixel) ;
+            //Танк 1
+            g.DrawImage(bitmap, position.X-100, position.Y, body, GraphicsUnit.Pixel) ;
+            g.DrawImage(bitmap, position.X, position.Y, tower, GraphicsUnit.Pixel);
+
+            //Танк 2
+            g.DrawImage(bitmap, position.X, position.Y, body, GraphicsUnit.Pixel);
             g.DrawImage(bitmap, position.X, position.Y, tower, GraphicsUnit.Pixel);
         }
     }
