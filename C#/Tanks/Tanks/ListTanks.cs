@@ -1,16 +1,32 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Drawing;
 
 namespace Tanks
 {
-    class ListTanks
+    class ListTanks : List<Tank>
     {
-        Tank tank;
+        public Tank tank = new Tank();
+        public List<Tank> listTanks = new List<Tank>();
 
+        //Создание списка танков
+        public List<Tank> CreateListTanks()
+        {
+            for (byte i = 1; i <= 10; i++)
+            {
+                listTanks.Add(new Tank()
+                {
+                    id = i,
+                    position = tank.Position()
+                });
+            }
+            return listTanks;
+        }
+
+        //Отрисовка списка танков
         public void DrawListTank(Graphics g)
         {
-            for (byte i = 0; i < 10; i++)
+            foreach (Tank tank in listTanks)
             {
-                tank = new Tank();
                 tank.DrawTank(g);
             }
         }
