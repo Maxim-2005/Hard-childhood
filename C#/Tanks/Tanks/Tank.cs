@@ -10,22 +10,22 @@ namespace Tanks
         Rectangle tower = new Rectangle(new Point(128, 0), new Size(128, 128));
 
         //Танк
-        int id; //Номер танка
-        Point position; //Позиция на карте
-        Point target; //Цель танка
-        float vector; //Угол повората корпуса
-        float vectorTower; //Угол поворота башни
-        Random random = new Random();
+        public int id; //Номер танка
+        public Point position; //Позиция на карте
+        public Point target; //Цель танка
+        public float vector; //Угол повората корпуса
+        public float vectorTower; //Угол поворота башни
+        public Random random = new Random();
 
         //Отрисовка танка
         public void DrawTank(Graphics g)
         {
-            position = Position();
             //Корпус
             g.TranslateTransform(position.X, position.Y);
             g.RotateTransform(vector);
             g.DrawImage(bitmap, -63, -78, body, GraphicsUnit.Pixel);
             g.ResetTransform();
+
             //Башня
             g.TranslateTransform(position.X, position.Y);
             g.RotateTransform(vectorTower);
@@ -34,7 +34,7 @@ namespace Tanks
         }
 
         //Расчет позиции танка
-        private Point Position()
+        public Point Position()
         {
             position.X = random.Next(1280);
             position.Y = random.Next(720);
