@@ -9,6 +9,7 @@ namespace Tanks
         public byte count = 10;
 
         private List<Tank> listTanks = new List<Tank>();
+        private List<Car> listCar = new List<Car>();
         private Random random = new Random();
 
         //Создание списка танков
@@ -16,13 +17,29 @@ namespace Tanks
         {
             for (byte i = 1; i <= count; i++)
             {
-                listTanks.Add(new Tank()
+                listTanks.Add(new Tank
                 {
                     id = i,
-                    position = StartPosition()
+                    position = StartPosition(),
+                    speed = 1
                 });
             }
             return listTanks;
+        }
+
+        //Создание списка машин
+        public List<Car> CreateListCar()
+        {
+            for (byte i = 1; i <= count; i++)
+            {
+                listCar.Add(new Car
+                {
+                    id = i,
+                    position = StartPosition(),
+                    speed = 3
+                });
+            }
+            return listCar;
         }
 
         //Стартовая позиция
@@ -40,6 +57,15 @@ namespace Tanks
             foreach (Tank tank in listTanks)
             {
                 tank.DrawTank(g, cursor);
+            }
+        }
+
+        //Отрисовка списка машин
+        public void DrawListCar(Graphics g, Point cursor)
+        {
+            foreach (Car car in listCar)
+            {
+                car.DrawCar(g, cursor);
             }
         }
     }
