@@ -10,7 +10,7 @@ namespace Tanks
         private float vectorTower; //Угол поворота башни
 
         //Отрисовка танка
-        public void DrawTank(Graphics g, Point cursor)
+        public void DrawUnit(Graphics g, Point cursor)
         {
             target = cursor;
             Position();
