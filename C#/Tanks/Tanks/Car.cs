@@ -8,7 +8,7 @@ namespace Tanks
         private Rectangle body = new Rectangle(new Point(0, 0), new Size(64, 64));
 
         //Отрисовка машинки
-        public void DrawCar(Graphics g, Point cursor)
+        public void DrawUnit(Graphics g, Point cursor)
         {
             target = cursor;
             Position();
@@ -17,7 +17,7 @@ namespace Tanks
             //Машинка
             g.TranslateTransform(position.X, position.Y);
             g.RotateTransform(vector);
-            g.DrawImage(bitmap, -62, -59, body, GraphicsUnit.Pixel);
+            g.DrawImage(bitmap, -30, -27, body, GraphicsUnit.Pixel);
             g.ResetTransform();
         }
     }
