@@ -18,14 +18,12 @@ namespace Tanks
             {
                 listUnits.Add(new Tank
                 {
-                    id = i,
                     position = StartPosition(),
                     speed = 1
                 });
 
                 listUnits.Add(new Car
                 {
-                    id = i,
                     position = StartPosition(),
                     speed = 3
                 });
