@@ -2,10 +2,10 @@
 
 namespace Tanks
 {
-    class Car : Unit
+    class Car : Unit, IDrawn
     {
-        private Bitmap bitmap = new Bitmap(Properties.Resources.Машинка);
-        private Rectangle body = new Rectangle(new Point(0, 0), new Size(64, 64));
+        private readonly Bitmap bitmap = new Bitmap(Properties.Resources.Машинка);
+        private readonly Rectangle body = new Rectangle(new Point(0, 0), new Size(64, 64));
 
         //Отрисовка машинки
         public void DrawUnit(Graphics g, Point cursor)
@@ -19,6 +19,8 @@ namespace Tanks
             g.RotateTransform(vector);
             g.DrawImage(bitmap, -30, -27, body, GraphicsUnit.Pixel);
             g.ResetTransform();
+
+            DrawInfo(g);
         }
     }
 }
