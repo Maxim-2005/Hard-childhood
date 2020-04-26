@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Text.RegularExpressions;
 
 namespace Tanks
 {
@@ -15,6 +16,7 @@ namespace Tanks
         private Font font = new Font("Arial", 10, FontStyle.Bold, GraphicsUnit.Point);
         private SolidBrush color = new SolidBrush(Color.Yellow);
         private Pen pen = new Pen(Color.Red, 3);
+        private float angle;
 
         //Номер и полоска жизни
         public void DrawInfo(Graphics g)
@@ -32,9 +34,22 @@ namespace Tanks
         //Расчет поворота танка
         public float Vector()
         {
+            //Угол на цель
             float katetX = target.X - position.X;
             float katetY = target.Y - position.Y;
-            vector = (float)(Math.Atan2(katetY, katetX) * 180 / Math.PI + 90);
+            angle = (float)(Math.Atan2(katetY, katetX) * 180 / Math.PI + 90);
+            if (angle < 0) angle += 360;
+
+            //Текущий угол
+            if (Math.Abs(vector - angle) > speed)
+            {
+                if ((vector < angle && (angle - vector) < 180) ^ ((angle - vector) > -180))
+                    vector = (vector - speed+360)%360;
+                else
+                    vector = (vector + speed)%360;
+            }
+            else
+                vector = angle;
 
             return vector;
         }
@@ -42,8 +57,11 @@ namespace Tanks
         //Расчет позиции танка
         public PointF Position()
         {
-            position.X += speed * (float)Math.Cos(vector);
-            position.Y += speed * (float)Math.Sin(vector);
+            if (vector == angle)
+            {
+                position.X += speed * (float)Math.Cos(vector);
+                position.Y += speed * (float)Math.Sin(vector);
+            }
             return position;
         }
     }
