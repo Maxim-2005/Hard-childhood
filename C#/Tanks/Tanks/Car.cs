@@ -4,8 +4,9 @@ namespace Tanks
 {
     class Car : Unit, IDrawn
     {
+        private static Size size = new Size(64, 64);
         private readonly Bitmap bitmap = new Bitmap(Properties.Resources.Машинка);
-        private readonly Rectangle body = new Rectangle(new Point(0, 0), new Size(64, 64));
+        private readonly Rectangle body = new Rectangle(new Point(0, 0), size);
 
         //Отрисовка машинки
         public void DrawUnit(Graphics g, Point cursor)
