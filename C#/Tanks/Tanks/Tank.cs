@@ -4,9 +4,10 @@ namespace Tanks
 {
     class Tank : Unit, IDrawn
     {
+        private static Size size = new Size(128, 128);
         private readonly Bitmap bitmap = new Bitmap(Properties.Resources.unnamed);
-        private readonly Rectangle body = new Rectangle(new Point(0, 0), new Size(128, 128));
-        private readonly Rectangle tower = new Rectangle(new Point(128, 0), new Size(128, 128));
+        private readonly Rectangle body = new Rectangle(new Point(0, 0), size);
+        private readonly Rectangle tower = new Rectangle(new Point(128, 0), size);
         private float vectorTower; //Угол поворота башни
 
         //Отрисовка танка
