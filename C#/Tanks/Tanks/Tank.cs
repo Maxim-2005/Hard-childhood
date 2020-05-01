@@ -15,8 +15,8 @@ namespace Tanks
         {
             target = cursor;
             Position();
-            Vector();
-            vectorTower += 1;
+            vector = Vector(vector, speed);
+            vectorTower = Vector(vectorTower, speed*2);
 
             #region Отрисовка по частям
             //Корпус
