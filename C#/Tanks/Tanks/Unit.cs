@@ -32,7 +32,7 @@ namespace Tanks
         }
 
         //Расчет поворота танка
-        public float Vector()
+        public float Vector(float vector, float speed)
         {
             //Угол на цель
             float katetX = target.X - position.X;
