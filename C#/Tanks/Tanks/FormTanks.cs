@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Tanks
@@ -9,6 +10,7 @@ namespace Tanks
         public Graphics g;
         private ListUnit listUnit;
         private Point cursor;
+        Shot shot = new Shot();
 
         //Окно приложения
         public FormTanks()
@@ -38,6 +40,9 @@ namespace Tanks
             g = e.Graphics;
             cursor = PointToClient(Cursor.Position);
             listUnit.DrawListUnit(g, cursor);
+
+            shot.position = new PointF(50, 50);
+            shot.DrawShot(g, cursor);
         }
 
         //Таймер
@@ -83,50 +88,55 @@ namespace Tanks
             Console.Beep(523, 150);
             Console.Beep(440, 1000);
         }
-        private void Sound()
+
+        //Звук заставки
+        async private void Sound()
         {
-            Console.Beep(349, 250);
-            Console.Beep(330, 250);
-            Console.Beep(293, 250);
-            Console.Beep(261, 250);
-            Console.Beep(392, 500);
-            Console.Beep(392, 350);
-            Console.Beep(349, 250);
-            Console.Beep(329, 250);
-            Console.Beep(293, 250);
-            Console.Beep(261, 250);
-            Console.Beep(392, 500);
-            Console.Beep(392, 350);
+            await Task.Run(() =>
+            {
+                Console.Beep(349, 250);
+                Console.Beep(330, 250);
+                Console.Beep(293, 250);
+                Console.Beep(261, 250);
+                Console.Beep(392, 500);
+                Console.Beep(392, 350);
+                Console.Beep(349, 250);
+                Console.Beep(329, 250);
+                Console.Beep(293, 250);
+                Console.Beep(261, 250);
+                Console.Beep(392, 500);
+                Console.Beep(392, 350);
 
-            Console.Beep(349, 250);
-            Console.Beep(440, 250);
-            Console.Beep(440, 250);
-            Console.Beep(349, 250);
-            Console.Beep(329, 250);
-            Console.Beep(392, 250);
-            Console.Beep(392, 250);
-            Console.Beep(329, 250);
-            Console.Beep(293, 250);
-            Console.Beep(329, 250);
-            Console.Beep(349, 250);
-            Console.Beep(293, 250);
-            Console.Beep(261, 500);
-            Console.Beep(261, 500);
+                Console.Beep(349, 250);
+                Console.Beep(440, 250);
+                Console.Beep(440, 250);
+                Console.Beep(349, 250);
+                Console.Beep(329, 250);
+                Console.Beep(392, 250);
+                Console.Beep(392, 250);
+                Console.Beep(329, 250);
+                Console.Beep(293, 250);
+                Console.Beep(329, 250);
+                Console.Beep(349, 250);
+                Console.Beep(293, 250);
+                Console.Beep(261, 500);
+                Console.Beep(261, 500);
 
-            Console.Beep(349, 250);
-            Console.Beep(440, 250);
-            Console.Beep(440, 250);
-            Console.Beep(349, 250);
-            Console.Beep(329, 250);
-            Console.Beep(392, 250);
-            Console.Beep(392, 250);
-            Console.Beep(329, 250);
-            Console.Beep(293, 250);
-            Console.Beep(329, 250);
-            Console.Beep(349, 250);
-            Console.Beep(293, 250);
-            Console.Beep(261, 500);
-            Console.Beep(261, 500);
+                Console.Beep(349, 250);
+                Console.Beep(440, 250);
+                Console.Beep(440, 250);
+                Console.Beep(349, 250);
+                Console.Beep(329, 250);
+                Console.Beep(392, 250);
+                Console.Beep(392, 250);
+                Console.Beep(329, 250);
+                Console.Beep(293, 250);
+                Console.Beep(329, 250);
+                Console.Beep(349, 250);
+                Console.Beep(293, 250);
+                Console.Beep(261, 500);
+                Console.Beep(261, 500);
+            });
         }
     }
 }
