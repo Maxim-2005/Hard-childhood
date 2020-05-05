@@ -25,9 +25,10 @@ namespace Tanks
                 listUnits.Add(new Car
                 {
                     position = StartPosition(),
-                    speed = 2
+                    speed = 3
                 });
             }
+
             return listUnits;
         }
 
