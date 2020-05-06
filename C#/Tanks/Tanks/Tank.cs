@@ -31,6 +31,11 @@ namespace Tanks
             g.DrawImage(bitmap, -64, -58, tower, GraphicsUnit.Pixel);
             g.ResetTransform();
 
+            //Цвет команды
+            position = Position();
+            Pen pen = new Pen(Color.Red, 3);
+            g.DrawEllipse(pen, position.X-7, position.Y, 10, 10);
+
             DrawInfo(g);
             #endregion
         }
