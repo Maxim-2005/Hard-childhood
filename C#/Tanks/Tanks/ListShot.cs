@@ -1,0 +1,7 @@
+﻿namespace Tanks
+{
+    class ListShot
+    {
+
+    }
+}
