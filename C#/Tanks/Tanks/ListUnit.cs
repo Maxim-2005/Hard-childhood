@@ -12,20 +12,22 @@ namespace Tanks
         private Random random = new Random();
 
         //Создание списка танков
-        public List<object> CreateListUnit()
+        public List<object> CreateListUnit(Color color)
         {
             for (byte i = 1; i <= count; i++)
             {
                 listUnits.Add(new Tank
                 {
+                    color = color,
                     position = StartPosition(),
                     speed = 1
                 });
 
                 listUnits.Add(new Car
                 {
+                    color = color,
                     position = StartPosition(),
-                    speed = 3
+                    speed = 2
                 });
             }
 
