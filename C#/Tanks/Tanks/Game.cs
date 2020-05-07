@@ -14,10 +14,10 @@ namespace Tanks
         public void StartGame()
         {
             RedParty = new ListUnit();
-            RedParty.CreateListUnit();
+            RedParty.CreateListUnit(Color.Red);
 
             BlueParty = new ListUnit();
-            BlueParty.CreateListUnit();
+            BlueParty.CreateListUnit(Color.Blue);
 
             //SW();
             Sound();
@@ -34,6 +34,7 @@ namespace Tanks
             BlueParty.DrawListUnit(g, cursor);
 
             shot.DrawShot(g);
+
         }
 
         #region//Звук заставки
