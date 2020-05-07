@@ -7,12 +7,12 @@ namespace Tanks
         private static Size size = new Size(64, 64);
         private readonly Bitmap bitmap = new Bitmap(Properties.Resources.Машинка);
         private readonly Rectangle body = new Rectangle(new Point(0, 0), size);
-
+        Pen pen;
         //Отрисовка машинки
         public void DrawUnit(Graphics g, Point cursor)
         {
             target = cursor;
-            Position();
+            PositionUnit();
             vector = Vector(vector, speed);
 
             //Машинка
@@ -20,6 +20,10 @@ namespace Tanks
             g.RotateTransform(vector);
             g.DrawImage(bitmap, -30, -27, body, GraphicsUnit.Pixel);
             g.ResetTransform();
+
+            //Цвет команды
+            pen = new Pen(color, 3);
+            g.DrawEllipse(pen, position.X - 7, position.Y, 10, 10);
 
             DrawInfo(g);
         }
