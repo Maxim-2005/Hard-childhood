@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Security.Principal;
 
 namespace Tanks
 {
@@ -8,25 +9,26 @@ namespace Tanks
     {
         public byte count = 10;
 
+        private Size window = FormTanks.window;
         private List<object> listUnits = new List<object>();
         private Random random = new Random();
 
         //Создание списка танков
-        public List<object> CreateListUnit(Color color)
+        public List<object> CreateListUnit(Color color, int x)
         {
             for (byte i = 1; i <= count; i++)
             {
                 listUnits.Add(new Tank
                 {
                     color = color,
-                    position = StartPosition(),
+                    position = StartPosition(x),
                     speed = 1
                 });
 
                 listUnits.Add(new Car
                 {
                     color = color,
-                    position = StartPosition(),
+                    position = StartPosition(x),
                     speed = 2
                 });
             }
@@ -44,11 +46,12 @@ namespace Tanks
         }
 
         //Стартовая позиция
-        public Point StartPosition()
+        public Point StartPosition(int x)
         {
+            
             Point position = new Point();
-            position.X = random.Next(1280);
-            position.Y = random.Next(720);
+            position.X = window.Width * x / 100 + random.Next(-200, 200);
+            position.Y = random.Next(50, window.Height-50);
             return position;
         }
     }
