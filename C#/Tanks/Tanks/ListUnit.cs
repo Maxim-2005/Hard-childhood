@@ -37,11 +37,12 @@ namespace Tanks
         }
 
         //Отрисовка списка танков
-        public void DrawListUnit(Graphics g, Point cursor)
+        public void DrawListUnit(Graphics g, Point cursor, ListShot listShot)
         {
             foreach (dynamic unit in listUnits)
             {
                 unit.DrawUnit(g, cursor);
+                listShot.NewShot(unit);
             }
         }
 
