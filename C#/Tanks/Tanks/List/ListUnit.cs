@@ -13,6 +13,14 @@ namespace Tanks
         private List<object> listUnits = new List<object>();
         private Random random = new Random();
 
+        /// <summary>
+        /// Команда
+        /// </summary>
+        public ListUnit(Color color, int x)
+        {
+            CreateListUnit(color, x);
+        }
+        
         //Создание списка танков
         public List<object> CreateListUnit(Color color, int x)
         {
