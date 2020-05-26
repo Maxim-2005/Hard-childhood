@@ -6,7 +6,6 @@ namespace Tanks
     class Game
     {
         private List<ListUnit> ListParty;
-        private ListUnit RedParty, BlueParty;
         private ListShot listShot;
 
         //Старт игры
@@ -14,9 +13,9 @@ namespace Tanks
         {
             ListParty = new List<ListUnit>();
 
-            ListParty.Add(new ListUnit(Color.Red, 20));
-            ListParty.Add(new ListUnit(Color.Blue, 80));
-            ListParty.Add(new ListUnit(Color.Yellow, 60));
+            ListParty.Add(new ListUnit(Color.Red, new Point(30, 20)));
+            ListParty.Add(new ListUnit(Color.Blue, new Point(70, 80)));
+            ListParty.Add(new ListUnit());
 
             listShot = new ListShot();
 
