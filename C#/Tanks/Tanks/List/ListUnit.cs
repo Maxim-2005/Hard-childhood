@@ -7,7 +7,7 @@ namespace Tanks
 {
     class ListUnit
     {
-        public byte count = 10;
+        public byte count = 1;
 
         private Size window = FormTanks.window;
         private List<object> listUnits = new List<object>();
@@ -29,22 +29,22 @@ namespace Tanks
         //Создание списка танков
         public List<object> CreateListUnit(Color color, Point start)
         {
-            for (byte i = 1; i <= count; i++)
+            for (byte i = 1; i <= 10; i++)
             {
-                listUnits.Add(new Tank
-                {
-                    color = color,
-                    position = StartPosition(start)
-                });
-
-                listUnits.Add(new Car
-                {
-                    color = color,
-                    position = StartPosition(start)
-                });
+                NewUnit(new Tank(color), start);
             }
 
+            for (byte i = 1; i <= 5; i++)
+                NewUnit(new Car(color), start);
+
             return listUnits;
+        }
+
+        //Добавляем юнита в список
+        private void NewUnit(dynamic unit, Point start)
+        {
+            listUnits.Add(unit);
+            unit.position = StartPosition(start);
         }
 
         //Отрисовка списка танков
@@ -59,14 +59,14 @@ namespace Tanks
                 {
                     listShot.NewShot(unit);
                     unit.timeShot = 0;
-                } 
+                }
             }
         }
 
         //Стартовая позиция
         public Point StartPosition(Point start)
         {
-            
+        
             Point position = new Point();
             position.X = window.Width * start.X / 100 + random.Next(-200, 200);
             position.Y = window.Height * start.Y / 100 + random.Next(-200, 200);
