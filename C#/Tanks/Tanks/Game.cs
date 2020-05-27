@@ -19,7 +19,7 @@ namespace Tanks
 
             listShot = new ListShot();
 
-            Sound.Music();
+            //Sound.Music();
         }
 
         //Шаг игры
