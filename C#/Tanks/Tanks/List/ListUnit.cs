@@ -32,6 +32,19 @@ namespace Tanks
             CreateListUnit(color, start, tank, car);
         }
 
+        /// <summary> Команда: Цвет и Позиция и Число юнитов <summary> \\\
+        public ListUnit(Color color, Point start, byte unit)
+        {
+            CreateListUnit(color, start, unit, unit);
+        }
+
+        /// <summary>Позиция танков и машинок : Пусто/summary>
+        public ListUnit(Point start, byte tank, byte car)
+        {
+            Color color = Color.FromArgb(255, Color.FromArgb(random.Next(0xFFFFFF + 1)));
+            CreateListUnit(color, start, tank, car);
+        }
+
         //Создание списка танков
         public List<object> CreateListUnit(Color color, Point start, byte  tank, byte  car)
         {
