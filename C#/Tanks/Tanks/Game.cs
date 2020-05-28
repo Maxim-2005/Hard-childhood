@@ -13,9 +13,10 @@ namespace Tanks
         {
             ListParty = new List<ListUnit>();
 
-            ListParty.Add(new ListUnit(Color.Red, new Point(30, 20)));
-            ListParty.Add(new ListUnit(Color.Blue, new Point(70, 80)));
-            ListParty.Add(new ListUnit());
+            //Цвет█Позиция█Танки█Машинки█
+            ListParty.Add(new ListUnit(Color.Red, new Point(30, 20), 2, 1));
+            ListParty.Add(new ListUnit(Color.Blue, new Point(70, 80), 2, 1));
+            ListParty.Add(new ListUnit(Color.Yellow, new Point(30, 80), 2, 1));
 
             listShot = new ListShot();
 
