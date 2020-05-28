@@ -9,7 +9,7 @@ namespace Tanks
         private static uint ID;
 
         public uint id = ++ID; //Номер танка
-        public float life; //Хит поинты
+        public float life; //Хитпоинты
         private Font font = new Font("Arial", 10, FontStyle.Bold, GraphicsUnit.Point);
         private SolidBrush color = new SolidBrush(Color.Yellow);
         private Pen pen = new Pen(Color.Red, 3);
