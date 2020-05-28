@@ -17,24 +17,28 @@ namespace Tanks
         public ListUnit()
         {
             Color color = Color.FromArgb(255, Color.FromArgb(random.Next(0xFFFFFF+1)));
-            CreateListUnit(color, new Point(50, 50));
+            CreateListUnit(color, new Point(50, 50), count, count);
         }
 
         /// <summary>Команда: Цвет и позиция</summary>
         public ListUnit(Color color, Point start)
         {
-            CreateListUnit(color, start);
+            CreateListUnit(color, start, count, count);
+        }
+
+        /// <summary>Цвет: ... Позиция: ... Танки: ... Машинки: ... </summary>
+        public ListUnit(Color color, Point start, byte tank, byte car)
+        {
+            CreateListUnit(color, start, tank, car);
         }
 
         //Создание списка танков
-        public List<object> CreateListUnit(Color color, Point start)
+        public List<object> CreateListUnit(Color color, Point start, byte  tank, byte  car)
         {
-            for (byte i = 1; i <= 10; i++)
-            {
+            for (byte i = 1; i <= tank; i++)
                 NewUnit(new Tank(color), start);
-            }
 
-            for (byte i = 1; i <= 5; i++)
+            for (byte i = 1; i <= car; i++)
                 NewUnit(new Car(color), start);
 
             return listUnits;
