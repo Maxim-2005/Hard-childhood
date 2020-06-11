@@ -23,9 +23,7 @@ namespace Tanks
         public void DrawUnit(Graphics g, Point cursor)
         {
             target = cursor;
-            PositionUnit();
-            vector = Vector(vector, speed);
-
+                        
             //Машинка
             g.TranslateTransform(position.X, position.Y);
             g.RotateTransform(vector);
