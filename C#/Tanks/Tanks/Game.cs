@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace Tanks
@@ -7,6 +8,7 @@ namespace Tanks
     {
         private List<ListUnit> ListParty;
         private ListShot listShot;
+        private Actions actions;
 
         //Старт игры
         public void StartGame()
@@ -27,12 +29,17 @@ namespace Tanks
 
             listShot = new ListShot();
 
+            actions = new Actions();
+
             //Sound.Music();
         }
 
         //Шаг игры
         public void StepGame(Graphics g, Point cursor)
         {
+
+            actions.ActUnit(ListParty, listShot);
+
             foreach (ListUnit party in ListParty)
                 party.DrawListUnit(g, cursor, listShot);
 
