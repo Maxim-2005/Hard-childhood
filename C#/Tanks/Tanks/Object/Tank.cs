@@ -25,8 +25,6 @@ namespace Tanks
         public void DrawUnit(Graphics g, Point cursor)
         {
             target = cursor;
-            PositionUnit();
-            vector = Vector(vector, speed);
             vectorTower = Vector(vectorTower, speed*2);
 
             #region Отрисовка по частям
