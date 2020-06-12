@@ -19,6 +19,7 @@ namespace Tanks
             this.color = color;
             speed = 1;
             life = 40;
+            act = Act.WAIT;
         }
 
         //Отрисовка танка
