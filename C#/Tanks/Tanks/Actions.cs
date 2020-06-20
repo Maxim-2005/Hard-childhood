@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using Game2D;
 
 namespace Tanks
@@ -55,7 +56,7 @@ namespace Tanks
                 unit.act = Act.DEAD;
 
             //Поиск цели
-            FindTarget(unit);
+            unit.target = FindTarget(unit);
         }
 
         //Процесс поиска
@@ -80,11 +81,20 @@ namespace Tanks
         //Поиск цели
         private float FindTarget(dynamic unit)
         {
+            PointF target;
             foreach (ListUnit party in ListParty)
                 foreach (dynamic findUnit in party.listUnits)
-                    Func2D.Delta(unit.position, findUnit.position);
+                {
+                    if (findUnit.act == Act.DEAD || findUnit.color != unit.color)
+                        target = Func2D.Delta(unit.position, findUnit.position)
+                            else
+                    {
+                        target.X = 0; 
+                        target.Y = 0;
+                    }
+                }
 
-            return 0;
+            return target;
         }
     }
 }
