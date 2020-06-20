@@ -23,7 +23,7 @@ namespace Tanks
         //Отрисовка машинки
         public void DrawUnit(Graphics g, Point cursor)
         {
-            target = cursor;
+            //target = cursor;
                         
             //Машинка
             g.TranslateTransform(position.X, position.Y);
