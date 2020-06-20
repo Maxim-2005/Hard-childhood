@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
+using Game2D;
 
 namespace Tanks
 {
     class Actions
     {
-        private List<ListUnit> ListPartyl;
+        private List<ListUnit> ListParty;
 
         //Перебор всех юнитов
         public void ActUnit(List<ListUnit> ListParty, ListShot listShot)
         {
-            this.ListParty = ListParty;
+            //this.ListParty = ListParty;
 
             foreach (ListUnit party in ListParty)
                 foreach (dynamic unit in party.listUnits)
@@ -49,8 +50,12 @@ namespace Tanks
         //Процесс ожидания
         private void ActWait(dynamic unit)
         {
+            //Если танк мёртв
             if (unit.life <= 0)
                 unit.act = Act.DEAD;
+
+            //Поиск цели
+            FindTarget(unit);
         }
 
         //Процесс поиска
@@ -70,6 +75,16 @@ namespace Tanks
         {
             unit.PositionUnit();
             unit.vector = unit.Vector(unit.vector, unit.speed);
+        }
+
+        //Поиск цели
+        private float FindTarget(dynamic unit)
+        {
+            foreach (ListUnit party in ListParty)
+                foreach (dynamic findUnit in party.listUnits)
+                    Func2D.Delta(unit.position, findUnit.position);
+
+            return 0;
         }
     }
 }
