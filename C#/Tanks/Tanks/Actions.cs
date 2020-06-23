@@ -11,7 +11,7 @@ namespace Tanks
         //Перебор всех юнитов
         public void ActUnit(List<ListUnit> ListParty, ListShot listShot)
         {
-            //this.ListParty = ListParty;
+            this.ListParty = ListParty;
 
             foreach (ListUnit party in ListParty)
                 foreach (dynamic unit in party.listUnits)
@@ -25,8 +25,7 @@ namespace Tanks
                 switch (unit.act)
                 {
                     case Act.WAIT:
-                        goto case Act.FIRE;
-                        //ActWait(unit);
+                        ActWait(unit);
                         break;
 
                     case Act.FIND:
@@ -56,19 +55,21 @@ namespace Tanks
                 unit.act = Act.DEAD;
 
             //Поиск цели
-            unit.target = FindTarget(unit);
+            else 
+                unit.target = FindTarget(unit);
+            unit.act = Act.FIRE;
         }
 
         //Процесс поиска
         private void ActFind(dynamic unit)
         {
-
+            //Юнит едет, башня прямо, через 1 секунду Wait
         }
          
         //Процесс перемещения
         private void ActMove(dynamic unit)
         {
-
+            //Юнит едет, башня на цель, пока не сможет стрелять Act FIRE когда можно стрелять
         }
 
         //Процесс атаки
@@ -79,22 +80,23 @@ namespace Tanks
         }
 
         //Поиск цели
-        private float FindTarget(dynamic unit)
+        private PointF FindTarget(dynamic unit)
         {
-            PointF target;
+            float findDelta = 1024, minDelta = 1024;
+
             foreach (ListUnit party in ListParty)
                 foreach (dynamic findUnit in party.listUnits)
                 {
-                    if (findUnit.act == Act.DEAD || findUnit.color != unit.color)
-                        target = Func2D.Delta(unit.position, findUnit.position)
-                            else
+                    if (findUnit.act != Act.DEAD && findUnit.color != unit.color)
+                        findDelta = Func2D.Delta(unit.position, findUnit.position);
+
+                    if (findDelta < minDelta)
                     {
-                        target.X = 0; 
-                        target.Y = 0;
+                        minDelta = findDelta;
+                        unit.target = findUnit.position;
                     }
                 }
-
-            return target;
+            return unit.target;
         }
     }
 }
