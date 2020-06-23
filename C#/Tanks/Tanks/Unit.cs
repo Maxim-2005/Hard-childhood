@@ -22,7 +22,7 @@ namespace Tanks
         {
             //Наименование
             g.TranslateTransform(position.X, position.Y);
-            g.DrawString(act.ToString(), font, color, -10, -50);
+            g.DrawString(target.ToString(), font, color, -10, -50);
             g.ResetTransform();
             //Жизнь
             g.TranslateTransform(position.X, position.Y);
