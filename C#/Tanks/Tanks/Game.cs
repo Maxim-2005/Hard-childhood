@@ -35,13 +35,13 @@ namespace Tanks
         }
 
         //Шаг игры
-        public void StepGame(Graphics g, Point cursor)
+        public void StepGame(Graphics g)
         {
 
             actions.ActUnit(ListParty, listShot);
 
             foreach (ListUnit party in ListParty)
-                party.DrawListUnit(g, cursor, listShot);
+                party.DrawListUnit(g, listShot);
 
             listShot.DrawListShot(g);
         }
