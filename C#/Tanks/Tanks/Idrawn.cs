@@ -4,6 +4,6 @@ namespace Tanks
 {
     interface IDrawn
     {
-        void DrawUnit(Graphics g, Point cursor);
+        void DrawUnit(Graphics g);
     }
 }
