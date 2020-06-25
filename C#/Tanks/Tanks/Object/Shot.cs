@@ -23,12 +23,17 @@ namespace Tanks
             speed = 16;
         }
 
-        //Отрисовка пульки
-        public void DrawShot(Graphics g)
+        //Расчет полета снаряда
+        public void MoveShot()
         {
             position0 = position;
             position = Position();
             speed *= 0.98f;
+        }
+
+        //Отрисовка пульки
+        public void DrawShot(Graphics g)
+        {
             g.DrawLine(pen, position, position0);
         }
     }
