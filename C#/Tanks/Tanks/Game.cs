@@ -9,6 +9,7 @@ namespace Tanks
         private List<ListUnit> ListParty;
         private ListShot listShot;
         private Actions actions;
+        private Shooting shooting;
 
         //Старт игры
         public void StartGame()
@@ -30,6 +31,7 @@ namespace Tanks
             listShot = new ListShot();
 
             actions = new Actions();
+            shooting = new Shooting();
 
             //Sound.Music();
         }
@@ -37,8 +39,8 @@ namespace Tanks
         //Шаг игры
         public void StepGame(Graphics g)
         {
-
             actions.ActUnit(ListParty, listShot);
+            shooting.ActShot(ListParty, listShot);
 
             foreach (ListUnit party in ListParty)
                 party.DrawListUnit(g, listShot);
