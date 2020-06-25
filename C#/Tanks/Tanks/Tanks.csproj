@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Act.cs" />
-    <Compile Include="Actions.cs" />
+    <Compile Include="Script\Actions.cs" />
     <Compile Include="AObject.cs" />
     <Compile Include="Object\Car.cs" />
     <Compile Include="FormTanks.cs">
@@ -68,6 +68,7 @@
     <Compile Include="Object\Shot.cs" />
     <Compile Include="Object\Tank.cs" />
     <Compile Include="Resources\Sound.cs" />
+    <Compile Include="Script\Shooting.cs" />
     <Compile Include="Unit.cs" />
     <EmbeddedResource Include="FormTanks.resx">
       <DependentUpon>FormTanks.cs</DependentUpon>
