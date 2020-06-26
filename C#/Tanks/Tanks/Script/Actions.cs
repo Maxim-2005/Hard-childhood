@@ -7,11 +7,13 @@ namespace Tanks
     class Actions
     {
         private List<ListUnit> ListParty;
+        private ListShot listShot;
 
         //Перебор всех юнитов
         public void ActUnit(List<ListUnit> ListParty, ListShot listShot)
         {
             this.ListParty = ListParty;
+            this.listShot = listShot;
 
             foreach (ListUnit party in ListParty)
                 foreach (dynamic unit in party.listUnits)
@@ -77,6 +79,13 @@ namespace Tanks
         {
             unit.PositionUnit();
             unit.vector = unit.Vector(unit.vector, unit.speed);
+
+            unit.timeShot++;
+            if (unit.timeShot > 60)
+            {
+                listShot.NewShot(unit);
+                unit.timeShot = 0;
+            }
         }
 
         //Поиск цели
