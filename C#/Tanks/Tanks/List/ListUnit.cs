@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Security.Principal;
 
 namespace Tanks
 {
@@ -65,19 +64,10 @@ namespace Tanks
         }
 
         //Отрисовка списка танков
-        public void DrawListUnit(Graphics g, ListShot listShot)
+        public void DrawListUnit(Graphics g)
         {
             foreach (dynamic unit in listUnits)
-            {
                 unit.DrawUnit(g);
-
-                unit.timeShot++;
-                if (unit.timeShot > 60)
-                {
-                    listShot.NewShot(unit);
-                    unit.timeShot = 0;
-                }
-            }
         }
 
         //Стартовая позиция
