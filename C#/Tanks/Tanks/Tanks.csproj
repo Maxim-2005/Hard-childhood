@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Act.cs" />
+    <Compile Include="Object\Bang.cs" />
     <Compile Include="Script\Actions.cs" />
     <Compile Include="AObject.cs" />
     <Compile Include="Object\Car.cs" />
