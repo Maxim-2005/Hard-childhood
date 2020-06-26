@@ -8,6 +8,7 @@ namespace Tanks
     class ListShot
     {
         public List<Shot> listShot = new List<Shot>();
+        public List<Bang> listBang = new List<Bang>();
 
         //Новый выстрел
         async public void NewShot(dynamic unit)
@@ -19,6 +20,7 @@ namespace Tanks
         //Удаление выстрела
         public void RemoveShot(Shot shot)
         {
+            listBang.Add(new Bang(shot.position));
             listShot.Remove(shot);
         }
 
@@ -26,9 +28,9 @@ namespace Tanks
         public void DrawListShot(Graphics g)
         {
             foreach (Shot shot in listShot)
-            {
                 shot.DrawShot(g);
-            }
+            foreach (Bang bang in listBang)
+                bang.DrawBang(g);
         }
     }
 }
