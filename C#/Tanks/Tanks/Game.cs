@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 
 namespace Tanks
@@ -43,7 +42,7 @@ namespace Tanks
             shooting.ActShot(ListParty, listShot);
 
             foreach (ListUnit party in ListParty)
-                party.DrawListUnit(g, listShot);
+                party.DrawListUnit(g);
 
             listShot.DrawListShot(g);
         }
