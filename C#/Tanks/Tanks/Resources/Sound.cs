@@ -5,6 +5,17 @@ namespace Tanks
 {
     class Sound
     {
+        //Звук выстрела
+        async public static void Shot()
+        {
+            await Task.Run(() => Console.Beep(400, 50));
+        }
+
+        //Звук взрыва
+        async public static void Bang()
+        {
+            await Task.Run(() => Console.Beep(100, 100));
+        }
 
         #region//Звук заставки
         public static void SW()
@@ -86,6 +97,5 @@ namespace Tanks
             });
         }
         #endregion
-
     }
 }
