@@ -19,8 +19,8 @@ namespace Tanks
             target = unit.target;
             vector = (float)Math.Atan2(unit.target.Y - unit.position.Y,
             unit.target.X - unit.position.X);
-
             speed = 16;
+            Sound.Shot();
         }
 
         //Расчет полета снаряда
