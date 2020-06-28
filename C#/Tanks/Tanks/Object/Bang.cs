@@ -1,6 +1,4 @@
 ﻿using System.Drawing;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading;
 
 namespace Tanks
 {
@@ -14,7 +12,8 @@ namespace Tanks
         /// </summary>
         public Bang(PointF position)
         {
-            this.position = position;   
+            this.position = position;
+            Sound.Bang();
         }
 
         public void DrawBang(Graphics g)
