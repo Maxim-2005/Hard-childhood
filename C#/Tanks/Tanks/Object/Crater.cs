@@ -18,8 +18,8 @@ namespace Tanks
         public void DrawCrater(Graphics g)
         {
             g.TranslateTransform(position.X, position.Y);
-            g.FillEllipse(new SolidBrush(Color.FromArgb(126, 0, 0, 0)),
-                new RectangleF(-time / 2, -time / 2, time, time));
+            g.FillEllipse(new SolidBrush(Color.FromArgb(128, 128, 128, 128)),
+                new RectangleF(-32, -32, 64, 64));
             g.ResetTransform();
         }
     }
