@@ -1,25 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Tanks
 {
     class Shooting
     {
-        private ListShot listShot;
+        private Shot shot;
+        private Bang bang;
+        private Crater crater;
 
         //Расчет стрельбы
-        async public void ActShot(List<ListUnit> ListParty, ListShot listShot)
+        public void ActShot(List<ListUnit> ListParty, ListShot listShot)
         {
-            this.listShot = listShot;
-
-            foreach (Shot shot in listShot.listShot)
+            //Расчет пуль
+            for (int i = 0; i < listShot.listShot.Count; i++)
             {
-                await Task.Run(() => Console.Beep(100, 100));
+                shot = listShot.listShot[i];
                 shot.MoveShot();
 
                 if (shot.speed < 5)
                     listShot.RemoveShot(shot);
+            }
+
+            //Расчет взрывов
+            for (int i = 0; i < listShot.listBang.Count; i++)
+            {
+                bang = listShot.listBang[i];
+                if (bang.time > 96)
+                    //************** РАСТЧЕТ ДАМАЖА **************
+                    listShot.RemoveBang(bang);
+                else
+                    bang.time += 8;
             }
         }
     }
