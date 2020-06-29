@@ -21,11 +21,11 @@ namespace Tanks
             // #2
             ListParty.Add(new ListUnit(Color.Red, new Point(30, 20)));
             // #3
-            ListParty.Add(new ListUnit(Color.Blue, new Point(70, 20), 2, 1));
+            //ListParty.Add(new ListUnit(Color.Blue, new Point(70, 20), 2, 1));
             // #4
-            ListParty.Add(new ListUnit(new Point(70, 80), 2, 1));
+            //ListParty.Add(new ListUnit(new Point(70, 80), 2, 1));
             // #5
-            ListParty.Add(new ListUnit(Color.Yellow, new Point(30, 80), 1));
+            //ListParty.Add(new ListUnit(Color.Yellow, new Point(30, 80), 1));
 
             listShot = new ListShot();
 
