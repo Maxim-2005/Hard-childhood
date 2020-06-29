@@ -1,4 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
+using System.Globalization;
+using System.Runtime.Remoting.Lifetime;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Tanks
 {
@@ -18,7 +22,18 @@ namespace Tanks
                 shot.MoveShot();
 
                 if (shot.speed < 5)
+                {
+                    //Расчет дамажа
+                    foreach (ListUnit party in ListParty)
+                        foreach (dynamic unit in party.listUnits)
+                        {
+                            float delta = unit.Delta(shot.position, unit.position);
+
+                            if (delta < 30) unit.life = 0;
+                        }
+
                     listShot.RemoveShot(shot);
+                }
             }
 
             //Расчет взрывов
@@ -26,10 +41,19 @@ namespace Tanks
             {
                 bang = listShot.listBang[i];
                 if (bang.time > 96)
-                    //************** РАСТЧЕТ ДАМАЖА **************
                     listShot.RemoveBang(bang);
                 else
-                    bang.time += 8;
+                    bang.time += 11;
+            }
+
+            //Расчет воронок
+            for (int i = 0; i < listShot.listCrater.Count; i++)
+            {
+                crater = listShot.listCrater[i];
+                if (crater.time > 300)
+                    listShot.RemoveCrater(crater);
+                else
+                    crater.time++;
             }
         }
     }
