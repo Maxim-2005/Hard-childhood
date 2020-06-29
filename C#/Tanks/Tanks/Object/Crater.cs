@@ -5,7 +5,7 @@ namespace Tanks
     class Crater
     {
         public PointF position;
-        public byte time;
+        public ushort time;
 
         /// <summary>
         /// Конструктор воронки
@@ -18,7 +18,7 @@ namespace Tanks
         public void DrawCrater(Graphics g)
         {
             g.TranslateTransform(position.X, position.Y);
-            g.FillEllipse(new SolidBrush(Color.FromArgb(128, 128, 128, 128)),
+            g.FillEllipse(new SolidBrush(Color.FromArgb(64/time+64, 32, 16, 0)),
                 new RectangleF(-32, -32, 64, 64));
             g.ResetTransform();
         }
