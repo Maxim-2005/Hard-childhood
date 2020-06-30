@@ -11,6 +11,7 @@ namespace Tanks
         public uint id = ++ID; //Номер танка
         public Act act; //Действие
         public float life; //Хитпоинты
+        public float vision; //Обзор
         private Font font = new Font("Arial", 10, FontStyle.Bold, GraphicsUnit.Point);
         private SolidBrush color = new SolidBrush(Color.Yellow);
         private Pen pen = new Pen(Color.Red, 3);
