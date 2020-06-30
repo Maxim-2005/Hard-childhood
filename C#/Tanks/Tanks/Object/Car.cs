@@ -17,6 +17,7 @@ namespace Tanks
             this.color = color;
             speed = 2;
             life = 10;
+            vision = 1024;
             act = Act.WAIT;
         }
 
