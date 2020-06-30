@@ -16,7 +16,8 @@ namespace Tanks
 
             foreach (ListUnit party in ListParty)
                 foreach (dynamic unit in party.listUnits)
-                    if (unit.act != Act.DEAD) Logic(unit);
+                    if (unit.act != Act.DEAD)
+                        Logic(unit);
         }
 
         //Логига действий
@@ -53,12 +54,14 @@ namespace Tanks
         {
             //Если танк мёртв
             if (unit.life <= 0)
-                unit.act = Act.DEAD;
+                KillUnit(unit);
 
             //Поиск цели
-            else 
+            else
+            {
                 unit.target = FindTarget(unit);
-            unit.act = Act.FIRE;
+                unit.act = Act.FIRE;
+            }      
         }
 
         //Процесс поиска
@@ -66,7 +69,7 @@ namespace Tanks
         {
             //Юнит едет, башня прямо, через 1 секунду Wait
         }
-         
+
         //Процесс перемещения
         private void ActMove(dynamic unit)
         {
@@ -84,13 +87,14 @@ namespace Tanks
             {
                 listShot.NewShot(unit);
                 unit.timeShot = 0;
+                unit.act = Act.WAIT;
             }
         }
 
         //Поиск цели
         private PointF FindTarget(dynamic unit)
         {
-            float findDelta = 1024, minDelta = 1024;
+            float findDelta = unit.vision, minDelta = unit.vision;
 
             foreach (ListUnit party in ListParty)
                 foreach (dynamic findUnit in party.listUnits)
@@ -105,6 +109,15 @@ namespace Tanks
                     }
                 }
             return unit.target;
+        }
+
+        //Убийство танка
+        private void KillUnit(dynamic unit)
+        {
+            unit.act = Act.DEAD;
+            unit.speed = 0.0f;
+            unit.life = 0.0f;
+            unit.color = Color.Black;
         }
     }
 }
