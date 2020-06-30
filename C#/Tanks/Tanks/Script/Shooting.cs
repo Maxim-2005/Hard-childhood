@@ -1,8 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
-using System.Globalization;
-using System.Runtime.Remoting.Lifetime;
-using System.Security.Cryptography.X509Certificates;
 
 namespace Tanks
 {
@@ -11,6 +7,7 @@ namespace Tanks
         private Shot shot;
         private Bang bang;
         private Crater crater;
+        private float delta;
 
         //Расчет стрельбы
         public void ActShot(List<ListUnit> ListParty, ListShot listShot)
@@ -21,15 +18,18 @@ namespace Tanks
                 shot = listShot.listShot[i];
                 shot.MoveShot();
 
-                if (shot.speed < 5)
+                if (shot.Delta(shot.position, shot.target) < 17 || shot.speed < 5)
                 {
                     //Расчет дамажа
                     foreach (ListUnit party in ListParty)
                         foreach (dynamic unit in party.listUnits)
                         {
-                            float delta = unit.Delta(shot.position, unit.position);
-
-                            if (delta < 30) unit.life = 0;
+                            if (unit.act != Act.DEAD)
+                            {
+                                delta = unit.Delta(shot.position, unit.position);
+                                if (delta < 30)
+                                    unit.life -= 50/delta;
+                            }
                         }
 
                     listShot.RemoveShot(shot);
