@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace Tanks
@@ -7,6 +8,7 @@ namespace Tanks
     {
         private List<ListUnit> ListParty;
         private ListShot listShot;
+        private readonly Random random = new Random();
 
         //Перебор всех юнитов
         public void ActUnit(List<ListUnit> ListParty, ListShot listShot)
@@ -59,8 +61,38 @@ namespace Tanks
             //Поиск цели
             else
             {
-                unit.target = FindTarget(unit);
-                unit.act = Act.FIRE;
+                //Поиск ближайщего танка
+                float findDelta = unit.vision, minDelta = unit.vision;
+                foreach (ListUnit party in ListParty)
+                    foreach (dynamic findUnit in party.listUnits)
+                    {
+                        if (findUnit.act != Act.DEAD && findUnit.color != unit.color)
+                            findDelta = unit.Delta(unit.position, findUnit.position);
+
+                        if (findDelta < minDelta)
+                        {
+                            minDelta = findDelta;
+                            unit.target = findUnit.position;
+                        }
+                    }
+
+                //Проверка на атаку
+                if (minDelta < 512)
+                    АТАКА;
+
+                //Проверка на движение
+                else if (minDelta < 1024)
+                {
+                    unit.Act = Act.
+                }
+
+                //Поиск цели
+                else
+                {
+                    unit.target.X = unit.position.X + random.Next(-128, 128);
+                    unit.target.Y = unit.position.Y + random.Next(-128, 128);
+                    unit.Act = Act.FIND;
+                }
             }      
         }
 
@@ -89,26 +121,6 @@ namespace Tanks
                 unit.timeShot = 0;
                 unit.act = Act.WAIT;
             }
-        }
-
-        //Поиск цели
-        private PointF FindTarget(dynamic unit)
-        {
-            float findDelta = unit.vision, minDelta = unit.vision;
-
-            foreach (ListUnit party in ListParty)
-                foreach (dynamic findUnit in party.listUnits)
-                {
-                    if (findUnit.act != Act.DEAD && findUnit.color != unit.color)
-                        findDelta = unit.Delta(unit.position, findUnit.position);
-
-                    if (findDelta < minDelta)
-                    {
-                        minDelta = findDelta;
-                        unit.target = findUnit.position;
-                    }
-                }
-            return unit.target;
         }
 
         //Убийство танка
