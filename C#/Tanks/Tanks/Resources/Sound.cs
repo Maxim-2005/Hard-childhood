@@ -8,7 +8,7 @@ namespace Tanks
         //Звук выстрела
         async public static void Shot()
         {
-            await Task.Run(() => Console.Beep(400, 50));
+            //await Task.Run(() => Console.Beep(400, 50));
         }
 
         //Звук взрыва
