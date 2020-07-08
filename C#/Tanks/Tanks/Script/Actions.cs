@@ -48,7 +48,7 @@ namespace Tanks
                         unit.act = Act.WAIT;
                         break;
                 }
-            }
+}
         }
 
         //Процесс ожидания
@@ -56,7 +56,7 @@ namespace Tanks
         {
             //Если танк мёртв
             if (unit.life <= 0)
-                KillUnit(unit);
+                ActDEAD(unit);
 
             //Поиск цели
             else
@@ -78,9 +78,7 @@ namespace Tanks
 
                 //Проверка на атаку
                 if (minDelta < unit.vision)
-                {
                     unit.act = Act.FIRE;
-                }
 
                 //Проверка на движение
                 else if (minDelta < unit.vision*2)
@@ -89,18 +87,19 @@ namespace Tanks
                 //Поиск цели
                 else
                 {
-                    unit.target.X = unit.position.X + random.Next(-128, 128);
-                    unit.target.Y = unit.position.Y + random.Next(-128, 128);
+                    unit.taeget = new PointF(
+                        unit.position.X + random.Next(-128, 128),
+                        unit.position.Y + random.Next(-128, 128));
                     unit.act = Act.FIND;
                 }
-            }      
+            }
         }
 
         //Процесс поиска
         private void ActFind(dynamic unit)
         {
-            if (unit.Delta(unit.position, unit.target) > unit.speed)
-            {
+            if (unit.Delta(unit.position, unit.target) > unit.speed*64)
+{
                 unit.PositionUnit();
                 unit.vector = unit.Vector(unit.vector, unit.speed);
             }
@@ -123,11 +122,12 @@ namespace Tanks
         //Процесс атаки
         private void ActFire(dynamic unit)
         {
-            unit.PositionUnit();
-            unit.vector = unit.Vector(unit.vector, unit.speed);
-
-            unit.timeShot++;
-            if (unit.timeShot > 60)
+            if (unit.timeShot < 120)
+            {
+                unit.timeShot++;
+                unit.vector = unit.Vector(unit.vector, unit.speed);
+            }
+            else
             {
                 listShot.NewShot(unit);
                 unit.timeShot = 0;
@@ -136,7 +136,7 @@ namespace Tanks
         }
 
         //Убийство танка
-        private void KillUnit(dynamic unit)
+        private void ActDEAD(dynamic unit)
         {
             unit.act = Act.DEAD;
             unit.speed = 0.0f;
