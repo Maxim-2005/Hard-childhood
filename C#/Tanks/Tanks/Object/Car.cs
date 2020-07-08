@@ -18,6 +18,7 @@ namespace Tanks
             speed = 2;
             life = 10;
             vision = 512;
+            timeShot = 80;
             act = Act.WAIT;
         }
 
