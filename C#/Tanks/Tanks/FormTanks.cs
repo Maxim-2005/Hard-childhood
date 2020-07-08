@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace Tanks
@@ -59,6 +60,15 @@ namespace Tanks
             if (FormBorderStyle == FormBorderStyle.Sizable)
                 FormBorderStyle = FormBorderStyle.None;
             else FormBorderStyle = FormBorderStyle.Sizable;
+        }
+
+        private void RESTART_Click(object sender, EventArgs e)
+        {
+            window = ClientSize;
+            game = new Game();
+            game.StartGame();
+
+            Refresh();
         }
     }
 }
