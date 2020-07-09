@@ -27,6 +27,7 @@ namespace Tanks
         //Отрисовка танка
         public void DrawUnit(Graphics g)
         {
+            Centre = life * 60 / 40 - 30;
             vectorTower = Vector(vectorTower, speed*2);
 
             #region Отрисовка по частям
