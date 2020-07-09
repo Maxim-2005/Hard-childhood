@@ -62,7 +62,7 @@ namespace Tanks
             else
             {
                 //Поиск ближайщего танка
-                float findDelta = unit.vision, minDelta = unit.vision;
+                float findDelta = unit.vision*2, minDelta = unit.vision*2;
                 foreach (ListUnit party in ListParty)
                     foreach (dynamic findUnit in party.listUnits)
                     {
@@ -87,7 +87,7 @@ namespace Tanks
                 //Поиск цели
                 else
                 {
-                    unit.taeget = new PointF(
+                    unit.target = new PointF(
                         unit.position.X + random.Next(-128, 128),
                         unit.position.Y + random.Next(-128, 128));
                     unit.act = Act.FIND;
@@ -98,10 +98,10 @@ namespace Tanks
         //Процесс поиска
         private void ActFind(dynamic unit)
         {
-            if (unit.Delta(unit.position, unit.target) > unit.speed*64)
+            if (unit.Delta(unit.position, unit.target) > unit.speed*16)
 {
-                unit.PositionUnit();
                 unit.vector = unit.Vector(unit.vector, unit.speed);
+                unit.PositionUnit();
             }
             else
                 unit.act = Act.WAIT;
@@ -112,8 +112,8 @@ namespace Tanks
         {
             if (unit.Delta(unit.position, unit.target) > unit.vision)
             {
-                unit.PositionUnit();
                 unit.vector = unit.Vector(unit.vector, unit.speed);
+                unit.PositionUnit();
             }
             else
                 unit.act = Act.WAIT;
