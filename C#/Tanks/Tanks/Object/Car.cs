@@ -16,7 +16,7 @@ namespace Tanks
         {
             this.color = color;
             speed = 2;
-            life = 10;
+            life = 30;
             vision = 512;
             timeShot = 80;
             act = Act.WAIT;
@@ -25,7 +25,8 @@ namespace Tanks
         //Отрисовка машинки
         public void DrawUnit(Graphics g)
         {
-                        
+            Centre = life * 60 / 30 - 30;
+
             //Машинка
             g.TranslateTransform(position.X, position.Y);
             g.RotateTransform(vector);
