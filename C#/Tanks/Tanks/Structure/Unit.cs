@@ -14,20 +14,25 @@ namespace Tanks
         public float vision; //Обзор
         private Font font = new Font("Arial", 10, FontStyle.Bold, GraphicsUnit.Point);
         private SolidBrush color = new SolidBrush(Color.Yellow);
-        private Pen pen = new Pen(Color.Red, 3);
-        private float angle;
+        private Pen penR = new Pen(Color.Red, 5);
+        private Pen penG = new Pen(Color.Green, 5);
+        public float Centre;
+        public float angle;
         public byte timeShot;
 
         //Номер и полоска жизни
         public void DrawInfo(Graphics g)
         {
+            if (life <= 0)
+                life = 0;
             //Наименование
             g.TranslateTransform(position.X, position.Y);
             g.DrawString(act.ToString(), font, color, -10, -50);
             g.ResetTransform();
             //Жизнь
             g.TranslateTransform(position.X, position.Y);
-            g.DrawLine(pen, -30, -30,  30, -30);
+            g.DrawLine(penG, -30, 30, Centre, 30);
+            g.DrawLine(penR, Centre, 30, 30, 30);
             g.ResetTransform();
         }
 
