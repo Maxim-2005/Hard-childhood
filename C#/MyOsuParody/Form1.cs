@@ -24,7 +24,7 @@ namespace MyOsuParody
         {
             //Hide cursor
             Cursor.Hide();
-
+            
             InitializeComponent();
 
             SetStyle(ControlStyles.OptimizedDoubleBuffer |
