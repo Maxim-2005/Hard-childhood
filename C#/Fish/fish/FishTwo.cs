@@ -5,17 +5,15 @@ namespace Fish
 {
     class FishTwo : AFish, IFish
     {
-        private readonly Bitmap bitmap = new Bitmap(Properties.Resources.latest1);
-
         public FishTwo()
         {
-            speed = 2;
+            bitmap = new Bitmap(Properties.Resources.latest1);
+            speed = 1.2f;
         }
 
         //Отрисовка рыбки
         public void DrawFish(Graphics g)
         {
-            Position(bitmap);
             g.DrawImage(bitmap, position);
         }
     }
