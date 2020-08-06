@@ -1,10 +1,11 @@
 # Задание №1 Выскокстный год
 
-x = input("Введите год: ")
- 
-if (int(x) % 4) and (int(x) % 100) and (int(x) % 400) > 0:
-	print("Невысокостный")
-else:
-	print("Высокостный")
+while True:
+	x = int(input("Введите год: "))
+	 
+	if x % 4 == 0 and x % 100 != 0 or x % 400 == 0: 
+		print("Высокостный")
+	else:
+		print("Обычный")
 
 input()
