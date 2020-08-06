@@ -5,57 +5,46 @@ namespace Fish.fish
 {
     abstract class AFish
     {
-        public PointF position = new PointF();
+        public Bitmap bitmap;
+        public PointF position;
         public PointF target;
-        private byte time = 0;
         public float speed;
-        private byte x = 2;
 
-        private float vector;
         private Random random = new Random();
 
         //Расчет Позиции
-        public PointF Position(Bitmap bitmap)
+        public PointF Position()
         {
-            if (time == 60)
-                time = 0;
-            if (target.X > position.X)
-            {
-                if (x == 1 && time == 0)
-                {
-                    bitmap.RotateFlip(RotateFlipType.RotateNoneFlipX);
-                    x = 2;
-                }
-                position.X++;
-            }
+            if (Math.Abs(position.X - target.X) < speed*2 &&
+                Math.Abs(position.Y - target.Y) < speed*2)
+                Target();
             else
             {
-                if (x == 2 && time == 0)
-                {
-                    bitmap.RotateFlip(RotateFlipType.Rotate180FlipY);
-                    x = 1;
-                }
-                position.X--;
+                if (position.X < target.X)
+                    position.X += speed;
+                else
+                    position.X -= speed;
+
+                if (position.Y < target.Y)
+                    position.Y += speed;
+                else
+                    position.Y -= speed;
             }
-
-            if (target.Y > position.Y)
-                position.Y++;
-            else
-                position.Y--;
-
-            time++;
             return position;
         }
-
 
         //Расчет цели
         public PointF Target()
         {
-            if (position == target)
+            target.X = random.Next(20, 1000);
+            target.Y = random.Next(20, 1000);
+
+            bitmap.RotateFlip(RotateFlipType.RotateNoneFlipNone);
+            if (position.X > target.X)
             {
-                target.X = random.Next(20, 1000);
-                target.Y = random.Next(20, 1000);
+                bitmap.RotateFlip(RotateFlipType.Rotate180FlipY);
             }
+
             return target;
         }
     }
