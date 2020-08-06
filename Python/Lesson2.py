@@ -67,8 +67,4 @@ x = y = z = 1
 x, y = y, x
 print("")
 
-x = input("Как тебя зовут?\n")
-print("Очень приятно,", x)
-print("")
-
 input()
