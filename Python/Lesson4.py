@@ -1,4 +1,5 @@
 # Урок номер 4 Цыклы
+import random
 
 x = 0
 while x < 3:
@@ -43,5 +44,23 @@ for i in range(1, 11):
 	for j in range(1, 11):
 		print(i * j, end = "  ")
 	print("")
+
+#break and continue
+x = [11, 22, 33, 44, 55, 66, 77, 88, 99]
+print(x)
+random.shuffle(x)
+print(x)
+while True:
+	print("Рандом от 0 до 1 - ", random.random())
+	print("Рандом от 100 до 200 - ", random.randint(100, 200))
+	print("Рандом рэндже до 10 - ", random.randrange(10))
+	print("Рандом рэндже от 1000 до 2000 - ", random.randrange(1000, 2000))
+	print("Рандом рэндже от 90 до 180 / 3 - ", random.randrange(90, 180, 3))
+	print("Рандом из списка - ", random.choice(x))
+	y = input("Выйти - 0, Продолжить - 1: ")
+	if y == "0":
+		break
+	else:
+		continue
 
 input()
