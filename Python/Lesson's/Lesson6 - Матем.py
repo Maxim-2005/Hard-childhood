@@ -2,6 +2,8 @@
 
 import math
 
+print("Длина строки", len("123"))
+print("Округление", round(8.6))
 print("Число ПИ", math.pi)
 print("Число эллера", math.e)
 print("Возведение в степень", math.pow(2, 3)) # 2**3
@@ -17,6 +19,12 @@ print("Отделяет целую часть и дробную", math.modf(123.
 print("Округление в большую", math.ceil(4.1))
 print("Округление в меньшую", math.floor(4.9))
 print("Отбрасывание дробной части", math.trunc(8.9))
-print("Округление", round(8.6))
+print("Отбрасывание дробной части", math.trunc(8.9))
+print("Косинус угла", math.cos(math.radians(60)))
+print("Синус угла", math.sin(math.radians(30)))
+print("Тангенс угла", math.tan(math.radians(45)))
+print("Гипотенуза", math.hypot(3, 4))
+print("Логaрифм", math.log(8, 2))
+print("Логaрифм десятичный", math.log10(100))
 
 input()
