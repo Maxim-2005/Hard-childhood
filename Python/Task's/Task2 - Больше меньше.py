@@ -17,7 +17,6 @@ while x != y:
 	
 	if (int(y)) > (int(x)):
 		print("Меньше")
-		
 	elif (int(y)) < (int(x)):
 		print("Больше")
 		
