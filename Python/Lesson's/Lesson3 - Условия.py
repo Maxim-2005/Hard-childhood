@@ -37,4 +37,6 @@ if 5 < x < 15:
 	print("Двойное сравнение " + str(x))
 print("")
 
+print(all([1, 125, "x", "abc", "True", 2<1, 0]))
+print(any([1, 0, "", "", "False", 2>10]))
 input()
