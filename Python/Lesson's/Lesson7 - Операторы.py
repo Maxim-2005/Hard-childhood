@@ -39,5 +39,6 @@ print("Bool 0", bool(0))
 print("Bool любого знака", bool("Hi"))
 print("Bool пробела", bool(""))
 
+help(str.split)
 
 input()
