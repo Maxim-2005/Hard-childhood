@@ -4,7 +4,7 @@ class Tank():
     life = 0
     speed = 0
     _life = 100 # _ обозначение закрытых полей, __ - еще закрытие
-    
+
     def repair(self, r):
         if self.life < 1:
             self.life = 0
@@ -13,7 +13,7 @@ class Tank():
         if self.life > self._life:
             self.life = self._life
         pass
-    
+
     @staticmethod
     def NoObject():
         print("статический метод, т.е. без объекта")
@@ -67,25 +67,25 @@ class Close_person:
     def __init__(self, name):
         self.__name = name
         self.__age = 0
-    
+
     @property # свойство - геттер
     def age(self):
         return self.__age
-    
+
     @age.setter # свойство - сеттер
     def age(self, age):
         if age in range(0, 150):
             self.__age = age
         else:
             print("столько не живут")
-    
+
     @property
     def name(self):
         return self.__name
-    
+
     def display_info(self):
         print("Имя:", self.__name, "\tВозраст:", self.__age)
-    
+
     def __str__(self):
         return "Имя: {} \t Возраст: {}".format(self.__name, self.__age)
 
