@@ -27,4 +27,14 @@ begin
   for var i := 0 to High(DynArr) do
     DynArr[i] := i*i;
   writeln(DynArr);
+  
+  writeln(5.555);
+  writeln(trunc(5.555));
+  writeln(round(5.555));
+  
+  writeln(IntToStr(5)+3);
+  writeln(FloatToStr(5.555)+3);
+  
+  writeln(StrToInt('5')+1);
+  writeln(StrToFloat('5.555')+3);
 end.
