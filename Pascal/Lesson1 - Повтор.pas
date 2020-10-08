@@ -29,8 +29,10 @@ begin
   writeln(DynArr);
   
   writeln(5.555);
+  writeln(5.555:8:2);
   writeln(trunc(5.555));
   writeln(round(5.555));
+  writeln(frac(5.555));
   
   writeln(IntToStr(5)+3);
   writeln(FloatToStr(5.555)+3);
