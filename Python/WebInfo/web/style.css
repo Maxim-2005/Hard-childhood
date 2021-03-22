@@ -1,0 +1,65 @@
+body {
+    background-image: url(img/bg.png)
+}
+
+p {
+    color: white;
+}
+
+b {
+    line-height:80px;
+    vertical-align:top;
+    text-align: top;
+    font-size: 250%;
+    color: white;
+}
+
+/* Блоки */
+.top {
+    height: 80px;
+    text-align: center;
+    color: white;
+}
+
+.row {
+    height: 70px;
+    text-align: center;
+}
+
+.cont{
+    display: flex;
+    height: 100px;
+    text-align: center;
+}
+
+.col-left{
+    width: 25%;
+    text-align: center;
+}
+
+.col-center{
+    width: 50%;
+    text-align: center;
+}
+
+.col-right{
+    width: 25%;
+    text-align: center;
+}
+
+/* Кнопки */
+a.button {
+  display: inline-block;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  padding: .5em 2em;
+  outline: none;
+  border: 2px solid;
+  border-radius: 1px;
+  transition: 0.2s;
+  font-size: 100%;
+}
+a.button:hover { background: rgba(255,255,255,.2); }
+a.button:active { background: white; }

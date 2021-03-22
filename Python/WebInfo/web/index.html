@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>WebInfo</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel = 'stylesheet' href = 'style.css'>
+    <link rel = 'stylesheet' href = 'css/normalize.css'>
+    <script src="eel.js"></script>
+</head>
+<body>
+    <div class="top">
+        <img src="img/img.png">
+        <b>WebInfo</b>
+    </div>
+    <div class="row">
+        <a onclick="call('calc')" class="button"/>Калькулятор</a>
+        <a onclick="call('paint')" class="button"/>⠀⠀Paint⠀⠀</a>
+        <a onclick="call('snippinghtool')" class="button"/>⠀Ножницы⠀</a>
+    </div>
+
+    <div class="cont">
+        <div class="col-left">
+            <a onclick="call('osu')" class="button"/>⠀Osu!⠀</a>
+            <a onclick="call('youtube')" class="button"/>Youtube</a>
+        </div>
+
+        <div class="col-center">
+            <input id="input_text" size="32">
+            <p id="text">WebInfo</p>
+        </div>
+
+        <div class="col-right">
+            <a onclick="call('discord')" class="button"/>⠀Discord⠀</a>
+            <a onclick="call('weigartemp')" class="button"/>clean temp</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <a onClick="refreshPage()" class="button"/>⠀⠀Refresh⠀⠀</a>
+        <a onclick="input_call()" class="button"/>Отправить</a>
+        <a onclick="call('quit')" class="button"/>⠀⠀Выход⠀⠀</a>
+    </div>
+</body>
+    <script>
+        // Отправка сообщения с сайта в пайтон
+        async function call(msg) {
+            await eel.call_in_js(msg);
+        }
+
+        // Прием сообщения из пайтон
+        eel.expose(call_in_python);
+        function call_in_python(msg) {
+            document.getElementById('text').innerHTML = msg;
+        }
+
+        //Отправка из строки ввода
+        function input_call() {
+            msg = document.getElementById('input_text').value;
+            call(msg);
+        }
+    </script>
+</html>
