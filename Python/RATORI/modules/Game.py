@@ -11,24 +11,30 @@ class Game(object):
         self.Ground = Ground()
         self.unit = Unit()
         self.Interface = Interface()
-        self.position()
+        self.unit.rect.center = self.position(size)
 
     def update(self, e):
         """Обновление игры"""
+        size = pg.display.get_window_size()
+        if self.size != size:
+            self.size = size
+            self.unit.rect.center = self.position(size)
+
         if e.type == pg.KEYDOWN and e.key == pg.K_UP:
-            self.unit.rect.y -= 10
+            self.unit.rect.y -= 100
         if e.type == pg.KEYDOWN and e.key == pg.K_DOWN:
-            self.unit.rect.y += 10
+            self.unit.rect.y += 100
         if e.type == pg.KEYDOWN and e.key == pg.K_LEFT:
-            self.unit.rect.x -= 10
+            self.unit.rect.x -= 100
         if e.type == pg.KEYDOWN and e.key == pg.K_RIGHT:
-            self.unit.rect.x += 10
+            self.unit.rect.x += 100
 
     def draw(self, g):
         """Отрисовка игры"""
         g.fill('grey')
         self.unit.draw(g)
 
-    def position(self):
-        self.unit.rect.x = self.size[0] // 2 - self.unit.rect.width // 2
-        self.unit.rect.y = self.size[1] // 2 - self.unit.rect.height // 2
+    def position(self, size):
+        x = size[0] // 2
+        y = size[1] // 2
+        return x, y
