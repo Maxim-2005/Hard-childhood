@@ -1,6 +1,4 @@
-import sys
-from random import randint
-
+import pygame as pg
 
 class Interface(object):
     def __init__(self):
@@ -11,6 +9,6 @@ class Interface(object):
         """Обновление"""
         pass
 
-    def draw(self):
+    def draw(self, g):
         """Отрисовка"""
-        pass
+        pg.draw.rect(g, 'white', (0, 450, 500, 300))

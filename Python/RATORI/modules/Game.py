@@ -8,9 +8,9 @@ class Game(object):
     def __init__(self, size):
         """"Конструктор игры"""
         self.size = size
-        self.Ground = Ground()
+        self.ground = Ground()
         self.unit = Unit()
-        self.Interface = Interface()
+        self.interface = Interface()
         self.unit.rect.center = self.position(size)
 
     def update(self, e):
@@ -21,18 +21,19 @@ class Game(object):
             self.unit.rect.center = self.position(size)
 
         if e.type == pg.KEYDOWN and e.key == pg.K_UP:
-            self.unit.rect.y -= 100
+            self.unit.rect.y -= 10
         if e.type == pg.KEYDOWN and e.key == pg.K_DOWN:
-            self.unit.rect.y += 100
+            self.unit.rect.y += 10
         if e.type == pg.KEYDOWN and e.key == pg.K_LEFT:
-            self.unit.rect.x -= 100
+            self.unit.rect.x -= 10
         if e.type == pg.KEYDOWN and e.key == pg.K_RIGHT:
-            self.unit.rect.x += 100
+            self.unit.rect.x += 10
 
     def draw(self, g):
         """Отрисовка игры"""
-        g.fill('grey')
+        self.ground.draw(g)
         self.unit.draw(g)
+        self.interface.draw(g)
 
     def position(self, size):
         x = size[0] // 2
