@@ -22,6 +22,7 @@ class Main(object):
         self.menu = Menu(self.size)
         self.game = Game(self.size)
         self.game_state = True
+
         self.game_cycle()
 
     # Игровой цикл
@@ -37,7 +38,7 @@ class Main(object):
                     pg.quit()
                     quit()
                 if e.type == pg.KEYDOWN and e.key == pg.K_F11:
-                    if g.get_flags()  & pg.FULLSCREEN:
+                    if g.get_flags() & pg.FULLSCREEN:
                         self.flag = pg.RESIZABLE
                     else:
                         self.flag = pg.FULLSCREEN

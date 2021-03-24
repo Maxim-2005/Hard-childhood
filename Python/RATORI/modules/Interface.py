@@ -1,14 +1,16 @@
 import pygame as pg
+from modules.MiniMap import MiniMap
 
 class Interface(object):
-    def __init__(self):
+    def __init__(self, size):
         """Конструктор"""
-        pass
+        self.size = size
+        self.minimap = MiniMap(self.size)
 
     def update(self):
         """Обновление"""
-        pass
+        self.minimap.update()
 
     def draw(self, g):
         """Отрисовка"""
-        pg.draw.rect(g, 'white', (0, 450, 500, 300))
+        self.minimap.draw(g)
