@@ -1,5 +1,5 @@
 import pygame as pg
-from modules.map import map as _map_
+from modules.ground.map import map as _map_
 
 class Terrain(object):
     pg.init()
@@ -27,6 +27,4 @@ class Terrain(object):
                 image = atlas.subsurface((rect, size))
                 key = str(f'{row:0{2}}') + str(f'{col:0{2}}')
                 self.tile_atlas[key] = image
-
-
         return self.tile_atlas

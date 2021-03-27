@@ -1,5 +1,4 @@
-import pygame as pg
-from modules.MiniMap import MiniMap
+from modules.interface.MiniMap import MiniMap
 
 class Interface(object):
     def __init__(self, size):
