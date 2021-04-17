@@ -9,7 +9,7 @@ class Ground(object):
         pass
 
     def draw(self, g):
-        g.fill('magenta')
+        g.fill('grey')
         for y in range(10):
             for x in range(25):
                 key = self.terrain.map[y][x]
