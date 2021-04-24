@@ -8,16 +8,18 @@ class MiniMap(object):
         self.terrain = Terrain()
         self.count_x = len(self.terrain.map[0])
         self.count_y = len(self.terrain.map)
-        self.rate = 5
+        self.rate = self.size[0] // (self.count_x * 3)
         self.rect = self.position(self.size)
+        self.hero = self.pos_hero(self.terrain.start_point)
 
     def update(self):
         """Обновление"""
         size = pg.display.get_window_size()
         if self.size != size:
             self.size = size
+            self.rate = self.size[0] // (self.count_x * 3)
             self.rect = self.position(self.size)
-            print(self.rect)
+        self.hero = self.pos_hero(self.hero)
 
     def draw(self, g):
         """Отрисовка"""
@@ -25,11 +27,23 @@ class MiniMap(object):
             for x in range(self.count_x):
                 key = self.terrain.map[y][x]
                 tile = self.terrain.tile_atlas[key]
+                tile = pg.transform.scale(tile, (self.rate, self.rate))
                 g.blit(tile, (x*self.rate, y*self.rate+self.rect[1], self.rate, self.rate))
+                pg.draw.circle(g, "red", self.hero, 5)
 
-        pg.draw.rect(g, 'white', (self.rect, (self.size[0] // 3, self.size[1] // 3)), 3)
+        pg.draw.rect(g, 'white', self.rect, 3)
 
     def position(self, size):
-        x = 0
-        y = size[1] - self.size[1] // 3
+        x1 = 0
+        x2 = self.rate*self.count_x
+        y2 = self.rate * self.count_y - 1
+        y1 = size[1] - y2
+
+        return x1, y1, x2, y2
+
+    def pos_hero(self, hero):
+        """Расчет позиции героя"""
+        x = 200
+        y = 200
+
         return x, y
