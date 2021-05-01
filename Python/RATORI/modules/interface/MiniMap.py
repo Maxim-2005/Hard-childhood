@@ -11,6 +11,7 @@ class MiniMap(object):
         self.rate = self.size[0] // (self.count_x * 3)
         self.rect = self.position(self.size)
         self.hero = self.pos_hero(self.terrain.start_point)
+        self.visio = pg.Rect(self.visibility())
 
     def update(self):
         """Обновление"""
@@ -19,7 +20,7 @@ class MiniMap(object):
             self.size = size
             self.rate = self.size[0] // (self.count_x * 3)
             self.rect = self.position(self.size)
-        self.hero = self.pos_hero(self.hero)
+        #self.hero = self.pos_hero(self.hero)
 
     def draw(self, g):
         """Отрисовка"""
@@ -32,6 +33,7 @@ class MiniMap(object):
                 pg.draw.circle(g, "red", self.hero, 5)
 
         pg.draw.rect(g, 'white', self.rect, 3)
+        pg.draw.rect(g, "green", self.visio, 1)
 
     def position(self, size):
         x1 = 0
@@ -43,7 +45,14 @@ class MiniMap(object):
 
     def pos_hero(self, hero):
         """Расчет позиции героя"""
-        x = 200
-        y = 200
-
+        x = hero[0] * self.rate // self.terrain.rate
+        y = hero[1] * self.rate // self.terrain.rate + self.rect[1]
         return x, y
+
+    def visibility(self):
+        x = self.hero[0] - (self.size[0] * self.rate // self.terrain.rate) * 0.5
+        y = self.hero[1] - (self.size[1] * self.rate // self.terrain.rate) * 0.5
+        w = self.size[0] * self.rate // self.terrain.rate
+        h = self.size[1] * self.rate // self.terrain.rate
+        print(x, y, w, h)
+        return x, y, w, h
