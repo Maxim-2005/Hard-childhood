@@ -8,7 +8,7 @@ class Game(object):
     def __init__(self, size):
         """"Конструктор игры"""
         self.size = size
-        self.ground = Ground()
+        self.ground = Ground(size)
         self.hero = Hero()
         self.interface = Interface(self.size)
         self.hero.rect.center = self.position(size)
@@ -43,6 +43,7 @@ class Game(object):
         else:
             self.turn = 'stop'
 
+        self.ground.update(self.size, self.turn)
         self.hero.update(self.turn)
         self.interface.update()
 
