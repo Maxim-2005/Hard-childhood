@@ -51,8 +51,9 @@ class Ground(object):
         x_right = self.point_x + self.size[0]
         y_top = self.point_y - self.size[1] // 2
         y_bottom = self.point_y + self.size[1]
-        for y in range(y_top // rate, y_bottom // rate):
-            for x in range(x_left // rate, x_right // rate):
+        print(x_left, x_right)
+        for y in range(y_top // rate, y_bottom // rate + 1):
+            for x in range(x_left // rate, x_right // rate + 1):
                 key = self.terrain.map[y][x]
                 tile = self.terrain.tile_atlas[key]
                 self.surface.blit(tile, (x*rate-x_left, y*rate-y_top, rate, rate))

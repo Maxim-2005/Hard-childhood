@@ -45,7 +45,8 @@ class Game(object):
 
         self.ground.update(self.size, self.turn)
         self.hero.update(self.turn)
-        self.interface.update()
+        hero = self.ground.point_x, self.ground.point_y
+        self.interface.update(hero)
 
     def draw(self, g):
         """Отрисовка игры"""

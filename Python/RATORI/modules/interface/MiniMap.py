@@ -13,14 +13,15 @@ class MiniMap(object):
         self.hero = self.pos_hero(self.terrain.start_point)
         self.visio = pg.Rect(self.visibility())
 
-    def update(self):
+    def update(self, hero):
         """Обновление"""
         size = pg.display.get_window_size()
         if self.size != size:
             self.size = size
             self.rate = self.size[0] // (self.count_x * 3)
             self.rect = self.position(self.size)
-        #self.hero = self.pos_hero(self.hero)
+        self.hero = self.pos_hero(hero)
+        self.visio = self.visibility()
 
     def draw(self, g):
         """Отрисовка"""
