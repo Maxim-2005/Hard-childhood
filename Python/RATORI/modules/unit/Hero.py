@@ -46,7 +46,7 @@ class Hero(object):
 
     def select(self):
         self.speed += 1
-        if self.speed >= 10:
+        if self.speed >= 5:
             self.speed = 0
             self.row += 1
             if self.row >= 4:
