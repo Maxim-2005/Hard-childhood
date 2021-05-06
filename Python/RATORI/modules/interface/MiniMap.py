@@ -55,5 +55,4 @@ class MiniMap(object):
         y = self.hero[1] - (self.size[1] * self.rate // self.terrain.rate) * 0.5
         w = self.size[0] * self.rate // self.terrain.rate
         h = self.size[1] * self.rate // self.terrain.rate
-        print(x, y, w, h)
         return x, y, w, h
