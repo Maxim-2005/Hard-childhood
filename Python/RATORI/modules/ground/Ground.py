@@ -73,6 +73,6 @@ class Ground(object):
                 self.surface.blit(tile, (x*rate-x_left, y*rate-y_top, rate, rate))
 
                 #Коды тайлов
-                text = self.font.render((str(y) + "-" + str(x)), True, "red")
-                text_rect = text.get_rect()
-                self.surface.blit(text, (x * rate - x_left + 4, y * rate - y_top + 1), text_rect)
+                #text = self.font.render((str(y) + "-" + str(x)), True, "red")
+                #text_rect = text.get_rect()
+                #self.surface.blit(text, (x * rate - x_left + 4, y * rate - y_top + 1), text_rect)
