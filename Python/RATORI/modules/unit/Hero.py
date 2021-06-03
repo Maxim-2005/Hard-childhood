@@ -6,6 +6,8 @@ class Hero(object):
 
     def __init__(self):
         """Конструктор"""
+        pg.init()
+        self.sound = pg.mixer.Sound("sounds\sound.wav")
         self.rate = self._rate_
         self.rect = pg.Rect(0, 0, self.rate, self.rate)
         self.tile_atlas = []
@@ -49,6 +51,7 @@ class Hero(object):
         if self.speed >= 10:
             self.speed = 0
             self.row += 1
+            self.steps()
             if self.row >= 4:
                 self.row = 0
 
@@ -66,3 +69,8 @@ class Hero(object):
                 image = pg.transform.scale(image, (rate*2, rate*2))
                 self.tile_atlas[row].append(image)
         return self.tile_atlas
+
+    # Шаги
+    def steps(self):
+        """Звуки шагов"""
+        pg.mixer.Sound.play(self.sound)
