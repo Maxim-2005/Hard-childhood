@@ -54,6 +54,7 @@ class Ground(object):
         self.select()
 
     def draw(self, g):
+        """Отрисовка"""
         g.fill('grey')
         g.blit(self.surface, self.rect)
 

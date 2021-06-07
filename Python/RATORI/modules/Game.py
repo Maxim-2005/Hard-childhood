@@ -55,6 +55,7 @@ class Game(object):
         self.interface.draw(g)
 
     def position(self, size):
+        """Позиция"""
         x = size[0] // 2
         y = size[1] // 2
         return x, y

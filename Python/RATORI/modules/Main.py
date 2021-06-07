@@ -19,6 +19,7 @@ class Main(object):
 
     # Новая игра
     def game_start(self):
+        """Старт игры"""
         self.menu = Menu(self.size)
         self.game = Game(self.size)
         self.game_state = True

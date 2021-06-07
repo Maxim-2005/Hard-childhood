@@ -1,5 +1,5 @@
 import pygame as pg
-from modules.ground.mapTEST import map as _map_
+from modules.ground.map import map as _map_
 
 class Terrain(object):
     pg.init()
@@ -13,7 +13,7 @@ class Terrain(object):
         self.rate = self._rate_
         self.tile_atlas = {}
         self.tile_atlas = self.filling()
-        self.start_point = 1536, 768
+        self.start_point = 3072, 1896
 
     # Отрисовка Трраина
     def filling(self):

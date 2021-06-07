@@ -37,6 +37,7 @@ class MiniMap(object):
         pg.draw.rect(g, "green", self.visio, 1)
 
     def position(self, size):
+        """Позиция"""
         x1 = 0
         x2 = self.rate*self.count_x
         y2 = self.rate * self.count_y - 1
@@ -51,6 +52,7 @@ class MiniMap(object):
         return x, y
 
     def visibility(self):
+        """Обзор"""
         x = self.hero[0] - (self.size[0] * self.rate // self.terrain.rate) * 0.5
         y = self.hero[1] - (self.size[1] * self.rate // self.terrain.rate) * 0.5
         w = self.size[0] * self.rate // self.terrain.rate

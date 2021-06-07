@@ -19,6 +19,7 @@ class Hero(object):
         self.speed = 0
 
     def update(self, turn):
+        """Обновление"""
         if turn == 'stop':
             self.image = self.tile_atlas[self.row][self.col]
         else:
