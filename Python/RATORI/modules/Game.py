@@ -55,32 +55,8 @@ class Game(object):
             self.size = size
             self.enemy.rect.center = self.position(size)
 
-        # Список кликов клавиатуры
-        keys = pg.key.get_pressed()
-
-        if (keys[pg.K_RIGHT] and keys[pg.K_DOWN]):
-            self.turn = 'right_down'
-        elif (keys[pg.K_LEFT] and keys[pg.K_DOWN]):
-            self.turn = 'left_down'
-        elif (keys[pg.K_LEFT] and keys[pg.K_UP]):
-            self.turn = 'left_up'
-        elif (keys[pg.K_RIGHT] and keys[pg.K_UP]):
-            self.turn = 'right_up'
-        elif (keys[pg.K_RIGHT]):
-            self.turn = 'right'
-        elif (keys[pg.K_DOWN]):
-            self.turn = 'down'
-        elif (keys[pg.K_LEFT]):
-            self.turn = 'left'
-        elif (keys[pg.K_UP]):
-            self.turn = 'up'
-        else:
-            self.turn = 'stop'
-
         self.ground.update(self.size, self.turn)
-        self.enemy.update(self.turn)
         enemy = self.ground.point_x, self.ground.point_y
-        self.interface.update(enemy)
 
     def draw(self, g):
         """Отрисовка игры"""
@@ -92,5 +68,5 @@ class Game(object):
     def position(self, size):
         """Позиция"""
         x = size[0] // 2
-        y = size[1] // 2
+        y = size[1] // 3
         return x, y

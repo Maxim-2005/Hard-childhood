@@ -1,7 +1,7 @@
 import pygame as pg
 
 class Enemy(object):
-    _atlas_ = pg.image.load('images\\hero.png')
+    _atlas_ = pg.image.load('images\\enemy.png')
     _rate_ = 64
 
     def __init__(self):

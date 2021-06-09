@@ -17,7 +17,7 @@ class Ground(object):
 
     def update(self, size, turn):
         """Обновление"""
-        scroll_line = 20
+        scroll_line = 10
         scroll = round(scroll_line / 1.4)
 
         if turn == 'right_down':

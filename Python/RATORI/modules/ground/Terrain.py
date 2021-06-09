@@ -14,6 +14,7 @@ class Terrain(object):
         self.tile_atlas = {}
         self.tile_atlas = self.filling()
         self.start_point = 3072, 1896
+        self.start_point_enemy = 3072, 1896
 
     # Отрисовка Трраина
     def filling(self):
