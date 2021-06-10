@@ -1,4 +1,5 @@
 from modules.ground.Terrain import Terrain
+from modules.unit.Enemy import Enemy
 import pygame as pg
 
 class Ground(object):
@@ -7,6 +8,8 @@ class Ground(object):
         self.terrain = Terrain()
         self.surface = pg.Surface(self.size)
         self.rect = self.surface.get_rect()
+        self.enemy = Enemy()
+        self.enemy_x, self.enemy_y = self.enemy.enemy_point
         self.point_x, self.point_y = self.terrain.start_point
         self.max_x = len(self.terrain.map[0]) * self.terrain.rate
         self.max_y = len(self.terrain.map) * self.terrain.rate
@@ -23,23 +26,35 @@ class Ground(object):
         if turn == 'right_down':
             self.point_x += scroll
             self.point_y += scroll
+            self.enemy_x -= scroll
+            self.enemy_y -= scroll
         elif turn == 'left_down':
             self.point_x -= scroll
             self.point_y += scroll
+            self.enemy_x += scroll
+            self.enemy_y -= scroll
         elif turn == 'left_up':
             self.point_x -= scroll
             self.point_y -= scroll
+            self.enemy_x += scroll
+            self.enemy_y += scroll
         elif turn == 'right_up':
             self.point_x += scroll
             self.point_y -= scroll
+            self.enemy_x -= scroll
+            self.enemy_y += scroll
         elif turn == 'right':
             self.point_x += scroll_line
+            self.enemy_x -= scroll_line
         elif turn == 'down':
             self.point_y += scroll_line
+            self.enemy_y -= scroll_line
         elif turn == 'left':
             self.point_x -= scroll_line
+            self.enemy_x += scroll_line
         elif turn == 'up':
             self.point_y -= scroll_line
+            self.enemy_y += scroll_line
 
         #Края карты
         if self.point_x < self.size[0] // 2 + scroll_line:
@@ -57,6 +72,7 @@ class Ground(object):
         """Отрисовка"""
         g.fill('grey')
         g.blit(self.surface, self.rect)
+        g.blit(self.enemy.image, (self.enemy_x, self.enemy_y))
 
     def select(self):
         """Отрисовка поверхности"""

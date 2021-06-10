@@ -68,5 +68,5 @@ class Game(object):
     def position(self, size):
         """Позиция"""
         x = size[0] // 2
-        y = size[1] // 3
+        y = size[1] // 2
         return x, y

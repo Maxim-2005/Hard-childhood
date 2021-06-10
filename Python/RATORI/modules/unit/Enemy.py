@@ -11,6 +11,7 @@ class Enemy(object):
         self.rect = pg.Rect(0, 0, self.rate, self.rate)
         self.tile_atlas = []
         self.tile_atlas = self.filling()
+        self.enemy_point = (100, 100)
         self.row = 0
         self.col = 0
         self.step = 0
@@ -44,7 +45,6 @@ class Enemy(object):
     def draw(self, g):
         """Отрисовка"""
         self.image = self.tile_atlas[self.row][self.col]
-        g.blit(self.image, self.rect)
 
     def select(self):
         self.speed += 1
