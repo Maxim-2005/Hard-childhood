@@ -1,6 +1,7 @@
 from modules.ground.Terrain import Terrain
 from modules.unit.Enemy import Enemy
 import pygame as pg
+import random as r
 
 class Ground(object):
     def __init__(self, size):
@@ -9,6 +10,8 @@ class Ground(object):
         self.surface = pg.Surface(self.size)
         self.rect = self.surface.get_rect()
         self.enemy = Enemy()
+        self.random_target = r.randint(100, 200)
+        self.target = 0
         self.enemy_x, self.enemy_y = self.enemy.enemy_point
         self.point_x, self.point_y = self.terrain.start_point
         self.max_x = len(self.terrain.map[0]) * self.terrain.rate
@@ -82,6 +85,8 @@ class Ground(object):
         x_right = x_left + self.size[0]
         y_top = self.point_y - self.size[1] // 2
         y_bottom = y_top + self.size[1]
+
+    def target(self):
 
         for y in range(y_top // rate, y_bottom // rate + 1):
             for x in range(x_left // rate, x_right // rate + 1):
