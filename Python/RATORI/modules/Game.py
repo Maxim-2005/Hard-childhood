@@ -1,7 +1,8 @@
 import pygame as pg
 from modules.ground.Ground import Ground
-from modules.unit.Hero import Hero
 from modules.unit.Enemy import Enemy
+from modules.unit.Gangster import Gangster
+from modules.unit.Hero import Hero
 from modules.interface.Interface import Interface
 
 class Game(object):
@@ -10,8 +11,9 @@ class Game(object):
         """"Конструктор игры"""
         self.size = size
         self.ground = Ground(self.size)
-        self.hero = Hero()
         self.enemy = Enemy()
+        self.gangster = Gangster()
+        self.hero = Hero()
         self.interface = Interface(self.size)
         self.hero.rect.center = self.position(self.size)
         self.turn = 'stop'
@@ -46,6 +48,7 @@ class Game(object):
             self.turn = 'stop'
 
         self.ground.update(self.size, self.turn)
+        self.gangster.update(self.turn)
         self.hero.update(self.turn)
         hero = self.ground.point_x, self.ground.point_y
         self.interface.update(hero)
@@ -53,16 +56,14 @@ class Game(object):
         size = pg.display.get_window_size()
         if self.size != size:
             self.size = size
-            self.enemy.rect.center = self.position(size)
-
-        self.ground.update(self.size, self.turn)
-        enemy = self.ground.point_x, self.ground.point_y
+            self.hero.rect.center = self.position(size)
 
     def draw(self, g):
         """Отрисовка игры"""
         self.ground.draw(g)
-        self.hero.draw(g)
         self.enemy.draw(g)
+        self.gangster.draw(g)
+        self.hero.draw(g)
         self.interface.draw(g)
 
     def position(self, size):
