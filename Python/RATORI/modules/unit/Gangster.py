@@ -1,6 +1,7 @@
 import pygame as pg
 from random import randint as r
 
+
 class Gangster(object):
     pg.init()
     _atlas_ = pg.image.load('images\\gangster.png')
@@ -12,7 +13,11 @@ class Gangster(object):
         self.step = 0
         self.row = 7
         self.col = 0
+        self.unit_speed = 4
+        self.unit_speed_line = 3
+        self.time_move = 60
         self.scroll_line = 10
+        self.unit_turn = 8
         self.scroll = self.scroll_line / 1.4
         self.tile_atlas = []
         self.tile_atlas = self.filling()
@@ -23,13 +28,24 @@ class Gangster(object):
     def update(self, turn):
         """Обновление"""
         self.rect.x, self.rect.y = self.pos_unit(turn)
+        if self.time_move < 1:
+            self.unit_turn = r(0, 8)
+            self.time_move = r(30, 150)
+        self.time_move -= 1
+        if self.unit_turn > 7:
+            self.image = self.tile_atlas[6][0]
+        else:
+            self.col = self.unit_turn
+            self.image = self.select()
+        self.move_unit()
 
     def draw(self, g):
         """Отрисовка"""
         g.blit(self.image, self.rect)
 
     def select(self):
-        if self.step > 120:
+        """Выбор картинки шага"""
+        if self.step > 10:
             if self.row > 4:
                 self.row = 0
             else:
@@ -75,3 +91,27 @@ class Gangster(object):
         elif turn == 'up':
             self.point_y += self.scroll_line
         return self.point_x, self.point_y
+
+    def move_unit(self):
+        """Движение юнита"""
+        if self.unit_turn == 1:
+            self.point_x += self.unit_speed_line
+            self.point_y += self.unit_speed_line
+        elif self.unit_turn == 7:
+            self.point_x -= self.unit_speed_line
+            self.point_y += self.unit_speed_line
+        elif self.unit_turn == 5:
+            self.point_x -= self.unit_speed_line
+            self.point_y -= self.unit_speed_line
+        elif self.unit_turn == 3:
+            self.point_x += self.unit_speed_line
+            self.point_y -= self.unit_speed_line
+        elif self.unit_turn == 2:
+            self.point_x += self.unit_speed
+        elif self.unit_turn == 0:
+            self.point_y += self.unit_speed
+        elif self.unit_turn == 6:
+            self.point_x -= self.unit_speed
+        elif self.unit_turn == 4:
+            self.point_y -= self.unit_speed
+

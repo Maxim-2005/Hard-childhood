@@ -11,7 +11,6 @@ class Main(object):
         self.size = self.width, self.height = 1280, 720
         self.fps = 60
 
-
         pg.display.set_mode((self.width, self.height), self.flag)
         icon = pg.image.load('images\\icon.png')
         pg.display.set_icon(icon)
