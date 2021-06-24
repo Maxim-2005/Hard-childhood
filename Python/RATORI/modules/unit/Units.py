@@ -1,13 +1,17 @@
 from modules.unit.Gangster import Gangster
 from modules.unit.Enemy import Enemy
+from modules.unit.Cat import Cat
 
 class Units(object):
     def __init__(self, size):
         """Конструктор"""
         self.list_unit = []
-        self.count = 50
+        self.count = 10
         for i in range(self.count):
             unit = Gangster(size)
+            self.list_unit.append(unit)
+        for i in range(self.count):
+            unit = Cat(size)
             self.list_unit.append(unit)
         self.enemy = Enemy()
         self.unit_speed = 4
