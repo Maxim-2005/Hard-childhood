@@ -5,10 +5,11 @@ from modules.unit.Cat import Cat
 class Units(object):
     def __init__(self, size):
         """Конструктор"""
+        tile_atlas = Gangster.filling()
         self.list_unit = []
-        self.count = 10
+        self.count = 1000
         for i in range(self.count):
-            unit = Gangster(size)
+            unit = Gangster(size, tile_atlas)
             self.list_unit.append(unit)
         for i in range(self.count):
             unit = Cat(size)

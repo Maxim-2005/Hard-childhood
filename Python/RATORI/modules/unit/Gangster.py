@@ -3,13 +3,29 @@ from random import randint as r
 
 
 class Gangster(object):
-    pg.init()
-    _atlas_ = pg.image.load('images\\gangster.png')
 
-    def __init__(self, size):
+    # Отрисовка Трраина
+    @staticmethod
+    def filling():
+        """Заполняем атлас тайлами"""
+        pg.init()
+        rate_x = 80
+        rate_y = 65
+        atlas = pg.image.load('images\\gangster.png')
+        atlas = pg.transform.scale(atlas, (8*rate_x, 9*rate_y))
+        tile_atlas = []
+        for row in range(atlas.get_height() // rate_y):
+            tile_atlas.append([])
+            for col in range(atlas.get_width() // rate_x):
+                rect = (rate_x * col, rate_y * row)
+                image = atlas.subsurface((rect, (rate_x, rate_y)))
+                tile_atlas[row].append(image)
+        return tile_atlas
+
+    def __init__(self, size, tile_atlas):
         """Конструктор"""
-        self.rate_x = 160
-        self.rate_y = 130
+        self.rate_x = 80
+        self.rate_y = 65
         self.step = 0
         self.row = 7
         self.col = 0
@@ -17,8 +33,7 @@ class Gangster(object):
         self.scroll_line = 10
         self.unit_turn = 8
         self.scroll = self.scroll_line / 1.4
-        self.tile_atlas = []
-        self.tile_atlas = self.filling()
+        self.tile_atlas = tile_atlas
         self.point_x = r(size[0] // 8, size[0] * 3 // 4)
         self.point_y = r(size[1] // 8, size[1] * 3 // 4)
         self.image = self.tile_atlas[self.row][self.col]
@@ -52,19 +67,6 @@ class Gangster(object):
         else:
             self.step += 12
         return self.tile_atlas[self.row][self.col]
-
-    # Отрисовка Трраина
-    def filling(self):
-        """Заполняем атлас тайлами"""
-        atlas = self._atlas_
-        size = (self.rate_x, self.rate_y)
-        for row in range(atlas.get_height() // self.rate_y):
-            self.tile_atlas.append([])
-            for col in range(atlas.get_width() // self.rate_x):
-                rect = (self.rate_x * col, self.rate_y * row)
-                image = atlas.subsurface((rect, size))
-                self.tile_atlas[row].append(image)
-        return self.tile_atlas
 
     def pos_unit(self, turn):
         """Позиция юнита"""
