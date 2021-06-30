@@ -3,23 +3,40 @@ from random import randint as r
 
 
 class Cat(object):
-    pg.init()
-    image = pg.image.load('images\\cat.png')
-    image = pg.transform.scale(image, (50, 60))
 
-    def __init__(self, size):
+    # Отрисовка Трраина
+    @staticmethod
+    def filling():
+        """Заполняем атлас тайлами"""
+        pg.init()
+        rate_x = 32
+        rate_y = 32
+        atlas = pg.image.load('images\\cat.png')
+        atlas = pg.transform.scale(atlas, (12 * rate_x, 8 * rate_y))
+        tile_atlas = []
+        for row in range(atlas.get_height() // rate_y):
+            tile_atlas.append([])
+            for col in range(atlas.get_width() // rate_x):
+                rect = (rate_x * col, rate_y * row)
+                image = atlas.subsurface((rect, (rate_x, rate_y)))
+                tile_atlas[row].append(image)
+        return tile_atlas
+
+    def __init__(self, size, tile_atlas):
         """Конструктор"""
-        self.rate_x = 160
-        self.rate_y = 130
+        self.rate_x = 32
+        self.rate_y = 32
         self.step = 0
-        self.row = 6
-        self.col = 8
-        self.time_move = 60
+        self.row = 0
+        self.col = 0
+        self.time_move = 10
         self.scroll_line = 10
-        self.unit_turn = 8
+        self.unit_turn = 0
         self.scroll = self.scroll_line / 1.4
+        self.tile_atlas = tile_atlas
         self.point_x = r(size[0] // 8, size[0] * 3 // 4)
         self.point_y = r(size[1] // 8, size[1] * 3 // 4)
+        self.image = self.tile_atlas[self.row][self.col]
         self.rect = pg.Rect(self.point_x, self.point_y, self.rate_x, self.rate_y)
 
     def update(self, turn):
@@ -27,12 +44,22 @@ class Cat(object):
         self.rect.x, self.rect.y = self.pos_unit(turn)
         if self.time_move < 1:
             self.unit_turn = r(0, 8)
-            self.time_move = r(30, 150)
+            self.time_move = r(10, 60)
         self.time_move -= 1
+        if self.unit_turn > 1:
+            self.image = self.tile_atlas[0][0]
+        else:
+            self.col = self.unit_turn
+            self.image = self.select()
 
     def draw(self, g):
         """Отрисовка"""
         g.blit(self.image, self.rect)
+
+    def select(self):
+        """Выбор картинки шага"""
+        if self.col
+        self.col += 1
 
     def pos_unit(self, turn):
         """Позиция юнита"""

@@ -6,13 +6,14 @@ class Units(object):
     def __init__(self, size):
         """Конструктор"""
         tile_atlas = Gangster.filling()
+        atlas_cat = Cat.filling()
         self.list_unit = []
-        self.count = 1000
+        self.count = 10
         for i in range(self.count):
             unit = Gangster(size, tile_atlas)
             self.list_unit.append(unit)
         for i in range(self.count):
-            unit = Cat(size)
+            unit = Cat(size, atlas_cat)
             self.list_unit.append(unit)
         self.enemy = Enemy()
         self.unit_speed = 4

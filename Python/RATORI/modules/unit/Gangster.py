@@ -65,7 +65,7 @@ class Gangster(object):
                 self.row += 1
                 self.step = 0
         else:
-            self.step += 12
+            self.step += 20
         return self.tile_atlas[self.row][self.col]
 
     def pos_unit(self, turn):
