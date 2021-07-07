@@ -1,12 +1,16 @@
 from modules.unit.Gangster import Gangster
 from modules.unit.Enemy import Enemy
 from modules.unit.Cat import Cat
+from modules.unit.Civil import Civil
+from modules.unit.Adapter import Adapter
 
 class Units(object):
     def __init__(self, size):
         """Конструктор"""
         tile_atlas = Gangster.filling()
         atlas_cat = Cat.filling()
+        atlas_civil = Civil.filling()
+        atlas_dog = Adapter.filling()
         self.list_unit = []
         self.count = 10
         for i in range(self.count):
@@ -14,6 +18,12 @@ class Units(object):
             self.list_unit.append(unit)
         for i in range(self.count):
             unit = Cat(size, atlas_cat)
+            self.list_unit.append(unit)
+        for i in range(self.count):
+            unit = Civil(size, atlas_civil)
+            self.list_unit.append(unit)
+        for i in range(self.count):
+            unit = Adapter(size, atlas_dog)
             self.list_unit.append(unit)
         self.enemy = Enemy()
         self.unit_speed = 4
