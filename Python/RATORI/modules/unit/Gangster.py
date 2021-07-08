@@ -24,12 +24,13 @@ class Gangster(object):
 
     def __init__(self, size, tile_atlas):
         """Конструктор"""
+        self.size = size
         self.rate_x = 80
         self.rate_y = 65
         self.step = 0
         self.row = 7
         self.col = 0
-        self.time_move = 60
+        self.time_move = 20
         self.scroll_line = 10
         self.unit_turn = 8
         self.scroll = self.scroll_line / 1.4
@@ -38,19 +39,24 @@ class Gangster(object):
         self.point_y = r(size[1] // 8, size[1] * 3 // 4)
         self.image = self.tile_atlas[self.row][self.col]
         self.rect = pg.Rect(self.point_x, self.point_y, self.rate_x, self.rate_y)
+        self.arrest = False
 
     def update(self, turn):
         """Обновление"""
         self.rect.x, self.rect.y = self.pos_unit(turn)
-        if self.time_move < 1:
-            self.unit_turn = r(0, 8)
-            self.time_move = r(30, 150)
-        self.time_move -= 1
-        if self.unit_turn > 7:
-            self.image = self.tile_atlas[6][0]
+
+        if not self.arrest:
+            if self.time_move < 1:
+                self.unit_turn = r(0, 10)
+                self.time_move = r(30, 150)
+            self.time_move -= 1
+            if self.unit_turn > 7:
+                self.image = self.tile_atlas[6][0]
+            else:
+                self.col = self.unit_turn
+                self.image = self.select()
         else:
-            self.col = self.unit_turn
-            self.image = self.select()
+            self.image = self.tile_atlas[8][self.col]
 
     def draw(self, g):
         """Отрисовка"""

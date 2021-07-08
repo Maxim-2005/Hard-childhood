@@ -1,5 +1,4 @@
 from modules.unit.Gangster import Gangster
-from modules.unit.Enemy import Enemy
 from modules.unit.Cat import Cat
 from modules.unit.Civil import Civil
 from modules.unit.Adapter import Adapter
@@ -25,22 +24,23 @@ class Units(object):
         for i in range(self.count):
             unit = Adapter(size, atlas_dog)
             self.list_unit.append(unit)
-        self.enemy = Enemy()
         self.unit_speed = 4
         self.unit_speed_line = 3
+        self.size = size
 
     def update(self, turn):
         """Обновление"""
         for unit in self.list_unit:
             unit.rect.x, unit.rect.y = self.move_unit(unit)
+            if unit.rect.collidepoint(self.size[0] // 2, self.size[1] // 2):
+                unit.arrest = True
+                unit.unit_turn = 8
             unit.update(turn)
-        self.enemy.update(turn)
 
     def draw(self, g):
         """Отрисовка"""
         for unit in self.list_unit:
             unit.draw(g)
-        self.enemy.draw(g)
 
     def move_unit(self, unit):
             """Движение юнита"""

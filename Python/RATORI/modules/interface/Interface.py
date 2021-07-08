@@ -4,6 +4,7 @@ from modules.interface.Score import Score
 from modules.interface.MiniMap import MiniMap
 
 class Interface(object):
+    """Пример паттерна Фасад"""
     def __init__(self, size):
         """Конструктор"""
         self.size = size
