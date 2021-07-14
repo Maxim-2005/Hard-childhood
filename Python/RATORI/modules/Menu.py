@@ -1,5 +1,6 @@
 import pygame as pg
 from modules.menu.Button import Button
+from modules.menu.Save import Save
 
 class Menu(object):
 
@@ -16,6 +17,7 @@ class Menu(object):
             self.list_button.append(button)
         self.button_action = None
         self.list_button[6].active = False
+        self.save = Save()
 
     def update(self, e):
         """Отрисовка меню"""
@@ -57,8 +59,11 @@ class Menu(object):
             if button_name == self.button_name[1]:
                 print('нажатак кнопка:', button_name)
             if button_name == self.button_name[2]:
+                value = self.save.load_data()
+                print(value)
                 print('нажатак кнопка:', button_name)
             if button_name == self.button_name[3]:
+                self.save.save_date(12)
                 print('нажатак кнопка:', button_name)
             if button_name == self.button_name[4]:
                 print('нажатак кнопка:', button_name)
