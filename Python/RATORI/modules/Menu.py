@@ -84,4 +84,3 @@ class Menu(object):
             pos_x = self.size[0] // 2 + 20
             pos_y = self.size[1] // 2 + i * 110 - 680
         return pos_x, pos_y
-
