@@ -1,8 +1,9 @@
 import pygame as pg
+from modules.unit.Abstract import Abstract
 from random import randint as r
 
 
-class Civil(object):
+class Civil(Abstract):
     pg.init()
 
     @staticmethod
@@ -34,8 +35,6 @@ class Civil(object):
         self.image = self.tile_atlas[self.row][self.col]
         self.point_x, self.point_y = (r(self.size[0] // 4, self.size[0] // 4 * 3)), (r(self.size[1] // 4, self.size[1] // 4 * 3))
         self.rect = pg.Rect(self.point_x, self.point_y, self.rate, self.rate)
-        self.scroll_line = 10
-        self.scroll = round(self.scroll_line / 1.4)
         self.time_move = 60
         self.speed = 1
 
@@ -55,31 +54,6 @@ class Civil(object):
     def draw(self, g):
         """Отрисовка"""
         g.blit(self.image, self.rect)
-
-    def pos_unit(self, turn):
-        """Позиция юнита"""
-        if turn == 'right_down':
-            self.point_x -= self.scroll
-            self.point_y -= self.scroll
-        elif turn == 'left_down':
-            self.point_x += self.scroll
-            self.point_y -= self.scroll
-        elif turn == 'left_up':
-            self.point_x += self.scroll
-            self.point_y += self.scroll
-        elif turn == 'right_up':
-            self.point_x -= self.scroll
-            self.point_y += self.scroll
-        elif turn == 'right':
-            self.point_x -= self.scroll_line
-        elif turn == 'left':
-            self.point_x += self.scroll_line
-        elif turn == 'down':
-            self.point_y -= self.scroll_line
-        elif turn == 'up':
-            self.point_y += self.scroll_line
-
-        return self.point_x, self.point_y
 
     def select(self):
         """Заполнение"""

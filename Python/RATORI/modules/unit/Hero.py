@@ -1,5 +1,6 @@
 import pygame as pg
 
+
 class Hero(object):
     _atlas_ = pg.image.load('images\\hero.png')
     _rate_ = 64
@@ -9,7 +10,7 @@ class Hero(object):
         pg.init()
         self.sound = pg.mixer.Sound("sounds\sound.wav")
         self.rate = self._rate_
-        self.rect = pg.Rect(0, 0, self.rate, self.rate)
+        self.rect = pg.Rect(0, 0, self.rate+25, self.rate+25)
         self.tile_atlas = []
         self.tile_atlas = self.filling()
         self.row = 0
@@ -67,7 +68,7 @@ class Hero(object):
             for col in range(atlas.get_width() // rate):
                 rect = (col * rate, row * rate)
                 image = atlas.subsurface((rect, size))
-                image = pg.transform.scale(image, (rate*2, rate*2))
+                image = pg.transform.scale(image, (int(rate*1.5), int(rate*1.5)))
                 self.tile_atlas[row].append(image)
         return self.tile_atlas
 

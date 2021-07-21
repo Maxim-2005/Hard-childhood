@@ -1,8 +1,9 @@
 import pygame as pg
 from random import randint as r
+from modules.unit.Abstract import Abstract
 
 
-class Dog(object):
+class Dog(Abstract):
 
     @staticmethod
     def filling():
@@ -32,8 +33,6 @@ class Dog(object):
         self.rate_y = 48
         self.unit_turn = 8
         self.time_move = 60
-        self.scroll_line = 10
-        self.scroll = round(self.scroll_line / 1.4)
         self.title_atlas = title_atlas
         self.point_x = r(size[0] // 4, size[0] * 3 // 4)
         self.point_y = r(size[1] // 4, size[1] * 3 // 4)
@@ -64,28 +63,3 @@ class Dog(object):
         if self.col > 4:
             self.col = 0
         return self.title_atlas[self.row][self.col]
-
-    def pos_unit(self, turn):
-        """Позиция unit"""
-        if turn == "right_down":
-            self.point_x -= self.scroll
-            self.point_y -= self.scroll
-        elif turn == 'left_down':
-            self.point_x += self.scroll
-            self.point_y -= self.scroll
-        elif turn == 'left_up':
-            self.point_x += self.scroll
-            self.point_y += self.scroll
-        elif turn == 'right_up':
-            self.point_x -= self.scroll
-            self.point_y += self.scroll
-        elif turn == 'down':
-            self.point_y -= self.scroll_line
-        elif turn == 'left':
-            self.point_x += self.scroll_line
-        elif turn == 'right':
-            self.point_x -= self.scroll_line
-        elif turn == 'up':
-            self.point_y += self.scroll_line
-
-        return self.point_x, self.point_y

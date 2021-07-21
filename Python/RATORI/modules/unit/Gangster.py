@@ -1,8 +1,9 @@
 import pygame as pg
 from random import randint as r
+from modules.unit.Abstract import Abstract
 
 
-class Gangster(object):
+class Gangster(Abstract):
 
     # Отрисовка Трраина
     @staticmethod
@@ -31,9 +32,7 @@ class Gangster(object):
         self.row = 7
         self.col = 0
         self.time_move = 20
-        self.scroll_line = 10
         self.unit_turn = 8
-        self.scroll = self.scroll_line / 1.4
         self.tile_atlas = tile_atlas
         self.point_x = r(size[0] // 8, size[0] * 3 // 4)
         self.point_y = r(size[1] // 8, size[1] * 3 // 4)
@@ -73,27 +72,3 @@ class Gangster(object):
         else:
             self.step += 20
         return self.tile_atlas[self.row][self.col]
-
-    def pos_unit(self, turn):
-        """Позиция юнита"""
-        if turn == 'right_down':
-            self.point_x -= self.scroll
-            self.point_y -= self.scroll
-        elif turn == 'left_down':
-            self.point_x += self.scroll
-            self.point_y -= self.scroll
-        elif turn == 'left_up':
-            self.point_x += self.scroll
-            self.point_y += self.scroll
-        elif turn == 'right_up':
-            self.point_x -= self.scroll
-            self.point_y += self.scroll
-        elif turn == 'right':
-            self.point_x -= self.scroll_line
-        elif turn == 'down':
-            self.point_y -= self.scroll_line
-        elif turn == 'left':
-            self.point_x += self.scroll_line
-        elif turn == 'up':
-            self.point_y += self.scroll_line
-        return self.point_x, self.point_y
