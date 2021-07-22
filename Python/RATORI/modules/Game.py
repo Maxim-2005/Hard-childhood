@@ -15,6 +15,7 @@ class Game(object):
         self.interface = Interface(self.size)
         self.hero.rect.center = self.position(self.size)
         self.turn = 'stop'
+        self.time = 0
 
     def update(self, e):
         """Обновление игры"""
@@ -23,7 +24,15 @@ class Game(object):
             self.size = size
             self.hero.rect.center = self.position(size)
 
-        #Список кликов клавиатуры
+        #  Клики мышкой
+        click = pg.mouse.get_pressed(3)
+        self.time += 1
+        if click[0]:
+            if self.time >= 10:
+                self.units.add_shot(self.turn)
+                self.time = 0
+
+        #  Список кликов клавиатуры
         keys = pg.key.get_pressed()
 
         if (keys[pg.K_RIGHT] and keys[pg.K_DOWN]):

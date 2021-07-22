@@ -13,7 +13,6 @@ class Units(object):
         atlas_dog = Adapter.filling()
         self.list_unit = []
         self.list_shot = []
-        self.list_shot.append(Shot(size))  # Времнно для теста
         self.count = 10
         for i in range(self.count):
             unit = Gangster(size, tile_atlas)
@@ -49,6 +48,11 @@ class Units(object):
             unit.draw(g)
         for shot in self.list_shot:
             shot.draw(g)
+
+    def add_shot(self, turn):
+        """Создание выстрела"""
+        shot = Shot(self.size, turn)
+        self.list_shot.append(shot)
 
     def move_unit(self, unit):
         """Движение юнита"""
