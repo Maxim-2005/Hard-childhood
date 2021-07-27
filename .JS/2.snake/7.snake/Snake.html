@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8"/>
+	<title>SnAkE</title>
+	<link rel="shortcut icon" href="snake.ico" type="image/x-icon">
+</head>
+<body>
+
+<h1>ЗмЕйКа</h1>
+<canvas id="snake" width="800" height="600">Обновите браузер (HTML 5 не поддерживается)</canvas>
+
+<script type ="text/javascript"> //программа
+
+var snake=document.getElementById("snake"), //переменные
+ctx=snake.getContext("2d"),
+xS=snake.width, yS=snake.height, //Ширина и выфсота рисунка
+qS=25, rS=0, //размер клетки
+xF, yF, //координаты фрукта
+xZ=xS/2, yZ=yS/2, //координаты головы змейки
+xK=0, yK=0, //направление движения
+xZarr=[], yZarr=[], arr=0; //Массив хвоста змейки
+
+fruit();
+
+//расчет рандома фрукта
+function fruit() {
+xF=Math.round(Math.random()*(xS/qS-1))*qS;
+yF=Math.round(Math.random()*(yS/qS-1))*qS;
+};
+
+onkeydown=function(event) { //управление змейкой
+	 switch (event.keyCode) {
+		case 38: case 87: (xK=0, yK=-1); break;
+		case 39: case 68: (xK=1, yK=0); break;
+		case 40: case 83: (xK=0, yK=1); break;
+		case 37: case 65: (xK=-1, yK=0); break;
+		}
+};
+
+setInterval(function(){ //отрисовка кадра
+
+//ресуем поле
+ctx.fillStyle="Black";
+ctx.fillRect(0, 0, xS, yS);
+
+//рисуем фрукт
+ctx.fillStyle="red";
+ctx.fillRect(xF, yF, qS, qS);
+
+//расчет движения змейки
+xZ=xZ+xK*qS;
+if (xZ >= xS) xZ=0;
+if (xZ < 0) xZ=xS-qS;
+yZ=yZ+yK*qS;
+if (yZ >= yS) yZ=0;
+if (yZ < 0) yZ=yS-qS;
+
+//Заменяем координаты в начальных элементов массива
+xZarr.unshift(xZ);
+yZarr.unshift(yZ);
+
+//рисуем змейку
+ctx.fillStyle="white";
+for (arr=0; arr<=rS; arr++) ctx.fillRect(xZarr[arr], yZarr[arr], qS, qS);
+
+//поедание фрукта
+if (xZ==xF && yZ==yF) {
+	fruit();
+	rS++;
+	} else {
+	xZarr.pop();
+	yZarr.pop();
+	};
+
+}, 1000/15);
+</script>
+</body>
+</html>

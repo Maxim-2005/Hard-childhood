@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8"/>
+	<title>SnAkE</title>
+	<link rel="shortcut icon" href="snake.ico" type="image/x-icon">
+</head>
+<body>
+
+<h1>ЗмЕйКа</h1>
+<canvas id="snake" width="800" height="600">Обновите браузер (HTML 5 не поддерживается)</canvas>
+
+<script type ="text/javascript">
+
+var snake=document.getElementById("snake"),
+ctx=snake.getContext("2d");
+xS=snake.width, yS=snake.height,
+qS=25,
+xF=1, yF=1,
+xZ=1, yZ=1,
+xK=0, yK=0;
+
+onkeydown=function(event) {
+	 switch (event.keyCode) {
+		case 38: case 87: (xK=0, yK=-1); break;
+		case 39: case 68: (xK=1, yK=0); break;
+		case 40: case 83: (xK=0, yK=1); break;
+		case 37: case 65: (xK=-1, yK=0); break;
+		}
+}
+
+setInterval(function() {
+
+ctx.fillStyle="black";
+ctx.fillRect(0, 0, 800, 600);
+
+ctx.fillStyle="orange";
+ctx.fillRect(xF, yF, qS, qS);
+
+xZ=xZ+xK*qS;
+yZ=yZ+yK*qS;
+
+ctx.fillStyle="orange";
+ctx.fillRect(xZ, yZ, qS, qS);
+
+xF=Math.round((xS/qS-1)*Math.random())*qS;
+yF=Math.round((yS/qS-1)*Math.random())*qS;
+
+}, 1000/25);
+</script>
+</body>
+</html>

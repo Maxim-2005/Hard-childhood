@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8"/>
+	<title>SnAkE</title>
+	<link rel="shortcut icon" href="snake.ico" type="image/x-icon">
+</head>
+<body>
+
+<h1>ЗмЕйКа</h1>
+<canvas id="snake" width="800" height="600">Обновите браузер (РЕЬД 5 не поддерживается)</canvas>
+
+<script type ="text/javascript">
+
+var snake=document.getElementById("snake"),
+ctx=snake.getContext("2d");
+xS=snake.width, yS=snake.height,
+qS=25,
+xF=1, yF=1;
+
+setInterval(function() {
+
+ctx.fillStyle="black";
+ctx.fillRect(0, 0, 800, 600);
+
+ctx.fillStyle="blue";
+ctx.fillRect(xF, yF, qS, qS);
+
+ctx.fillStyle="Lime";
+ctx.fillRect(20*qS, 10*qS, qS, qS);
+
+xF=Math.round((xS/qS-1)*Math.random())*qS;
+yF=Math.round((yS/qS-1)*Math.random())*qS;
+
+}, 1000/25);
+</script>
+</body>
+</html>
