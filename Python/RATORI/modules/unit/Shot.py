@@ -9,6 +9,7 @@ class Shot(Abstract):
         self.shot_turn = turn
         self.point_x = self.size[0] // 2
         self.point_y = self.size[1] // 2
+        self.timedel = 600
 
     def update(self, turn):
         self.point_x, self.point_y = self.pos_unit(turn)
@@ -41,3 +42,6 @@ class Shot(Abstract):
             self.point_y -= self.scroll_line
 
         return self.point_x, self.point_y
+
+    def _del_(self):
+        pass

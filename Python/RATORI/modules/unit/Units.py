@@ -39,8 +39,12 @@ class Units(object):
                 unit.unit_turn = 8
             unit.update(turn)
 
-        for shot in self.list_shot:
-            shot.update(turn)
+        for i in range(len(self.list_shot)):
+            self.list_shot[i].timedel -= 1
+            if self.list_shot[i].timedel <= 0:
+                del self.list_shot[i]
+                break
+            self.list_shot[i].update(turn)
 
     def draw(self, g):
         """Отрисовка"""
