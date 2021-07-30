@@ -1,5 +1,8 @@
 N = int(input())
-for i in range(N):
-    arr = input()
+arr = []
 
-print(0)
+for i in range(N):
+    string = list(input())
+    arr.append(string)
+
+print(arr)
