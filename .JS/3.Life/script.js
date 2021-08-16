@@ -8,7 +8,8 @@ var canvas=document.getElementById("canvas"),
     speed=200,
     width,
     height,
-    x=500,
+    row,
+    col,
     size=32;
 
 // Размеры окна
@@ -19,40 +20,8 @@ function onResize(){
     height=window.innerHeight;
     canvas.width=width;
     canvas.height=height;
-}
-
-function drawLines(){
-    ctx.lineWidth=0.25;
-    ctx.strokeStyle="chocolate";
-    // Горизонтальные линии
-    ctx.beginPath();
-    for(let i=0; i<height; i+=size){
-        ctx.moveTo(0, i);
-        ctx.lineTo(width, i);
-    }
-    ctx.stroke();
-    ctx.closePath();
-
-    // Вертикальные линии
-    ctx.beginPath();
-    for(let i=0; i<width; i+=size){
-        ctx.moveTo(i, 0);
-        ctx.lineTo(i, height);
-    }
-    ctx.stroke();
-    ctx.closePath();
-}
-
-function update(){
-    x++;
-}
-
-function drawCell(){
-    ctx.fillStyle="White";
-    ctx.beginPath();
-    ctx.arc(x, 500, 16, 0, 2*Math.PI, true);
-    ctx.fill();
-    ctx.closePath();
+    row=Math.ceil(width/size);
+    col=Math.ceil(height/size);
 }
 
 // Цикл анимации
@@ -70,3 +39,62 @@ setInterval(() => {
     drawCell();
 
 }, speed);
+
+// Создаем массив клеток
+arr = arrNew();
+
+function arrNew(){
+    let arr=[];
+    for(let i=0; i<row; i++){
+        arr[i]=[];
+        for(let j=0; j<col; j++){
+            arr[i][j]=true;
+        }
+    }
+
+    return arr;
+}
+
+function drawLines(){
+    ctx.lineWidth=0.25; 
+    ctx.strokeStyle="chocolate";
+    // Горизонтальные линии
+    ctx.beginPath();
+    for(let i=0; i<height; i+=size){
+        ctx.moveTo(0, i);
+        ctx.lineTo(width, i);
+    } 
+    ctx.stroke();
+    ctx.closePath();
+
+    // Вертикальные линии
+    ctx.beginPath();
+    for(let i=0; i<width; i+=size){
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i, height);
+    }
+    ctx.stroke();
+    ctx.closePath();
+}
+
+function update(){
+    for(let i=0; i<row; i++){
+        for(let j=0; j<col; j++){
+            arr[i][j]=!arr[i][j];
+        }
+    }
+}
+
+function drawCell(){
+    ctx.fillStyle="White";
+    for(let i=0; i<row; i++){
+        for(let j=0; j<col; j++){
+            if (arr[i][j]){
+                ctx.beginPath();
+                ctx.arc(i*size+size/2, j*size+size/2, size/2, 0, 2*Math.PI);
+                ctx.fill();
+                ctx.closePath()
+            }
+        }
+    }
+}
