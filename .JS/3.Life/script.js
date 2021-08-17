@@ -5,11 +5,15 @@
 
 var canvas=document.getElementById("canvas"),
     ctx=canvas.getContext("2d"),
+    btnPlay=document.getElementById("play"),
+    btnClear=document.getElementById("clear"),
     speed=200,
     width,
     height,
     row,
     col,
+    game=false,
+    focus=false,
     size=32;
 
 // Размеры окна
@@ -24,6 +28,28 @@ function onResize(){
     col=Math.ceil(height/size);
 }
 
+// Старт / Пауза
+btnPlay.onclick=()=>{
+    focus=true;
+    game=!game;
+}
+
+// Рестарт
+btnClear.onclick=()=>{
+    focus=true;
+    arr = arrNew();
+}
+
+// Мышка
+onclick=(e)=>{
+    if(!focus){
+        let x=Math.floor(e.clientX/size);
+        let y=Math.floor(e.clientY/size);
+        arr[x][y]=true;
+    }
+    focus=false;
+}
+
 // Цикл анимации
 setInterval(() => {
     // Заливка фона
@@ -33,7 +59,8 @@ setInterval(() => {
     drawLines();
 
     //Обновление
-    update();
+    if (game)
+        update();
 
     // Отрисовка точек
     drawCell();
@@ -48,10 +75,9 @@ function arrNew(){
     for(let i=0; i<row; i++){
         arr[i]=[];
         for(let j=0; j<col; j++){
-            arr[i][j]=true;
+            arr[i][j]=false;
         }
     }
-
     return arr;
 }
 
@@ -80,7 +106,6 @@ function drawLines(){
 function update(){
     for(let i=0; i<row; i++){
         for(let j=0; j<col; j++){
-            arr[i][j]=!arr[i][j];
         }
     }
 }

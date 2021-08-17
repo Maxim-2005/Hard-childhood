@@ -5,3 +5,18 @@ html, body{
     padding: 0;
     background-color: DimGrey;
 }
+
+button{
+    color:orange;
+    font-weight: bold;
+    width: 5em;
+    padding: 2px;
+    border-radius: 10px;
+    background-color: DimGrey;
+}
+
+#buttons{
+    position:absolute;
+    top:1em;
+    left:1em;
+}
