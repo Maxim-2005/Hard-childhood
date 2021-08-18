@@ -45,7 +45,7 @@ onclick=(e)=>{
     if(!focus){
         let x=Math.floor(e.clientX/size);
         let y=Math.floor(e.clientY/size);
-        arr[x][y]=true;
+        arr[x][y]=!arr[x][y];
     }
     focus=false;
 }
