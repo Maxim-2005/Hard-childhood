@@ -32,12 +32,18 @@ function onResize(){
 btnPlay.onclick=()=>{
     focus=true;
     game=!game;
+    if (game){
+        btnPlay.innerHTML="STOP";
+    }
+    else
+        btnPlay.innerHTML="START";
 }
 
 // Рестарт
 btnClear.onclick=()=>{
     focus=true;
     arr = arrNew();
+    game=false;
 }
 
 // Мышка
