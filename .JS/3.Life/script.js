@@ -110,10 +110,30 @@ function drawLines(){
 }
 
 function update(){
-    for(let i=0; i<row; i++){
-        for(let j=0; j<col; j++){
+    buffer = copyArr(arr);
+    for(let i=1; i<row-1; i++){
+        for(let j=1; j<col-1; j++){
+            let count=arr[i-1][j-1] + arr[i+1][j+1] + arr[i+1][j-1] + arr[i-1][j+1] + arr[i-1][j] + arr[i+1][j] + arr[i][j-1] + arr[i][j+1];
+            if (arr[i][j] == false && (count == 3)){
+                buffer[i][j] = true;
+            }
+            if (arr[i][j] == true && (count < 2 || count > 3)){
+                buffer[i][j] = false;
+            }
         }
     }
+    arr = copyArr(buffer);
+}
+
+function copyArr(arr){
+    let buffer = [];
+    for(let i=0; i<row; i++){
+        buffer[i]=[];
+        for(let j=0; j<col; j++){
+            buffer[i][j]=arr[i][j];
+        }
+    }
+    return buffer;
 }
 
 function drawCell(){
