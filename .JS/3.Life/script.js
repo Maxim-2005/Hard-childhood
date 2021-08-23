@@ -7,14 +7,15 @@ var canvas=document.getElementById("canvas"),
     ctx=canvas.getContext("2d"),
     btnPlay=document.getElementById("play"),
     btnClear=document.getElementById("clear"),
-    speed=200,
+    btnRnd=document.getElementById("random"),
+    speed=100,
     width,
     height,
     row,
     col,
     game=false,
     focus=false,
-    size=32;
+    size=16;
 
 // Размеры окна
 onResize();
@@ -44,6 +45,12 @@ btnClear.onclick=()=>{
     focus=true;
     arr = arrNew();
     game=false;
+}
+
+// Рандомое заполнение
+btnRnd.onclick=()=>{
+    focus=true;
+    arr = arrNew(1);
 }
 
 // Мышка
@@ -76,12 +83,15 @@ setInterval(() => {
 // Создаем массив клеток
 arr = arrNew();
 
-function arrNew(){
+function arrNew(param=0){
     let arr=[];
     for(let i=0; i<row; i++){
         arr[i]=[];
         for(let j=0; j<col; j++){
-            arr[i][j]=false;
+            if(!param)
+                arr[i][j]=false;
+            else
+                arr[i][j]=Math.random()>0.61803;
         }
     }
     return arr;
