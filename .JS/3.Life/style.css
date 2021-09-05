@@ -3,16 +3,16 @@ html, body{
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: DimGrey;
+    background-color: black;
 }
 
 button{
-    color:orange;
+    color:DeepSkyBlue;
     font-weight: bold;
     width: 5em;
     padding: 2px;
     border-radius: 10px;
-    background-color: DimGrey;
+    background-color: black;
 }
 
 #buttons{

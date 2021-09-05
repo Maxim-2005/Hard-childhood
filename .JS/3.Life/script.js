@@ -66,7 +66,7 @@ onclick=(e)=>{
 // Цикл анимации
 setInterval(() => {
     // Заливка фона
-    ctx.fillStyle="orange";
+    ctx.fillStyle="black";
     ctx.fillRect(0, 0, width, height);
     // Сетка
     drawLines();
@@ -99,7 +99,7 @@ function arrNew(param=0){
 
 function drawLines(){
     ctx.lineWidth=0.25; 
-    ctx.strokeStyle="chocolate";
+    ctx.strokeStyle="DeepSkyBlue";
     // Горизонтальные линии
     ctx.beginPath();
     for(let i=0; i<height; i+=size){
@@ -147,7 +147,7 @@ function copyArr(arr){
 }
 
 function drawCell(){
-    ctx.fillStyle="White";
+    ctx.fillStyle="DeepSkyBlue";
     for(let i=0; i<row; i++){
         for(let j=0; j<col; j++){
             if (arr[i][j]){
