@@ -63,4 +63,16 @@ while True:
 	else:
 		continue
 
+arr = ["one", "two", "three", "four", "five"]
+
+for i, value in enumerate(arr):
+        print(i, value)
+
+iArr = iter(reversed(arr))
+print(next(iArr))
+print(next(iArr))
+print(next(iArr))
+print(next(iArr))
+print(next(iArr))
+
 input()

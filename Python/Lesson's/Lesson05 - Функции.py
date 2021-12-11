@@ -61,3 +61,14 @@ def Return_Lot():
 Main()
 
 input()
+
+def calc(x, y):
+        yield(x + y)
+        yield(x - y)
+        yield(x * y)
+        yield(x / y)
+
+for i in calc(2, 3):
+        print(i)
+
+input()

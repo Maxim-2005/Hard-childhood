@@ -39,4 +39,9 @@ print("")
 
 print(all([1, 125, "x", "abc", "True", 2<1, 0]))
 print(any([1, 0, "", "", "False", 2>10]))
+print("yes" if 5 < 2 else print("no"))
+if all ([5 > 3, 1 > 0, 10 < 11, 2 > 3]):
+        print("yes")
+else:
+        print("no")
 input()
