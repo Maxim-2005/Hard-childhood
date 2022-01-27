@@ -5,11 +5,17 @@ x = io.read('*n')
 
 if x == 0 then
 	print('0')
-elseif (x < 5 or x == 5) and x > 0 then
+elseif (x < 5 or x ~= 5) and x > 0 then
 	print('1-5')
 else
 	print('another')
 end
+
+do
+--block koda
+local x = math.max(1, 5 ,4 ,8 ,2)
+end
+print(x)
 
 function sum(a, b)
 	local c = a + b
@@ -21,6 +27,7 @@ print(c)
 multi = function(a, b)
 	local c = a * b
 return(c)
+end
 
 print(multi(5, 6))
 
