@@ -3,7 +3,6 @@ os.setlocale('rus_rus.1251')
 
 print("Ishodniy text")
 text = [[
-
 ]]
 --text = io.read()
 print(text)
