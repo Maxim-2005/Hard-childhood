@@ -1,0 +1,33 @@
+os.setlocale('rus_rus.1251')
+lib = require('Lib')
+text = [[
+yoy0?vyoy0v¦vNeNyoyyvNy#evivo"N|ewy|8?@yoy0?vyoy0vivo"N|ewy|8vNevN¦eyGv¦eewy|eG?@yoy0?vyoy0vNvki$iPiv8ki¦v6i6"8v6e2yo8?@yoy0?vyoy0v¦vNeNyoyyvNy#evivo"N|ewy|8¦@@¦yNi?v¦yNi?viv8#"Syve69w!v¦yNi?@iv6iSii0vNeNyoN|"0?v|i|v"v0y?vyvoevNi?@|ew>?v|ew>ve$i#"v¶ive|e0vN|ew>?@$¦i#"viv|8N|"v0yvo8M8?vkoyvPyvw>?vkoyvPyvw>¦¦¦@ei?vei?veiv0y9vNv80ivN¦y#i?@ei?veiv6e|eGv"v¦e##v¶i2$i#i?@"v6efy08vwi|vN#ioeNwevewv2e#"?@6e¶i2>#v9v¦Nyv68w"?v6ewy$9#v6i$e#"+@@yoy0?vyoy0v¦vNeNyoyyvNy#evivo"N|ewy|8?@yoy0?vyoy0vivo"N|ewy|8vNevN¦eyGv¦eewy|eG?@yoy0?vyoy0vNvki$iPiv8ki¦v6i6"8v6e2yo8?@yoy0?vyoy0v¦vNeNyoyyvNy#evivo"N|ewy|8¦@@8vfweveNe2y``ekev¦vXweGvyv6eG08veNe2yK@9v"fykevNvNe2eGv6eoy#iw!?vyvN6eNe2y?@yv¶i#v9?vfwev|v2yoyvwi|eGvyv6$"N6eNe2#y?@oiv8P?vwi|"0v|i|v9?vyvoi#wv6$y0"#v'e2y#!0¦@evNi0"vek"?v|vyGv0y9vN"#|e0v¦yo8w?@ivo"N|ewy|8?vNi0"?vNi0"v¦v6#9Nv"o8w?@0y9ve|8wi#ev2y¶8oy$Pe0vw80ie0?@¦ewveiv6$"M#iv##2e¦!zve|eIe|e9`i9zzz@@yoy0?vyoy0v¦vNeNyoyyvNy#evivo"N|ewy|8?@yoy0?vyoy0vivo"N|ewy|8vNevN¦eyGv¦eewy|eG?@yoy0?vyoy0vNvki$iPiv8ki¦v6i6"8v6e2yo8?@yoy0?vyoy0v¦vNeNyoyyvNy#evivo"N|ewy|8¦@@yoy0?vyoy0v¦vNeNyoyyvNy#evivo"N|ewy|8?@yoy0?vyoy0vivo"N|ewy|8vNevN¦eyGv¦eewy|eG?@yoy0?vyoy0vNvki$iPiv8ki¦v6i6"8v6e2yo8?@yoy0?vyoy0v¦vNeNyoyyvNy#evivo"N|ewy|8¦@@yoy0?vyoy0v¦vNeNyoyyvNy#evivo"N|ewy|8?@yoy0?vyoy0vivo"N|ewy|8vNevN¦eyGv¦eewy|eG?@yoy0?vyoy0vNvki$iPiv8ki¦v6i6"8v6e2yo8?@yoy0?vyoy0v¦vNeNyoyyvNy#evivo"N|ewy|8¦@@ivoevoy$y¦"vweGvoi#y|e?@w8oivoe2$iw!N9v28oywvy#yk|e?@Nifi#iv6y$yy4iw!v¦Nyv0eNw>?@"v|i|I"28o!ve2ry4iw!v¦Nyv6eNw>¦@ev9v¦yo!v¶i#?vPoyM!v0y9?vPoyM!vw>@68N|iGv¦N#vef!ve$8wv¶ive|e0v|ew>?@9v6e#y¦>yvi$¦8vwy2yvS¦yw>?@0>vyoy0?vyoy0v¦vNeNyoyyvNy#e¦@
+]]
+abc(text)
+
+text = text: gsub('@', '\n')
+text = text: gsub('v', ' ')
+text = text: gsub('?', ',')
+text = text: gsub('z', '.')
+text = text: gsub('6', 'ï')
+text = text: gsub('i', 'à')
+text = text: gsub('w', 'ò')
+text = text: gsub('i', 'à')
+text = text: gsub('|', 'ê')
+text = text: gsub('o', 'ä')
+text = text: gsub('"', 'è')
+text = text: gsub('e', 'î')
+text = text: gsub('8', 'ó')
+text = text: gsub('N', 'ñ')
+text = text: gsub('y', 'å')
+text = text: gsub('0', 'ì')
+text = text: gsub('`', 'í')
+text = text: gsub('#', 'ë')
+text = text: gsub('G', 'é')
+text = text: gsub('2', 'ä')
+text = text: gsub('k', 'ã')
+text = text: gsub('$', 'ð')
+text = text: gsub('P', 'æ')
+print(text)
+
+io.read()
