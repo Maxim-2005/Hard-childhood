@@ -1,7 +1,6 @@
 os.setlocale('rus_rus.1251')
 
 function abc(text)
-	print(#text)
 	origsymbol = {}
 	numsymbol = {}
 
@@ -35,3 +34,28 @@ function abc(text)
 
 	print(numabc)
 end
+
+-- кол-во символов
+function num(text)
+	print(#text)
+end
+
+function space(text)
+	maximum = 0
+	spaceX = ''
+	for i = 1, #numsymbol do
+		if maximum < numsymbol[i] then
+			maximum = numsymbol[i]
+			spaceX = origsymbol[i]
+		end
+	end
+	return spaceX
+end
+
+
+--[[
+Поиск пробела
+Поиск слов в которых повторяются буквы подряд
+Выборка однабуквенных слов
+Поиск знаков применания
+]]
