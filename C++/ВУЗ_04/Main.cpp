@@ -4,9 +4,9 @@ using namespace std;
 
 int main() {
 	setlocale(LC_ALL, "RUS");
-	int A = 0;
-	int B = 0;
-	int temp = 0;
+	int A;
+	int B;
+	int temp;
 	
 	cout << "Введите число А: " << endl;
 	cin >> A;
