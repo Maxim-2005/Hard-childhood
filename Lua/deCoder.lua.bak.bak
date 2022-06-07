@@ -1,0 +1,52 @@
+os.setlocale('rus_rus.1251')
+
+text = [[
+yoy0?vyoy0v¦vNeNyo`yyvNy#ev`ivo"N7ewy78?@yoy0?vyoy0v`ivo"N7ewy78vNevN¦eyGv¦e`ewy7eG?@yoy0?vyoy0vNvki%iPiv8k`i¦v6i6"`8v6e2yo8?@yoy0?vyoy0v¦vNeNyo`yyvNy#ev`ivo"N7ewy78¦@@¦yN`i?v¦yN`i?v`iv8#"Syve69w!v¦yN`i?@iv6iSi`i0vNeNyoN7"0?v7i7v"v0`y?v`yvoevN`i?@7ew>?v7ew>ve%i#"v¶ive7`e0vN7ew>?@%¦i#"v`iv78N7"v0`yvo8M8?vkoyvPyvw>?vkoyvPyvw>¦¦¦@e`i?ve`i?ve`iv0y`9vNv80ivN¦y#i?@e`i?ve`iv6e7eGv"v¦e##v¶i2%i#i?@"v6efy08vwi7vN#ioeNw`evewv2e#"?@6e¶i2>#v9v¦Nyv68w"?v6ewy%9#v6i%e#"+@@yoy0?vyoy0v¦vNeNyo`yyvNy#ev`ivo"N7ewy78?@yoy0?vyoy0v`ivo"N7ewy78vNevN¦eyGv¦e`ewy7eG?@yoy0?vyoy0vNvki%iPiv8k`i¦v6i6"`8v6e2yo8?@yoy0?vyoy0v¦vNeNyo`yyvNy#ev`ivo"N7ewy78¦@@`8vfweveNe2y``ekev¦vXweGv`yv6eG08veNe2yK@9v`"fykevNvNe2eGv6eoy#iw!?v`yvN6eNe2y`?@`yv¶`i#v9?vfwev7v2yoyvwi7eGv`yv6%"N6eNe2#y`?@oiv8P?vwi7"0v7i7v9?v`yvoi#wv6%y0"#v'`e2y#!0¦@`evNi0"v`ek"?v7v`yGv0y`9vN"#7e0v¦yo8w?@`ivo"N7ewy78?vNi0"?vNi0"v¦v6#9Nv"o8w?@0y`9ve78wi#ev2y¶8oy%P`e0vw80i`e0?@¦ewve`iv6%"M#iv##2e¦!zve7eIe7e9``i9zzz@@yoy0?vyoy0v¦vNeNyo`yyvNy#ev`ivo"N7ewy78?@yoy0?vyoy0v`ivo"N7ewy78vNevN¦eyGv¦e`ewy7eG?@yoy0?vyoy0vNvki%iPiv8k`i¦v6i6"`8v6e2yo8?@yoy0?vyoy0v¦vNeNyo`yyvNy#ev`ivo"N7ewy78¦@@yoy0?vyoy0v¦vNeNyo`yyvNy#ev`ivo"N7ewy78?@yoy0?vyoy0v`ivo"N7ewy78vNevN¦eyGv¦e`ewy7eG?@yoy0?vyoy0vNvki%iPiv8k`i¦v6i6"`8v6e2yo8?@yoy0?vyoy0v¦vNeNyo`yyvNy#ev`ivo"N7ewy78¦@@yoy0?vyoy0v¦vNeNyo`yyvNy#ev`ivo"N7ewy78?@yoy0?vyoy0v`ivo"N7ewy78vNevN¦eyGv¦e`ewy7eG?@yoy0?vyoy0vNvki%iPiv8k`i¦v6i6"`8v6e2yo8?@yoy0?vyoy0v¦vNeNyo`yyvNy#ev`ivo"N7ewy78¦@@ivoevoy%y¦`"vweGvoi#y7e?@w8oivoe2%iw!N9v28oywv`y#yk7e?@N`ifi#iv6y%yy4iw!v¦Nyv0eNw>?@"v7i7I`"28o!ve2ry4iw!v¦Nyv6eNw>¦@`ev9v¦yo!v¶`i#?vPoyM!v0y`9?vPoyM!vw>@68N7iGv¦N#v`ef!ve%8wv¶ive7`e0v7ew>?@9v6e#y¦>yv`i%¦8vwy2yvS¦yw>?@0>vyoy0?vyoy0v¦vNeNyo`yyvNy#e¦@
+]]
+
+print(#text)
+origsymbol = {}
+numsymbol = {}
+
+for i = 1, #text do
+	s = text:sub(i, i)
+	temp = 0
+	for j = 1, #origsymbol do
+		if s ~= origsymbol[j] then
+			temp = temp + 1
+		elseif s == origsymbol[j] then
+			break
+		end
+	end
+	if temp == #origsymbol then
+		origsymbol[#origsymbol + 1] = s
+		x = 0
+		for n = 1, #text do
+			stemp = text:sub(n, n)
+			if s == stemp then
+				x = x + 1
+			end
+		end
+		numsymbol[#numsymbol + 1] = x
+	end
+end
+
+numabc = ''
+for i = 1, #origsymbol do
+	numabc = numabc .. origsymbol[i] .. '-' .. numsymbol[i] .. ' '
+end
+
+print(numabc)
+
+text = text:gsub('@', '\n')
+text = text:gsub('v', '  ')
+text = text:gsub('?', ',')
+text = text:gsub('z', '.')
+text = text:gsub('7', 'ê')
+text = text:gsub('i', 'à')
+text = text:gsub('w', 'ò')
+text = text:gsub('e', 'ó')
+text = text:gsub('|', 'è')
+print(text)
+
+io.read()
