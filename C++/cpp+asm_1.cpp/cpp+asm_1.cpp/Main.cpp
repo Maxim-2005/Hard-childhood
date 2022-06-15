@@ -35,15 +35,16 @@ int main()
     }
     cout << res;
 
-   ////Δελενθε
-   //cin >> x;
-   //cin >> y;
-   //__asm
-   //{
-   //    mov eax, x
-   //    mov ebx, y
-   //    div ebx
-   //    mov res, eax
-   //}
-   //cout << res;
+   //Δελενθε
+   cin >> x;
+   cin >> y;
+   __asm
+   {   mov edx, 0
+       mov eax, x
+       mov ebx, y
+       div ebx
+       mov res, eax
+   }
+   cout << res;
+   system("pause > nul");
 }
