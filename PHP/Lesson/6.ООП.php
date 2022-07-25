@@ -1,6 +1,8 @@
 <?php
 namespace Lessons;
 
+use BadFunctionCallException;
+
 define('SIZE', 1920); // Константа
 
 class Unit{
@@ -67,3 +69,22 @@ echo $hero -> armor;
 echo '<br/>';
 // echo $hero -> pos; Ошибка доступа
 echo $hero -> getPos();
+
+// Проверка приндалжености объекта к классу
+echo "instanceoff hero", $hero instanceof Hero, '<br/>';
+echo "instanceoff Unit", $hero instanceof Unit, '<br/>';
+echo "instanceoff hero", $unit instanceof Hero, '<br/>';
+
+// Набор функций для вставки в класс
+Trait Action {
+    public function talk(){
+        echo "Я герой", '<br/>';
+    }
+}
+
+class SuperHero extends Unit {
+    use Action;
+}
+
+$superHero = new SuperHero('БэтМен', 500);
+$superHero -> talk();

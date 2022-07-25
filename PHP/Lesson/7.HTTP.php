@@ -35,12 +35,19 @@ echo "Пример GET запроса из поля для ввода", '<br/><b
     <input type = "submit" name = "x" value = "Привет"/>
 
 </form>
-<?php
 
+<h3>POST - запрос</h3>
+<form method = "POST">
+    <p>Имя: <input type = "text" name = "name"/></p>
+    <p>Возраст: <input type = "number" name = "age"/></p>
+    <input type = "submit" value = "Отправить"/>
+</from>
+<?php
 
 //Вывод данных
 echo "<h5>Данные в массиве_GET</h5>";
 var_export($_GET);
+var_export($_POST);
 echo '<br/><br/>';
 
 echo "<h5>Все данные в GLOBALS</h5>";
