@@ -1,2 +1,2 @@
-# Hard-hildhood
+# Hard-childhood
 Программы моего тяжелого детства...
