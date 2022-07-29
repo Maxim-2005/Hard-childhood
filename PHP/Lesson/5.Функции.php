@@ -6,9 +6,12 @@ function func1 () {
 func1();
 
 function func2 ($x) {
+    global $z;
+    $z = 123;
     echo $x, '<br/>';
 }
 func2('Привет мир');
+echo $z;
 echo '<br/>';
 
 function func3 ($x) {
@@ -27,7 +30,7 @@ echo func4(), '<br/><br/>';
 
 function func5 (string $x) {
     var_dump($x);
-}
+}   
 echo func5(10), '<br/><br/>';
 
 //Анонимные функии

@@ -4,6 +4,7 @@ namespace Lessons;
 use BadFunctionCallException;
 
 define('SIZE', 1920); // Константа
+const TEST = "Константа";
 
 class Unit{
     const PI = 3.14;
@@ -88,3 +89,24 @@ class SuperHero extends Unit {
 
 $superHero = new SuperHero('БэтМен', 500);
 $superHero -> talk();
+
+// Интерфейс
+interface iDrave{
+    function update(); // Абстрактный метод
+}
+
+// Абстрактный класс (Не имеет объектов для наследования)
+abstract class Item{
+    function update() {
+        echo "Обновление";
+    }
+}
+
+// $item = new Item(); - Ошибка
+
+// Запечатанный класс (Без наследования)
+final class Calc {
+    public final function delta(){ // Запечатанная функция
+        echo "Запечатанный method";
+    }
+}
