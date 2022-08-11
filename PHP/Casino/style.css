@@ -1,0 +1,10 @@
+body {
+    background-color: darkgreen;
+    color: lime;
+}
+
+.button{
+    margin: 16px;
+    padding: 16px;
+    font-size: 1.2em;
+}
