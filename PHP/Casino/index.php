@@ -24,6 +24,25 @@ if (isset($_POST["php_count"]))
 
 <br/><hr/><br/>
 
+<!--Рандом с сервера PHP-->
+<?php
+    $arr = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $random = '?';
+    if (isset($_POST["php_random"]))
+        $random = random_int(0, 36);
+?>
+
+<form method = "post">
+    <input type = "submit" name = "php_random" class = "button" value = '<?='PHP-Рандом: '.$random ?>'>
+</form>
+<?php 
+    $arr[$random] += 1;
+    foreach ($arr as $element)
+        echo $element, ' ';
+?>
+
+<br/><hr/><br/>
+
 <?php
     var_export($GLOBALS);
 ?>
