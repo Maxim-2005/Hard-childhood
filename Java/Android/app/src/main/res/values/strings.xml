@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GalaxyZombie</string>
+    <string name="strText">Введите текст</string>
+    <string name="btn1">Камень Ножнецы Бумага</string>
+    <string name="btn2">Вернуться в меню</string>
+    <string name="x_mif">Переход в X-Mif</string>
+    <string name="textKNB">Начнём игру</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

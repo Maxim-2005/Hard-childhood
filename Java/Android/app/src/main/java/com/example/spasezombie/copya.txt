@@ -1,0 +1,79 @@
+package com.example.spasezombie;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.Random;
+
+public class knb extends AppCompatActivity {
+
+    //Объекты
+    ImageView kam, noj, bum;
+    TextView textKNB;
+    int rndKNB, userKNB;
+
+    final Random random = new Random();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.knb);
+        //Присваеваем значение переменным
+        kam = (ImageView) findViewById(R.id.kam);
+        noj = (ImageView) findViewById(R.id.noj);
+        bum = (ImageView) findViewById(R.id.bum);
+        textKNB = (TextView) findViewById(R.id.textKNB);
+
+        //Слушатели
+        View.OnClickListener onClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.kam:
+                        userKNB = 0;
+                        break;
+                    case R.id.noj:
+                        userKNB = 1;
+                        break;
+                    case R.id.bum:
+                        userKNB = 2;
+                        break;
+                }
+
+                //Рандомное число
+                rndKNB = random.nextInt(3);
+
+                if (userKNB == rndKNB) {
+                    textKNB.setText("НИЧЬЯ");
+                } else if (userKNB == 0 && rndKNB == 1 ||
+                        userKNB == 1 && rndKNB == 2 ||
+                        userKNB == 2 && rndKNB == 0) {
+                    textKNB.setText("ПОБЕДА");
+                } else {
+                    textKNB.setText("ПОРАЖЕНИЕ");
+                }
+            }
+    };
+
+        kam.setOnClickListener(onClickListener);
+        noj.setOnClickListener(onClickListener);
+        bum.setOnClickListener(onClickListener);
+
+    }
+
+    public void Click2(View view) {
+        Intent intent = new Intent(knb.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+        System.exit(0);
+    }
+
+    public void ClickExit(View view) {
+        finish();
+        System.exit(0);
+    }
+}

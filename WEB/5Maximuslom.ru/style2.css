@@ -1,0 +1,68 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: radial-gradient(white, black);
+	max-width:1200px;
+	margin:5px auto;
+}
+
+header {
+	text-align:center;
+	border: 1px solid black;
+	height:120px;
+	background: radial-gradient(white, black);
+	padding: 5px;
+	margin: 5px;
+	border-radius: 10px;
+}
+
+main {
+	display:flex;
+	background: radial-gradient(white, black);
+	overflow:auto;
+	border-radius: 10px;
+	min-height :600px;
+}
+
+menu {
+	flex:1;
+	background: radial-gradient(white, black);
+	border-radius: 10px;
+	padding: 5px;
+	margin: 5px;
+}
+
+content {
+	flex:4;
+	background: radial-gradient(black, white);
+	padding: 5px;
+	margin: 5px;
+	border-radius: 10px;
+}
+
+aside {
+	flex:1;
+	background: radial-gradient(white, black);
+	padding: 5px;
+	margin: 5px;
+	border-radius: 10px;
+}
+
+footer {
+	border: 1px solid black;
+	height :100px;
+	background: radial-gradient(white, black);
+	padding: 5px;
+	margin: 5px;
+	border-radius: 10px;
+}
+.screen {
+	max-width: 450px;
+}
+.code {
+	max-width: 290px;
+	max-height: 400px;
+	overflow: auto;
+}

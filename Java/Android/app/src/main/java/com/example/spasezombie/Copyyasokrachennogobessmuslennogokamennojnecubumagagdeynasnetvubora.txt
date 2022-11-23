@@ -1,0 +1,79 @@
+package com.example.spasezombie;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class knb extends AppCompatActivity {
+
+    //Объекты
+    ImageView kam, noj, bum;
+    TextView textKNB;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.knb);
+
+        //Присваеваем значение переменным
+        kam = (ImageView) findViewById(R.id.kam);
+        noj = (ImageView) findViewById(R.id.noj);
+        bum = (ImageView) findViewById(R.id.bum);
+        textKNB = (TextView) findViewById(R.id.textKNB);
+
+        //Создаем объекты
+        final Player user = new Player();
+        final Player comp = new Player();
+
+        //Слушатели
+        View.OnClickListener onClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()) {
+                    case R.id.kam:
+                        user.hand = Player.Hands.KAM;
+                        break;
+                    case R.id.noj:
+                        user.hand = Player.Hands.NOJ;
+                        break;
+                    case R.id.bum:
+                        user.hand = Player.Hands.BUM;
+                        break;
+                }
+
+                //Выбор компьютера
+                comp.hand = Player.randomMetod();
+
+                if (user.hand == comp.hand) {
+                    textKNB.setText("НИЧЬЯ");
+                } else if (user.hand == Player.Hands.KAM && comp.hand == Player.Hands.NOJ ||
+                        user.hand == Player.Hands.NOJ && comp.hand == Player.Hands.BUM ||
+                        user.hand == Player.Hands.BUM && comp.hand == Player.Hands.KAM) {
+                    textKNB.setText("ПОБЕДА");
+                } else {
+                    textKNB.setText("ПОРАЖЕНИЕ");
+                }
+            }
+    };
+
+        kam.setOnClickListener(onClickListener);
+        noj.setOnClickListener(onClickListener);
+        bum.setOnClickListener(onClickListener);
+
+    }
+
+    public void Click2(View view) {
+        Intent intent = new Intent(knb.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+        System.exit(0);
+    }
+
+    public void ClickExit(View view) {
+        finish();
+        System.exit(0);
+    }
+}
