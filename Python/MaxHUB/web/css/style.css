@@ -1,0 +1,293 @@
+/**
+Локальный месседжер
+Студенты:
+- Максим Покидько
+18 марта 2024 г.
+*/
+
+/* БЛОКИ */
+
+body, html {
+  height: 100%;
+  font-family: Arial;
+  color: #333;
+  background-color: #808080;
+}
+
+header {
+  height: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../img/parallax.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+}
+
+discription {
+  display: block;
+  font-size: 1em;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 0.1em 0.1em 0.15em rgba(0, 0, 0, 0.25);
+ }
+
+nav {
+  background-color: #292929;
+  padding: 0.625em 1.25em;
+  text-align: center;
+}
+
+main {
+  max-width: 75em;
+  margin: 0 auto;
+  padding: 1.875em;
+  background-color: #c5c5c5;
+}
+
+section {
+  margin: 0.625em 3.125em 3.125em;
+  padding: 1.25em;
+  background-color: #fff;
+  border-radius: 1.5625em;
+  box-shadow: 0 0.3125em 0.3125em rgba(0, 0, 0, 0.1);
+  text-shadow: 0.1em 0.1em 0.15em rgba(0, 0, 0, 0.25);
+  text-align: justify;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1.25em 0;
+  text-align: center;
+}
+
+/* ЭЛЕМЕНТЫ */
+h1 {
+  color: rgb(255, 236, 128);
+  display: block;
+  text-transform: uppercase;
+  font-size: 12em;
+  font-family: Alex Brush, cursive;
+  animation: burning 1.5s ease-in-out infinite alternate;
+
+  -webkit-text-shadow: 0.3125em 0.3125em 0.3125em rgba(0, 0, 0, 0.75);
+  -moz-text-shadow: 0.3125em 0.3125em 0.3125em rgba(0, 0, 0, 0.75);
+  text-shadow: 0.1em 0.1em 0.15em rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+  font-size: 1.5em;
+  text-align: center;
+  text-shadow: 0.1em 0.1em 0.15em rgba(0, 0, 0, 0.25);
+}
+
+h3 {
+  text-align: center;
+  font-style: italic;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+  background-color: #333;
+  width: 8em;
+  color: #fff;
+  border: none;
+  padding: 0.625em;
+  border-radius: 0.3125em;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e2e2e2;
+  color: #000000;
+}
+
+/* КЛАССЫ */
+
+.container {
+  margin: 0 auto;
+  padding: 1.25em;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image {
+  text-align: center;
+  font-style: italic;
+  width: 100%;
+  height: auto;
+}
+
+.logoImage {
+  text-align: center;
+  font-style: italic;
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+  margin: 2.5em auto 1em;
+}
+
+.advantages {
+  margin-top: 1.25em;
+  text-shadow: 0.1em 0.1em 0.15em rgba(0, 0, 0, 0.25);
+}
+
+.advantage {
+  margin-bottom: 0.9375em;
+}
+
+.advantage-title {
+  font-weight: bold;
+  color: #007BFF;
+}
+
+/* ID ЭЛЕМЕНТЫ */
+
+#download-button {
+  display: block;
+  width: 35%;
+  margin: 0.625em auto 1.875em;
+  background-color: #160a7e;
+  color: #fff;
+  border: none;
+  border-radius: 6.25em;
+  padding: 1.25em 2.5em;
+  font-size: 2em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#download-button:hover {
+  background-color: #5d38e2;
+}
+
+#up{
+  position: fixed;
+  width: 2.5em;
+  bottom: 1.25em;
+  right: 1.25em;
+  padding: 0.625em;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+}
+
+#up:hover {
+  background-color: #e2e2e2;
+  color: #000000;
+}
+
+@media screen and (max-width: 800px) {
+  .advantage {
+    text-shadow: none;
+  }
+
+  h1 {
+    font-size: 8em;
+  }
+
+  header {
+    height: 25%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../img/parallax.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  section {
+    font-size: 0.75em;
+    margin: 0.75em;
+    padding: 1em;
+  }
+
+  main {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1em 0 0.5em;
+    background-color: #c5c5c5;
+  }
+
+  button {
+    background-color: #333;
+    width: 6em;
+    color: #fff;
+    border: none;
+    padding: 0.625em;
+    border-radius: 0.3125em;
+    font-size: 1.125em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .logoImage {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 auto 1em;
+  }
+
+  #up{
+    position: fixed;
+    width: 2.5em;
+    bottom: 1.25em;
+    right: 1.25em;
+    border-radius: 100%;
+    padding: 0.625em;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  #up:hover {
+    background-color: #333;
+    color: #fff;
+  }
+
+  #download-button {
+    display: block;
+    width: 30%;
+    height: 5%;
+    margin: 0 auto 0;
+    background-color: #160a7e;
+    color: #fff;
+    border: none;
+    border-radius: 6.25em;
+    padding: 1em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #download-button:hover {
+    background-color: #160a7e;
+  }
+}
