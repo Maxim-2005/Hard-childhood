@@ -1,0 +1,38 @@
+﻿@using DataBasePractice.Models.Account;
+@model LoginViewModel
+
+<form asp-action="Login" asp-controller="Account">
+    <div class="mb-3">
+        <div class="input-group">
+            <span class="input-group-text">
+                <i class="fa-solid fa-user"></i>
+            </span>
+            <div class="form-floating">
+                <input asp-for="Login" type="text" class="form-control" placeholder="Введите логин" />
+                <label asp-for="Login" class="form-label">Логин</label>
+            </div>
+        </div> 
+        <span class="text-danger" asp-validation-for="Login"></span>
+    </div>
+    <div class="mb-3">
+        <div class="input-group ">
+            <span class="input-group-text">
+                <i class="fa-solid fa-lock"></i>
+            </span>
+            <div class="form-floating">
+                <input 
+                    asp-for="Password"
+                    type="password"
+                    class="form-control"
+                    placeholder="Введите пароль"
+                    value="@Model?.Password"
+                />
+                <label asp-for="Password" class="form-label">Пароль</label>
+            </div>
+        </div>
+        <span class="text-danger" asp-validation-for="Password"></span>
+    </div>
+
+    <div class="text-danger mb-2">@ViewBag.Error</div>
+    <button type="submit" class="btn btn-primary w-100">Войти</button>
+</form>

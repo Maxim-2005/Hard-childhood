@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBasePractice", "DataBasePractice.csproj", "{B6C4E699-14E9-4919-8CDF-116922E0E88A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoList.Domain", "..\TodoList.Domain\TodoList.Domain.csproj", "{3BEB3DE1-144A-4FB4-86FB-D76E133B50A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6C4E699-14E9-4919-8CDF-116922E0E88A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6C4E699-14E9-4919-8CDF-116922E0E88A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6C4E699-14E9-4919-8CDF-116922E0E88A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6C4E699-14E9-4919-8CDF-116922E0E88A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BEB3DE1-144A-4FB4-86FB-D76E133B50A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BEB3DE1-144A-4FB4-86FB-D76E133B50A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BEB3DE1-144A-4FB4-86FB-D76E133B50A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BEB3DE1-144A-4FB4-86FB-D76E133B50A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D1727F6-1A59-47B8-A4B6-06DE389C9461}
+	EndGlobalSection
+EndGlobal

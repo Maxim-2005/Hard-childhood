@@ -1,0 +1,64 @@
+﻿@using DataBasePractice.Models.Home;
+@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="shadow-sm p-3 mt-4 rounded bg-white">
+    <form asp-action="Create">
+        <div class="row">
+            <div class="col-7">
+                <div class="form floating">
+                    <input asp-for="TaskName"
+                        type="text"
+                        class="form-control shadow-sm rounded"
+                        placeholder="Название задачи">
+                    <label asp-for="TaskName">Название задачи</label>
+                </div>
+                <span asp-validation-for="TaskName" class="text-danger"></span>
+                <div class="text-danger">@ViewBag.Error</div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-floating">
+                    <input asp-for="DateTime"
+                        type="datetime-local"
+                        class="form-control shadow-sm rounded" 
+                        placeholder="Username">
+                    <label asp-for="DateTime">Дата и время</label>
+                </div>
+                <span asp-validation-for="DateTime" class="text-danger"></span>
+            </div>
+
+            <div class="col-1 align-items-center d-flex">
+                <button class="btn btn-primary d-flex align-items-center justify-content-center shadow" 
+                        style="border-radius: 50%; height: 40px; width: 40px"
+                        data-bs-title="Добавить"
+                        data-bs-toggle="tooltip"
+                        type="submit">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<hr class="mt-5 mb-5" />
+
+<div class="tasks">
+    @foreach (var task in Model.Tasks)
+    {
+        <vc:task-item task="@task" /> 
+    }
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+
+    <script src="~/js/components/taskItem/Default.js"></script>
+}

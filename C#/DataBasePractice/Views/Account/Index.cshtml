@@ -1,0 +1,81 @@
+﻿@using DataBasePractice.Models.Account;
+@model AccountViewModel
+
+@{
+    Layout = null;
+
+    var isVisibleRegisterTab = Model?.RegisterViewModel != null;
+}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial=scale=1.0" />
+    <title>Авторизация - DataBasePractice</title>
+
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DataBasePractice.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="container-fluid d-flex align-items-center justify-content-center flex-column" style="min-height: 100vh;">
+        <main role="main" style="width: 400px" class="mt-5">
+            <div class="card">
+                <div class="card-header d-flex justify-content-center">
+                    <span class="text-primary fw-bold" style="font-size: 25px">
+                        <i class="fa-solid fa-clipboard-list"></i> Список задач
+                    </span>
+                </div>
+                <div class="card-body ps-5 pe-4">
+                    <ul class="nav nav-pills nav-justified mb-3" id="exl" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link @(!isVisibleRegisterTab ? "active" : "")"
+                                    id="tab-login"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#pills-login"
+                                    role="tab"
+                                    aria-controls="pills-login"
+                                    aria-selected="true">
+                                Вход
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link @(isVisibleRegisterTab ? "active" : "")"
+                                    id="tab-register"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#pills-register"
+                                    role="tab"
+                                    aria-controls="pills-register"
+                                    aria-selected="false">
+                                Регистрация
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade @(!isVisibleRegisterTab ? "show active" : "")" id="pills-login" role="tabpanel">
+                            @{
+                                ViewData.TemplateInfo.HtmlFieldPrefix = "l";
+                                await Html.RenderPartialAsync("_Login", Model?.LoginViewModel);
+                            }
+                        </div>
+                        <div class="tab-pane fade @(isVisibleRegisterTab ? "show active" : "")" id="pills-register" role="tabpanel">
+                            @{
+                                ViewData.TemplateInfo.HtmlFieldPrefix = "r";
+                                await Html.RenderPartialAsync("_Register", Model?.RegisterViewModel);
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer text-end mt-3">
+                &copy; 2024 - Список задач
+            </footer>
+        </main>
+    </div>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
