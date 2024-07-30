@@ -12,3 +12,6 @@ py -m pip freeze                        // Список подключенных
 pip freeze > requirements.txt           // Сохранить список подключенных модулей в файл
 pip freeze -r requirements.txt          // Загрузить список подключенных модулей с файла
 Создать файл gitignore.txt              // Добавление исключений для Flask, Python, VScode
+app.py                                  // Точка входа
+python app.py                           // Запуск сервера с терминала
+Далее смотреть app.py...
