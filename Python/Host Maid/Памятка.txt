@@ -1,0 +1,14 @@
+py -V                                   // Проверка версии python
+import sys; print sys.version           // Проверка версии python из кода
+python.exe -m pip install --upgrade pip // Обновление pyven
+python -m venv venv                     // Создание виртуального пространства
+.\venv\Scripts\activate                 // Активация виртуального пространства (venv салатовым)
+deactivate                              // Деактивация виртуального пространства
+pip list                                // Список подключенных модулей
+Get-ExecutionPolicy                     // Проверка доступа к скриптам
+Set-ExecutionPolicy AllSigned           // (RemoteSigned) Разрешает работу скриптов
+pip install Flask                       // Установка Flask
+py -m pip freeze                        // Список подключенных модулей
+pip freeze > requirements.txt           // Сохранить список подключенных модулей в файл
+pip freeze -r requirements.txt          // Загрузить список подключенных модулей с файла
+Создать файл gitignore.txt              // Добавление исключений для Flask, Python, VScode
