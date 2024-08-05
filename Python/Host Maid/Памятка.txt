@@ -18,3 +18,24 @@ python app.py                           // Запуск сервера с тер
 
 Templates = папка для шаблонов
 Static - папка для для css js image
+
+План действий:
+1. Перечислить странички которые нужны
+2. Расписать под них функции
+3. Оформить их в шаблоне
+4. Сделать нормальную верстку
+5. Дизайн
+6. Создание, редактирование, удалить, список всего и вся
+
+pip install flask_sqlalchemy            // Модуль для работы с БД
+from flask_sqlalchemy import SQLAlchemy // Подключаем модуль
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///sqlite.db"
+db = SQLAlchemy(app)
+
+class User(db.Model):                   // Расписываем классы для таблиц
+Переходим в режим питон
+>>> from app import app, db             // Создание папки
+>>> app.app_context().push()            // Пушим
+>> db.create_all                        //
+
+Вывод базы данных смотреть в user_list

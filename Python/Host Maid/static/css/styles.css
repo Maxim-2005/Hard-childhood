@@ -1,3 +1,5 @@
+@import url("palette.css");
+
 body {
     background-color: grey;
     border-style: solid;
@@ -11,7 +13,7 @@ header {
     justify-content: center;
     text-align: center;
     border-style: solid;
-    border-color: red;
+    border-color: var(--b1);
 }
 
 aside {
@@ -46,6 +48,7 @@ footer {
     border-color: cyan;
 }
 
-h1 {
+.title {
     font-size: 50px;
+    color: white;
 }
