@@ -1,19 +1,24 @@
 {% extends "base/main.html" %}
 
 {% block title %}
-	Пользователи
+	{{data.title}}
 {% endblock %}
 
 {% block content %}
+	<div class = "user_list">
 	<h1>Пользователи</h1>
-	{% if data %}
-		{% for i in data %}
-			<p>{{i.id}}</p>
-			<p>{{i.name}}</p>
-			<p>{{i.description}}</p>
-			<p>{{i.date}}</p>
+	{% if data.content %}
+		{% for i in data.content %}
+			<div class="user_info">
+				{{i.id}}
+				{{i.name}}
+				{{i.description}}
+				{{i.date}}
+				<p></p>
+			</div>
 		{% endfor %}
 	{% else %}
 		<p>Данные отсутствуют</p>
 	{% endif %}
+	</div>
 {% endblock %}

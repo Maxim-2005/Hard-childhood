@@ -1,0 +1,16 @@
+{% extends "base/main.html" %}
+
+{% block title %}
+	{{data.title}}
+{% endblock %}
+
+{% block content %}
+	<div class = "create_user">
+		<h1>Добавить пользователя</h1>
+		<form method = "post">
+			<input type = "text" name = name placeholder = "Введите имя">
+			<input type = "text" name = description placeholder = "Введите описание">
+			<button type = "submit">Отправить</button>
+		</form>
+	</div>
+{% endblock %}
