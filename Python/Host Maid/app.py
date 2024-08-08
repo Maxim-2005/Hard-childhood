@@ -36,7 +36,7 @@ def create_user():
         name = request.form["name"]
         description = request.form["description"]
         user = User(name = name, description = description)
-        
+
         try:
             db.session.add(user)
             db.session.commit()
@@ -45,10 +45,10 @@ def create_user():
             return "Увы но не выйдет"
     else:
         data = {
-        "title": "Создать пользователя",
-        "content": "..."
+            "title": "Создать пользователя",
+            "content": "..."
         }
-        return render_template("/create_user.html", data = data)
+        return render_template("create_user.html", data = data)
         
 @app.route("/edit")
 def edit():
@@ -72,16 +72,17 @@ def user_list():
         "title": "Список пользователей",
         "content": User.query.all()
     }
-    
     return render_template("user_list.html", data = data)
 
-@app.route("/user")
-def user():
+@app.route("/user/<int:id>")
+def user(id):
     data = {
         "title": "Пользователь",
-        "content": "..."
+        "user": User.query.get(id)
     }
     return render_template("user.html", data = data)
+
+#@app.route("/user/<int:id>")
 
 if __name__ == "__main__":
     app.run(debug=True)

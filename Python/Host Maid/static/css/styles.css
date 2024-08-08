@@ -1,14 +1,17 @@
 @import url("palette.css");
 
 body {
-    background-color: grey;
+    font-family: 'Cascadia Code';
+    background-color: #202833;
     height: 80%;
+    color: #f1f1f1;
 }
 
 header {
     width: 100%;
     height: 4.5em;
-    background: #696969;
+    background: #202833;
+    border-bottom: solid 1em #0B0C10;
 }
 
 aside {
@@ -20,15 +23,69 @@ footer {
     bottom: 0;
     height: 4.5em;
     position: absolute;
-    background-color: rgb(75, 75, 75);
+    background-color: #202833;
     justify-content: center;
     display: flex;
     align-items: center;
     text-align: center;
+    color: #f1f1f1;
 }
 
 h1 {
     margin: 0;
+}
+
+button, input[type="submit"] {
+    width: 150px;
+    border-radius: 0.5em;
+    padding: 10px;
+    background-color: #46A29F;
+    color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #55c4c0;
+}
+
+li {
+    background-color: #1a2029;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+li:hover {
+    background-color: #303c4d;
+}
+
+a {
+    color: #6c63ff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 1em;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #9d94ff;
+}
+
+.id {
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+.username {
+    flex-grow: 1;
 }
 
 .create_user {
@@ -38,7 +95,40 @@ h1 {
 }
 
 .create_user h1{
+    color: #f1f1f1;
+    font-size: 2em;
     margin-bottom: 1em;
+}
+
+.create_user input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #4a4a4a;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    color: #f1f1f1;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.create_user input[type="text"]:focus {
+    border-color: #6c63ff;
+    outline: none;
+}
+
+.create_user input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.create_user input[type="submit"]:hover {
+    background-color: #0056b3;
 }
 
 .menu_btn {
@@ -50,6 +140,10 @@ h1 {
     justify-content: left;
     text-align: left;
     margin: 1em;
+    list-style-type: none;
+    padding: 0;
+    color: #f1f1f1;
+    font-size: 1em;
 }
 
 .user_list h1 {
@@ -72,5 +166,5 @@ h1 {
 .title {
     text-align: left;
     padding: 1em;
-    color: white;
+    color: #f1f1f1;
 }

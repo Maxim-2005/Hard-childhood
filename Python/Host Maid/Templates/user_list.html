@@ -10,11 +10,14 @@
 	{% if data.content %}
 		{% for i in data.content %}
 			<div class="user_info">
-				{{i.id}}
-				{{i.name}}
-				{{i.description}}
-				{{i.date}}
-				<p></p>
+				<li>
+					<span class="id">{{i.id}}</span>
+					<span class="username">{{i.name}}</span>
+					<span class="username">{{i.description}}</span>
+					<span class="username">{{i.date}}</span>
+					<a href = "/user/{{i.id}}">Подробнее</a>
+					<p></p>
+				</li>
 			</div>
 		{% endfor %}
 	{% else %}
