@@ -8,8 +8,17 @@
 	<div class = "create_user">
 		<h1>Добавить пользователя</h1>
 		<form method = "post">
-			<input type = "text" name = name placeholder = "Введите имя">
-			<input type = "text" name = description placeholder = "Введите описание">
+			<input type = "text" name = "name" placeholder = "Введите имя">
+			<input type = "text" name = "description" placeholder = "Введите описание">
+			<select name = "city_id">
+				{% if data.city %}
+					{%for i in data.city%}
+						<option value = "{{i.id}}">{{i.name}}</option>
+					{%endfor%}
+				{% else %}
+					<option value = "0"> Нет данных </option>
+				{% endif %}
+			</select>
 			<button type = "submit">Отправить</button>
 		</form>
 	</div>

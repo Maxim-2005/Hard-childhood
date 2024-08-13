@@ -88,35 +88,35 @@ a:hover {
     flex-grow: 1;
 }
 
-.create_user {
+.create_user, .user_update {
     justify-content: left;
     text-align: left;
     margin: 1em;
 }
 
-.create_user h1{
+.create_user h1, .user_update h1{
     color: #f1f1f1;
     font-size: 2em;
     margin-bottom: 1em;
 }
 
-.create_user input[type="text"] {
+.create_user input[type="text"], .user_update input[type="text"]{
     padding: 10px;
     margin-right: 10px;
-    border: 1px solid #4a4a4a;
+    border: 1px solid #303c4d;
     border-radius: 5px;
-    background-color: #3a3a3a;
+    background-color: #1a2029;
     color: #f1f1f1;
     font-size: 14px;
     transition: border-color 0.3s ease;
 }
 
-.create_user input[type="text"]:focus {
+.create_user input[type="text"]:focus, .user_update input[type="text"]:focus {
     border-color: #6c63ff;
     outline: none;
 }
 
-.create_user input[type="submit"] {
+.create_user input[type="submit"], .user_update input[type="submit"] {
     padding: 10px 20px;
     background-color: #007bff;
     color: #f1f1f1;
@@ -127,7 +127,7 @@ a:hover {
     transition: background-color 0.3s ease;
 }
 
-.create_user input[type="submit"]:hover {
+.create_user input[type="submit"]:hover, .user_update input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
@@ -167,4 +167,26 @@ a:hover {
     text-align: left;
     padding: 1em;
     color: #f1f1f1;
+}
+
+.user {
+    display: flex;
+    justify-content: center; /* Align buttons horizontally in the center */
+    gap: 10px; /* Space between buttons */
+
+    background-color: #4ca3af;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+
+    background-color: #357e88; /* Change color on hover */
+}
+
+.menu {
+    position: absolute;
+    right: 2em;
+    top: 7em;
 }

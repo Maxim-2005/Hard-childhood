@@ -5,5 +5,11 @@
 {% endblock %}
 
 {% block content %}
-	{{data.user.id}}
+	<div class = "user">
+		{{data.user.id}}
+		{{data.user.name}}
+		{{data.user.discription}}
+		{{data.user.city_id}}
+		{%include "ins/user_menu.html"%}
+	<div>
 {% endblock %}
