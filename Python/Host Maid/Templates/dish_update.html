@@ -1,0 +1,29 @@
+{% extends "base/main.html" %}
+
+{% block title %}
+	{{data.title}}
+{% endblock %}
+
+{% block content %}
+	<div class = "dish_update">
+		<h1>Редактировать блюда</h1>
+		<form method = "post">
+			<input type = "text" name = "name" value = "{{data.dish.name}}" placeholder = "Введите имя">
+			<input type = "text" name = "description" value = "{{data.dish.description}}" placeholder = "Введите описание">
+			<select name = "difficult_id">
+				{% if data.difficult %}
+					{% for i in data.difficult %}
+						{% if i.id == data.dish.difficult_id %}
+							<option selected value = "{{i.id}}">{{i.name}}</option>
+						{% else %}
+							<option value = "{{i.id}}">{{i.name}}</option>
+						{% endif %}
+					{% endfor %}
+				{% else %}
+					<option value = "0">Нет данных</option>
+				{% endif %}
+			</select>
+			<button type = "submit">Обновить</button>
+		</form>
+	</div>
+{% endblock %}

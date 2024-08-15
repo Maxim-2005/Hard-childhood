@@ -5,17 +5,17 @@
 {% endblock %}
 
 {% block content %}
-	<div class = "user_list">
-	<h1>Пользователи</h1>
+	<div class = "dish_list">
+	<h1>Меню</h1>
 	{% if data.content %}
 		{% for i in data.content %}
-			<div class="user_info">
+			<div class="dish_info">
 				<li>
 					<span class="id">{{i.id}}</span>
-					<span class="username">{{i.name}}</span>
-					<span class="username">{{i.description}}</span>
-					<span class="username">{{i.date}}</span>
-					<a href = "/user/{{i.id}}">Подробнее</a>
+					<span class="dishname">{{i.name}}</span>
+					<span class="dishname">{{i.description}}</span>
+					<span class="dishname">{{i.date}}</span>
+					<a href = "/dish/{{i.id}}">Подробнее</a>
 					<p></p>
 				</li>
 			</div>

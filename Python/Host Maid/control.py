@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect
 from app import app, db
-from model.user import User
-from model.city import City
+from model.dish import Dish
+from model.difficult import Difficult
 
 
 @app.route("/")
@@ -9,7 +9,7 @@ from model.city import City
 def index():
     data = {
         "title": "Главная страница",
-        "content": "Ченебудь"
+        "content": ""
     }
     return render_template("index.html", data = data)
 
@@ -17,80 +17,80 @@ def index():
 def about():
     data = {
         "title": "О нас",
-        "content": "Оп оп оп"
+        "content": ""
     }
     return render_template("about.html", data = data)
 
 # Создание строки в таблице
-@app.route("/create_user", methods = ["GET", "POST"])
-def create_user():
+@app.route("/dish_add", methods = ["GET", "POST"])
+def dish_add():
     if request.method == "POST":
         name = request.form["name"]
         description = request.form["description"]
-        city_id = request.form["city_id"]
-        user = User(name = name, description = description, city_id = city_id)
+        difficult_id = request.form["difficult_id"]
+        dish = Dish(name = name, description = description, difficult_id = difficult_id)
         try:
-            db.session.add(user)
+            db.session.add(dish)
             db.session.commit()
-            return redirect("/user/" + str(user.id))
+            return redirect("/dish/" + str(dish.id))
         except:
             return "Увы но не выйдет"
     else:
         data = {
-            "title": "Создать пользователя",
-            "city": City.query.all()
+            "title": "Добавить блюдо",
+            "difficult": Difficult.query.all()
         }
-        return render_template("create_user.html", data = data)
+        return render_template("dish_add.html", data = data)
 
 
 # Обновление данных в таблице
-@app.route("/user/<int:id>/update", methods = ["GET", "POST"])
-def user_update(id):
-    user = User.query.get(id)
+@app.route("/dish/<int:id>/update", methods = ["GET", "POST"])
+def dish_update(id):
+    dish = Dish.query.get(id)
     if request.method == "POST":
-        user.name = request.form["name"]
-        user.description = request.form["description"]
-        user.city_id = request.form["city_id"]
+        dish.name = request.form["name"]
+        dish.description = request.form["description"]
+        dish.difficult_id = request.form["difficult_id"]
         try:
             db.session.commit()
-            return redirect("/user/" + str(uesr.id))
+            return redirect("/dish/" + str(dish.id))
         except:
             return "Увы но не выйдет"
     else:
         data = {
-            "title": "Редактировать пользователя",
-            "user": user,
-            "city": City.query.all()
+            "title": "Редактировать блюда",
+            "dish": dish,
+            "difficult": Difficult.query.all()
         }
-        return render_template("user_update.html", data = data)
+        return render_template("dish_update.html", data = data)
 
 
 # Удаление данных из таблицы
-@app.route("/user/<int:id>/delete")
-def delete(id):
-    user = User.query.get_or_404(id)
+@app.route("/dish/<int:id>/delete")
+def dish_delete(id):
+    dish = Dish.query.get_or_404(id)
     try:
-        db.session.delete(user)
+        db.session.delete(dish)
         db.session.commit()
-        return redirect("/user_list")
+        return redirect("/dish_list")
     except:
         return "Увы но не выйдет"
 
 # Чтение таблицы
-@app.route("/user_list")
-def user_list():
+@app.route("/dish_list")
+def dish_list():
     data = {
         "title": "Список пользователей",
-        "content": User.query.all()
+        "content": Dish.query.all()
     }
-    return render_template("user_list.html", data = data)
+    return render_template("dish_list.html", data = data)
 
-@app.route("/user/<int:id>")
-def user(id):
-    user = User.query.get(id)
-    user.city_id = City.query.get(user.city_id).name
+@app.route("/dish/<int:id>")
+def dish(id):
+    dish = Dish.query.get(id)
+    dish.difficult = Difficult.query.get(dish.difficult_id).name
     data = {
-        "title": "Пользователь",
-        "user": user
+        "title": "Блюдо",
+        "dish": dish
     }
-    return render_template("user.html", data = data)
+    return render_template("dish.html", data = data)

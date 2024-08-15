@@ -15,7 +15,6 @@ header {
 }
 
 aside {
-    width: 20%;
 }
 
 footer {
@@ -84,23 +83,23 @@ a:hover {
     margin-right: 1em;
 }
 
-.username {
+.dishname {
     flex-grow: 1;
 }
 
-.create_user, .user_update {
+.dish_add, .dish_update {
     justify-content: left;
     text-align: left;
     margin: 1em;
 }
 
-.create_user h1, .user_update h1{
+.dish_add h1, .dish_update h1{
     color: #f1f1f1;
     font-size: 2em;
     margin-bottom: 1em;
 }
 
-.create_user input[type="text"], .user_update input[type="text"]{
+.dish_add input[type="text"], .dish_update input[type="text"]{
     padding: 10px;
     margin-right: 10px;
     border: 1px solid #303c4d;
@@ -111,12 +110,12 @@ a:hover {
     transition: border-color 0.3s ease;
 }
 
-.create_user input[type="text"]:focus, .user_update input[type="text"]:focus {
+.dish_add input[type="text"]:focus, .dish_update input[type="text"]:focus {
     border-color: #6c63ff;
     outline: none;
 }
 
-.create_user input[type="submit"], .user_update input[type="submit"] {
+.dish_add input[type="submit"], .dish_update input[type="submit"] {
     padding: 10px 20px;
     background-color: #007bff;
     color: #f1f1f1;
@@ -127,7 +126,7 @@ a:hover {
     transition: background-color 0.3s ease;
 }
 
-.create_user input[type="submit"]:hover, .user_update input[type="submit"]:hover {
+.dish_add input[type="submit"]:hover, .dish_update input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
@@ -136,7 +135,7 @@ a:hover {
     height: 3em;
 }
 
-.user_list {
+.dish_list {
     justify-content: left;
     text-align: left;
     margin: 1em;
@@ -146,7 +145,7 @@ a:hover {
     font-size: 1em;
 }
 
-.user_list h1 {
+.dish_list h1 {
     margin-bottom: 1em;
 }
 
@@ -169,24 +168,35 @@ a:hover {
     color: #f1f1f1;
 }
 
-.user {
+.dish {
     display: flex;
-    justify-content: center; /* Align buttons horizontally in the center */
-    gap: 10px; /* Space between buttons */
-
-    background-color: #4ca3af;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-
-    background-color: #357e88; /* Change color on hover */
+    justify-content: center;
+    gap: 1em;
+    text-align: center;
 }
 
 .menu {
     position: absolute;
     right: 2em;
     top: 7em;
+}
+
+select {
+    width: 12em;
+    padding: 8px;
+    background-color: #1E1E24;
+    border: 1px solid #3B3E48;
+    border-radius: 4px;
+    color: white;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5H7z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+.dish_menu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }

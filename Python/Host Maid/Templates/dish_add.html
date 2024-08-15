@@ -1,0 +1,25 @@
+{% extends "base/main.html" %}
+
+{% block title %}
+	{{data.title}}
+{% endblock %}
+
+{% block content %}
+	<div class = "dish_add">
+		<h1>Добавить блюдо</h1>
+			<form method = "post">
+				<input type = "text" name = "name" placeholder = "Название">
+				<input type = "text" name = "description" placeholder = "Описание">
+				<select name = "difficult_id">
+					{% if data.difficult %}
+						{%for i in data.difficult%}
+							<option value = "{{i.id}}">{{i.name}}</option>
+						{%endfor%}
+					{% else %}
+						<option value = "0">Нет данных</option>
+					{% endif %}
+				</select>
+			<button type = "submit">Отправить</button>
+		</form>
+	</div>
+{% endblock %}

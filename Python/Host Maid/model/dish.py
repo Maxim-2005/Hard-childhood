@@ -1,11 +1,11 @@
 from datetime import datetime
 from app import db
-from model.city import City
+from model.difficult import Difficult
 
 
-class User(db.Model):
+class Dish(db.Model):
     id = db.Column(db.Integer, primary_key = True)  # Айдишник
-    name = db.Column(db.String(255), nullable = False)  # Имя
+    name = db.Column(db.String(255), nullable = False)  # Название
     description = db.Column(db.Text, default = "undefined") # Описание
     data = db.Column(db.Date, default = datetime.utcnow) # Временная метка
-    city_id = db.Column(db.Integer, db.ForeignKey(City.id), nullable = True) # Ключ города
+    difficult_id = db.Column(db.Integer, db.ForeignKey(Difficult.id), nullable = True) # Сложность приготовления

@@ -1,0 +1,11 @@
+<div class = "dish_menu">
+    <div>
+        <a href = "{{url_for("dish_add")}}"><button class = "menu_btn">Добавить блюдо</button></a>
+    </div>
+    <div>
+        <a href = "{{url_for("dish_update", id = data.dish.id)}}"><button class = "menu_btn">Обновить блюдо</button></a>
+    </div>
+    <div>
+        <a href = "{{url_for("dish_delete", id = data.dish.id)}}"><button class = "menu_btn">Удалить блюдо</button></a>
+    </div>
+</div>
