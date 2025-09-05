@@ -18,44 +18,10 @@ pnt_specifier_first = [80, 170]     # Координаты 1 карточки
 pnt_specifier_middle = [80, 250]    # Коориднаты 2-9 карточек
 pnt_specifier_last = [70, 310]      # Координаты 10 карточки
 
-url = "https://yang.yandex-team.ru/task/82961255/"
 btn_key = "0"
 img_type = ""
 pg.PAUSE = 0.2
 pg.FAILSAFE = True
-
-# Парсер по html тэгам
-def parse_and_copy(url):
-    try:
-        # Получаем HTML страницы
-        response = requests.get(url)
-        response.raise_for_status()  # Проверяем успешность запроса
-    
-        # Парсим HTML
-        soup = BeautifulSoup(response.text, 'html.parser')
-        
-        # Ищем нужный div по классу
-        target_div = soup.find('div', class_='label_3kPe4')
-
-        if target_div:
-            # Извлекаем текст
-            text = target_div.get_text(strip=True)
-            print(f"Найден текст: {text}")
-            
-            # Копируем в буфер обмена
-            pyperclip.copy(text)
-            print("Текст скопирован в буфер обмена!")
-            return text
-        else:
-            print("Div с классом 'label_3kPe4' не найден")
-            return None
-
-    except requests.RequestException as e:
-        print(f"Ошибка при запросе: {e}")
-        return None
-    except Exception as e:
-        print(f"Произошла ошибка: {e}")
-        return None
 
 
 # Парсер текста по координатам
@@ -96,7 +62,7 @@ while True:
             if parcer_text(pnt_task_verifer) != "Это задание в ра":
                 # Выполнение задания
                 pg.moveTo(pnt_actv[0], pnt_actv[1])
-                error_task = randint(0, 10)
+                error_task = randint(0, 7)
                 for i in range(10):
                     #if i == 0:
                     #    answer(pnt_specifier_first)
